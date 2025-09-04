@@ -1,0 +1,157 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+
+}
+
+ul{
+    list-style-type: none;
+    padding-left: 0;
+
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+p{
+    color: rgb(51, 35, 73);
+    
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1250px;
+    margin: 0 auto;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(52, 52, 52);
+    padding: 0 10px;
+    color: white;
+}
+
+ul{
+    display: flex;
+    gap: 60px;
+}
+
+.logo{
+    font-size: 24px;
+}
+
+.grid{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px ;
+    margin: 0 auto;
+    display: grid;
+    max-width: 1250px;
+    grid-template-columns: 290px 3fr 1fr;
+    grid-template-rows: calc(100vh - 51px);
+    background-color: aqua;
+    background: linear-gradient(270deg, blue, pink);
+    
+    grid-gap: 20px;
+}
+
+.grid--1 div {
+    margin-left: 10px;
+    color: rgb(36, 36, 36);
+   
+    
+}
+
+.grid--1__faqs > h2{
+    text-align: center;
+     background: linear-gradient(90deg, rgb(255, 87, 196), rgb(47, 0, 255));
+  
+   
+   
+    background-clip: text;
+    color: transparent;
+
+
+
+}
+
+.grid--1__faqs p{
+    color: rgb(51, 35, 73);
+    margin-left: 12px;
+}
+
+.grid--2__introduction > h2{
+    text-align: center;
+    
+       background: linear-gradient(90deg, rgb(209, 199, 255), rgb(255, 143, 227));
+  
+   
+   
+    background-clip: text;
+    color: transparent;
+}
+
+.grid--2__introduction h3{
+    text-align: center;
+     color:  rgb(228, 228, 228);
+}
+
+.grid--2__introduction p{
+    color: rgb(51, 35, 73);
+}
+
+.grid--2__pictures {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+
+    
+}
+
+
+
+img{
+    border-radius: 10px;
+}
+
+.grid--3{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 51px);
+   flex-shrink: 0 ;
+    overflow-y: auto;  
+    
+}
+
+.products{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0 ;
+    overflow-y: auto;
+    min-height: 0; 
+    height: 100%; 
+}
+
+
+
+.grid--3 h2{
+    text-align: center;
+     background: linear-gradient(90deg, rgb(255, 82, 203), rgb(255, 255, 255));
+    background-clip: text;
+    color: transparent;
+}
+
+
+
