@@ -1,0 +1,31 @@
+*{
+  box-sizing: border-box;
+}
+
+.Box1 {
+  width: 400px;
+  height: 500px;
+  background-color: #a9def9;
+  border: 3px solid #ff99c8;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+
+.Box2 {
+  width: 320px;
+  height: 400px;
+  background-color: #d0f4de;
+  border: 3px solid #ff99c8;
+  padding: 20px;
+  margin: 25px auto;
+}
+
+.Box3 {
+  width: 250px;
+  height: 320px;
+  background-color: #e4c1f9;
+  border: 3px solid #ff99c8;
+  padding: 20px;
+  margin: 15px auto;
+}
