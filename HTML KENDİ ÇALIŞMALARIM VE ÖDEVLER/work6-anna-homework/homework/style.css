@@ -1,0 +1,33 @@
+.text-blue {
+  color: #c45729;
+}
+
+.text-bold {
+  font-weight: 900;
+  color: #a26e58;
+}
+
+.text-beaver {
+  color: #c48e77;
+}
+
+body {
+  background-color: #dfd3ce;
+}
+
+.separator {
+  height: 2px;
+  background-color: #bc7c61;
+  width: 30%;
+  margin: 20px 0;
+}
+
+form {
+  max-width: 30%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}

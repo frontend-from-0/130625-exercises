@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Web Design</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <button class="hidden-lg">
+          <img src="./icons/hamburger.svg" alt="" />
+        </button>
+
+        <div>
+          <img src="./icons/logo.svg" alt="Travlog logo" />
+        </div>
+
+        <ul class="hidden-sm hidden-md">
+          <li class="strong">Home</li>
+          <li>Discover</li>
+          <li>Special Deals</li>
+          <li>Contact</li>
+        </ul>
+
+        <div class="hidden-sm">
+          <div class="button-container">
+            <button class="btn-primary btn-login strong">Log In</button>
+            <button class="btn-primary btn-signup">Sign Up</button>
+          </div>
+        </div>
+      </nav>
+
+      <main>
+        <section class="hero">
+          <picture class="hero__picture">
+            <source media="(max-width:465px)" srcset="./assets/hero_xs.webp" />
+            <source
+              media="(min-width:465.98px)"
+              srcset="./assets/hero_lg.webp"
+            />
+            <img src="./assets/hero_lg.webp" alt="TO BE UPDATED" />
+          </picture>
+
+          <div class="hero__content">
+            <section>
+              <p class="subtitle gap-43">
+                Explore the world!<span class="icon"
+                  ><img src="./icons/explore.svg" alt="explore icon"
+                /></span>
+              </p>
+            </section>
+            <h1 class="main-title gap-43">
+              Travel
+              <span class="highlight"
+                >top<br />
+                destination<br
+              /></span>
+              of the world<br />
+            </h1>
+            <p class="description gap-43">
+              We always make our customer happy by<br />
+              providing as many choices as possible
+            </p>
+
+            <div class="hero__cta">
+              <a href="#" class="btn btn-primary">Get Started</a>
+              <a href="#" class="btn btn-secondary"
+                ><img src="./icons/play.svg" alt="play icon" />Watch Demo</a
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
