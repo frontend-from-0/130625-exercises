@@ -1,4 +1,4 @@
-/* 
+ /* 
 Topic: JavaScript Basics
 
 Focus: Variables, data types, arithmetic, strings, random numbers, template literals, increments
