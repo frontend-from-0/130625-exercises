@@ -219,6 +219,18 @@ sumWithDoWhile([1, 2, 3, 4, 5]);
     - Hint: you could check if the item is already in the new array before pushing.
     - Log the new array without duplicates.
 */
+ function removeDuplicates(arr){
+   let uniqueArr = [];
+   for (let i = 0; i < arr.length; i++) {
+     if (!uniqueArr.includes(arr[i])) {
+       uniqueArr.push(arr[i]);
+     }
+   }
+   console.log('Array without duplicates:', uniqueArr);
+   return uniqueArr;
+ }
+
+removeDuplicates([5,7,7,10,11,13,13,17,18,18,20]);
 
 /*
 13. Calculate Factorial (For Loop)
