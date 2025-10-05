@@ -182,7 +182,13 @@ sumObjectValues({a: 10, b: 20, c: 5});
       to log each key of the object.
     - Example: { name: "Alice", age: 25 } -> logs "name", then "age"
 */
+function printObjectKeys(obj){
+  for(const key in obj){
+    console.log(key + ':', obj[key]);
+  }
+}
 
+printObjectKeys({ name: "Alice", age: 25 });
 /*
 11. Sum Array Using do-while Loop
     - Define a function `sumWithDoWhile(numbers)` that uses a do-while loop
