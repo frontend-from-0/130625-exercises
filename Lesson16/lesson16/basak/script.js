@@ -131,14 +131,15 @@ filterNegative([10, -5, 0, 22, -9, 4, -1]);
 */
 function doubleValues(numbers) {
   let valuesDoubled = [];
-  
+
   for (const number of numbers) {
     
     valuesDoubled.push(number * 2);
   }
+  console.log('Doubled values are', valuesDoubled);
   return valuesDoubled;
 }
-doubleValues([1,2,3,4,5,6])
+doubleValues([1,2,3,4,5,6]);
 
 /*
 8. Print Each Character of a String (For-of)
