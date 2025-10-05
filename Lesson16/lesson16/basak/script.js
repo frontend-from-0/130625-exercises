@@ -146,7 +146,14 @@ doubleValues([1,2,3,4,5,6]);
    - Define a function `printCharacters(str)` that uses a for-of loop
      to log each character in the string on a separate line.
 */
+function printCharacters(str){
+  for(const string of str){
+    console.log(string);
 
+  }
+}
+
+printCharacters('loops');
 /*
 9. Sum All Values in an Object
    - Define a function `sumObjectValues(obj)` that iterates over the
