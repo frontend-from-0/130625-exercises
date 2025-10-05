@@ -275,6 +275,18 @@ reverseWords('Do this and a bit of that.');
       to collect only the words that have a length >= minLength.
     - Log the resulting array.
 */
+function filterLongWords(words,minLength){
+  let longWords = [];
+  for (let i=0 ; i<words.length ; i++){
+    if(words[i].length >= minLength){
+      longWords.push(words[i]);
+    }
+  }
+  console.log('Long words:', longWords);
+  return longWords;
+}
+
+filterLongWords(['function', 'return', 'switch', 'while', 'for', 'if', 'const', 'let', 'factorial', 'array'], 6);
 
 /*
 16. Log Array Elements with Their Indices
