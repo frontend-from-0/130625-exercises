@@ -345,6 +345,18 @@ countOccurrences(['big','big', 'girl', 'in', 'a', 'big', 'big', 'world'],'big');
     - Log the new array.
 */
 
+function removeFalsyValues(arr){
+  let truthy=[];
+  for(let i=0; i<arr.length ; i++){
+    if(arr[i]){
+      truthy.push(arr[i]);
+    }
+  }
+  console.log('Truthy values:', truthy);
+  return truthy;
+}
+removeFalsyValues([1,2,null, 'switch', false, 'while', 13, undefined, 'log']);
+
 /*
 20. Sum of All Digits in a String
     - Define a function `sumDigits(str)` that loops through each character of `str`,
