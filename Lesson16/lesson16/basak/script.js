@@ -424,6 +424,18 @@ flattenArray([[1,2],[2,3],[3,4]]);
     - Log the filtered array.
 */
 
+function findWordsWithLetter(words, letter){
+  let filteredWords=[];
+  for(let i=0; i<words.length; i++){
+    if(words[i].includes(letter)) {
+      filteredWords.push(words[i]);
+    }
+  }
+  console.log('Words contain','letter', letter, ':', filteredWords);
+  return filteredWords;
+}
+
+findWordsWithLetter(['function', 'return', 'switch', 'while', 'for', 'if', 'const', 'let', 'factorial', 'array'], 't')
 /*
 24. Push and Pop Operations
     - Define a function `pushPopExample(arr, itemToPush)` that:
