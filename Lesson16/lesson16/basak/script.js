@@ -129,7 +129,16 @@ filterNegative([10, -5, 0, 22, -9, 4, -1]);
      to multiply each number by 2, storing results in a new array.
    - Log the new array.
 */
-
+function doubleValues(numbers) {
+  let valuesDoubled = [];
+  
+  for (const number of numbers) {
+    
+    valuesDoubled.push(number * 2);
+  }
+  return valuesDoubled;
+}
+doubleValues([1,2,3,4,5,6])
 
 /*
 8. Print Each Character of a String (For-of)
