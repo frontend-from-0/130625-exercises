@@ -111,6 +111,17 @@ reverseArray([1,2,3,4,5]);
    - Log the new array.
 */
 
+function filterNegative(numbers) {
+  let positiveNumbers=[];
+  for(let i=0 ; i<numbers.length ; i++){
+    if(numbers[i]>=0){
+      positiveNumbers.push(number[i]);
+    }
+  } return positiveNumbers;
+}
+
+numbers[10, -5, 0, 22, -9, 4, -1];
+
 /*
 7. Double the Values (For-of Loop)
    - Define a function `doubleValues(numbers)` that uses a for-of loop
