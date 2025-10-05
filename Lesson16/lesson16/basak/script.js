@@ -325,6 +325,18 @@ findMin([12,17,34,24,67,35]);
       to count how many times `word` appears.
     - Log the count.
 */
+function countOccurrences(arr,word){
+  let counted=0;
+  for(let i=0; i<arr.length; i++){
+    if(arr[i] === word){
+      counted++;
+    }
+  }
+  console.log('Counted', word, ':', counted);
+  return counted;
+}
+
+countOccurrences(['big','big', 'girl', 'in', 'a', 'big', 'big', 'world'],'big');
 
 /*
 19. Remove Falsy Values
