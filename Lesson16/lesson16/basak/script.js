@@ -258,6 +258,17 @@ factorial(7);
     - Log the reversed sentence.
 */
 
+function reverseWords(sentence){
+  let words = sentence.split(' ');
+  let reversedWords = [];
+  for(let i=words.length -1 ; i>=0 ; i--){
+    reversedWords.push(words[i]);
+  }
+  console.log(reversedWords.join(' '));
+}
+
+reverseWords('Do this and a bit of that.');
+
 /*
 15. Filter Words Longer Than X
     - Define a function `filterLongWords(words, minLength)` that uses a for loop
