@@ -240,6 +240,16 @@ removeDuplicates([5,7,7,10,11,13,13,17,18,18,20]);
     - Example: factorial(5) -> 120
 */
 
+function factorial(n) {
+  let result = 1;
+  for (let i = 1; i <= n; i++) {
+    result *= i;
+  }
+  console.log(result);
+}
+
+factorial(7);
+
 /*
 14. String -> Array -> String
     - Define a function `reverseWords(sentence)` that splits the sentence 
