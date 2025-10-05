@@ -466,6 +466,16 @@ pushPopExample([1,2,3,4,5],6);
       - logs the final queue
 */
 
+function manageQueue(queue, newPerson){
+  queue.push(newPerson);
+  console.log('Pushed Queue:',queue );
+  console.log('Shifted Person:',queue.shift());
+  console.log('Final Queue:',queue);
+
+}
+
+manageQueue(['Ted Mosby','Robin Scherbatsky','Marshall Eriksen','Lily Aldrin'],'Barney Stinson');
+
 /*
 26. To-Do List Application 
   - Define a function `updateTodoList(todoList, startIndex, deleteCount, ...newTasks)`:
