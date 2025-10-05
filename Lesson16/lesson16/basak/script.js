@@ -308,6 +308,17 @@ logElementsWithIndex(['function', 'return', 'switch', 'while', 'for', 'if', 'con
     - Log the smallest number.
 */
 
+function findMin(numbers){
+  let minValue = numbers[0];
+  for(let i = 1; i < numbers.length; i++){
+    if(numbers[i] < minValue){
+      minValue = numbers[i];
+    }
+  }
+  console.log('Smallest number is:', minValue);
+}
+findMin([12,17,34,24,67,35]);
+
 /*
 18. Count Occurrences of a Word in an Array
     - Define a function `countOccurrences(arr, word)` that loops through `arr`
