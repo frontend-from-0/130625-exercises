@@ -161,6 +161,20 @@ printCharacters('loops');
    - Log the sum.
    - Example: {a: 10, b: 20, c: 5} -> 35
 */
+function sumObjectValues(obj){
+  let sum=0;
+  for(const property in obj) {
+    const value=obj[property];
+    if(typeof value==='number'){
+      sum += value;
+    }
+    
+  }
+  console.log('Sum:',sum);
+  return sum;
+}
+
+sumObjectValues({a: 10, b: 20, c: 5});
 
 /*
 10. Print Keys of an Object (For-in)
