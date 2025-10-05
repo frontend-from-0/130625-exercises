@@ -120,7 +120,7 @@ function filterNegative(numbers) {
   } return positiveNumbers;
 }
 
-numbers[10, -5, 0, 22, -9, 4, -1];
+const numbers = [10, -5, 0, 22, -9, 4, -1];
 
 /*
 7. Double the Values (For-of Loop)
