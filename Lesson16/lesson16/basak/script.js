@@ -485,4 +485,14 @@ manageQueue(['Ted Mosby','Robin Scherbatsky','Marshall Eriksen','Lily Aldrin'],'
    - Logs the updated list.
 */
 
+function updateTodoList(todoList, startIndex, deleteCount, ...newTasks) {
+  console.log('Current list:',todoList);
+  let removedTasks = todoList.splice(startIndex, deleteCount);
+  console.log('Removed Tasks:', removedTasks);
+  todoList.push(...newTasks);
+  console.log('updated list:', todoList);
+}
+
+
 const todoList = ['Study JS', 'Eat breakfast', 'Walk dog'];
+updateTodoList(todoList, 1, 1, 'Go grocery shopping', 'Clean the house');
