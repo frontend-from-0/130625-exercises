@@ -403,6 +403,19 @@ averageArray([1,2,3,4,5,6,7,8]);
     - Log the flattened array.
 */
 
+function flattenArray(twoDArray){
+  let flattend=[];
+  for(let i=0; i<twoDArray.length; i++){
+    for(let j=0; j<twoDArray[i].length; j++){
+      flattend.push(twoDArray[i][j]);
+    }
+  }
+  console.log('Flattened array:', flattend);
+  return flattend;
+}
+
+flattenArray([[1,2],[2,3],[3,4]]);
+
 /*
 23. Find Words Containing a Letter
     - Define a function `findWordsWithLetter(words, letter)` that loops through
