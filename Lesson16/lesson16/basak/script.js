@@ -293,6 +293,13 @@ filterLongWords(['function', 'return', 'switch', 'while', 'for', 'if', 'const', 
     - Define a function `logElementsWithIndex(arr)` that loops through the array
       and logs "Index: i, Value: arr[i]" for each element.
 */
+function logElementsWithIndex(arr){
+  for(let i=0; i<arr.length; i++){
+    console.log('Index:', i, 'Value:', arr[i]);
+  }
+}
+
+logElementsWithIndex(['function', 'return', 'switch', 'while', 'for', 'if', 'const', 'let', 'factorial', 'array'])
 
 /*
 17. Find the Smallest Number in an Array
