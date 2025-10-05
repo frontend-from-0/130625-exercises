@@ -195,6 +195,22 @@ printObjectKeys({ name: "Alice", age: 25 });
       to sum all numbers in the array.
     - Log the total.
 */
+function sumWithDoWhile(numbers){
+  let sum = 0;
+  let i = 0;
+  
+  if (numbers.length > 0) {
+    do {
+      sum += numbers[i];
+      i++;
+    } while(i < numbers.length);
+  }
+
+  console.log('Sum with do-while:', sum);
+}
+
+sumWithDoWhile([1, 2, 3, 4, 5]);
+
 
 /*
 12. Remove Duplicates from an Array
