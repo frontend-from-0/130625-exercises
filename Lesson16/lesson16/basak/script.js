@@ -446,6 +446,16 @@ findWordsWithLetter(['function', 'return', 'switch', 'while', 'for', 'if', 'cons
       - logs the final array
 */
 
+function pushPopExample(arr,itemToPush){
+ arr.push(itemToPush);
+ console.log('Pushed Element:', arr);
+ const popped = arr.pop();
+ console.log('Popped Element:', popped);
+ console.log('Final Array:', arr);
+}
+
+pushPopExample([1,2,3,4,5],6);
+
 /*
 25. Push and Shift Operations
     - Define a function `manageQueue(queue, newPerson)` that:
