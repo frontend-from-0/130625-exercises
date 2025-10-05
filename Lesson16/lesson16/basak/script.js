@@ -115,12 +115,13 @@ function filterNegative(numbers) {
   let positiveNumbers=[];
   for(let i=0 ; i<numbers.length ; i++){
     if(numbers[i]>=0){
-      positiveNumbers.push(number[i]);
+      positiveNumbers.push(numbers[i]);
     }
-  } return positiveNumbers;
+  }
+  console.log('Filtered numbers are', positiveNumbers);
 }
+filterNegative([10, -5, 0, 22, -9, 4, -1]);
 
-const numbers = [10, -5, 0, 22, -9, 4, -1];
 
 /*
 7. Double the Values (For-of Loop)
@@ -128,6 +129,7 @@ const numbers = [10, -5, 0, 22, -9, 4, -1];
      to multiply each number by 2, storing results in a new array.
    - Log the new array.
 */
+
 
 /*
 8. Print Each Character of a String (For-of)
