@@ -384,6 +384,18 @@ sumDigits('R2-D2');
     - Log the average.
 */
 
+function averageArray(numbers){
+  let sum = 0;
+  for(let i = 0; i < numbers.length; i++){
+    sum += numbers[i];
+  }
+  let average = numbers.length > 0 ? sum / numbers.length : 0;
+  console.log(average);
+}
+
+averageArray([1,2,3,4,5,6,7,8]);
+
+
 /*
 22. Flatten a 2D Array (Nested Loops)
     - Define a function `flattenArray(twoDArray)` that takes an array of arrays
