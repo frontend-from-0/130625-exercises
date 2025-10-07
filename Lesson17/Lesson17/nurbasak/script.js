@@ -204,6 +204,22 @@ truncateString('This is a long string.', 5);
      - Logs "Even" if the number is even
      - Logs "Odd" if the number is odd
 */
+function evenOrOdd(number){
+  if (typeof number !== 'number') {
+    console.log('Please provide a number.');
+    return;
+  } 
+  if (number % 2 === 0) {
+    console.log('Even');
+  } else {
+    console.log('Odd');
+  }
+}
+
+evenOrOdd(0);
+evenOrOdd(1);
+evenOrOdd(2);
+
 
 /*
 11. URL Protocol Checker
