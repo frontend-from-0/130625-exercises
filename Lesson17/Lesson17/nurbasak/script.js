@@ -295,6 +295,16 @@ getDayOfWeek(3);
    - Log the repeated result.
 */
 
+function repeatWord(word, times) {
+  if (typeof word !== 'string' || typeof times !== 'number') {
+    console.log('Please provide a string and a number');
+    return;
+  }
+  console.log(word.repeat(times));
+}
+
+repeatWord('hello word ', 3);
+
 /*
 14. Replace Substring
    - Define a function `censorWord(sentence, target)` that replaces `target`
