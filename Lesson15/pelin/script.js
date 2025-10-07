@@ -175,7 +175,7 @@ console.log('Ex.25.', numberEx10, incrementedNum);
 // 26. Declare numberEx11=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value.
 // CODE HERE
 let numberEx11= 3;
-incrementedEx11= ++numberEx11;
+const incrementedEx11= ++numberEx11;
 finalValue= incrementedEx11*2;
 console.log('Ex.26.', finalValue);
 
