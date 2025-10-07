@@ -228,6 +228,19 @@ evenOrOdd(2);
    - Log "Secure connection" if true, otherwise "Unsecure connection".
 */
 
+function checkProtocol(url){
+  if (typeof url !== 'string') {
+    console.log('Please provide a url.');
+    return;
+  } if (url.toLowerCase().startsWith('https')){
+    console.log('Secure connection');
+  } else {
+    console.log('Unsecure connection');
+  }
+}
+
+checkProtocol('https://nurbasakalbeyoglu.com');
+
 /*
 12. Switch: Day of the Week
    - Define a function `getDayOfWeek(num)` that uses a switch statement:
