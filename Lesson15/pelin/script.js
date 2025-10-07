@@ -176,7 +176,7 @@ console.log('Ex.25.', numberEx10, incrementedNum);
 // CODE HERE
 let numberEx11= 3;
 const incrementedEx11= ++numberEx11;
-finalValue= incrementedEx11*2;
+const finalValue= incrementedEx11*2;
 console.log('Ex.26.', finalValue);
 
 // 27. Declare a=2 and b=3. Increment a using the prefix ++ operator, then add b to the result and log it.
