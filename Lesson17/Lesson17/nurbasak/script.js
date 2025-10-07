@@ -41,6 +41,17 @@ uppercaseName('hasan');
    - Example: "USER@Example.COM" -> "user@example.com"
 */
 
+function normalizeEmail(email) {
+  if (typeof email!== 'string'){
+    console.log('Please provide a string value');
+  return;
+  } else {
+    console.log(email.toLowerCase())
+  }
+}
+
+normalizeEmail('USER@Example.COM');
+
 /*
 4. Extract Domain
    - Define a function `getDomain(email)` that uses `slice` or `substring` to
@@ -101,7 +112,10 @@ containsWord(124321321312, 12);
    - Otherwise, log: "Not a PDF file."
 */
 function checkFileExtension(filename) {
-  // TODO: add type
+  if (typeof filename !== 'string') {
+    console.log('Please provide a string value.');
+    return;
+  }
   if (filename.endsWith('.pdf')) {
     console.log('This is a PDF file.');
   } else {
@@ -119,7 +133,10 @@ checkFileExtension('myassignment.pdf');
      - Logs "Numbers are equal" if they are the same
 */
 function compareNumbers(a, b) {
-  // TODO: check that a and b are numbers
+  if (typeof a,b !== 'numbers') {
+    console.log('Please provide a number value.');
+    return;
+  }
   if (a > b) {
     console.log('a is bigger');
   } else if (b > a) {
@@ -140,6 +157,25 @@ compareNumbers(4, 4);
    - If it is, log: "<str> is a palindrome"
    - Otherwise, log: "<str> is not a palindrome"
 */
+
+function isPalindrome(str) {
+  if (typeof str !== 'string') {
+    console.log('Please provide a string value.');
+    return;
+  }
+  let rev = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    rev += str[i];
+  }
+  if (rev === str) {
+    console.log(str + ' is a palindrome');
+  } else {
+    console.log(str + ' is not a palindrome');
+  }
+}
+
+isPalindrome('nalan');
+isPalindrome('basak');
 
 /*
 9. String Truncation
