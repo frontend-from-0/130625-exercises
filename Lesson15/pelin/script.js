@@ -183,6 +183,6 @@ console.log('Ex.26.', finalValue);
 // CODE HERE
 let valueA = 2;
 incrementedValueA = ++valueA;
-valueB = 3;
+const valueB = 3;
 finalResult = incrementedValueA + valueB;
 console.log('Ex.27.', finalResult);
