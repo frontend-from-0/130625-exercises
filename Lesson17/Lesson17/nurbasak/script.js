@@ -184,6 +184,20 @@ isPalindrome('basak');
    - Log the final truncated string.
 */
 
+function truncateString(text, maxLength) {
+  if (typeof text !== 'string' || typeof maxLength !== 'number') {
+    console.log('Please provide a string value and a number for maxLength.');
+    return;
+  }
+  if (text.length > maxLength) {
+    console.log(text.slice(0, maxLength) + '...');
+  } else {
+    console.log(text);
+  }
+}
+
+truncateString('This is a long string.', 5);
+
 /*
 10. Check Even or Odd (if-else)
    - Define a function `evenOrOdd(number)` that:
