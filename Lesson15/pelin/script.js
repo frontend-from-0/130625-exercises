@@ -184,5 +184,5 @@ console.log('Ex.26.', finalValue);
 let valueA = 2;
 incrementedValueA = ++valueA;
 const valueB = 3;
-finalResult = incrementedValueA + valueB;
+const finalResult = incrementedValueA + valueB;
 console.log('Ex.27.', finalResult);
