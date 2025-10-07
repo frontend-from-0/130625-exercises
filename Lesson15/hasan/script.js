@@ -169,7 +169,6 @@ console.log(numberEx10, incrementedNumber2);
 // here why is answer 9 and 8? I thought it would be 8 and 9.
 
 
-
 // 26. Declare numberEx11=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value. 
 let numberEx11 = -3;
 let incrementedNumber3 = ++numberEx11;
@@ -182,3 +181,4 @@ let a3 = 2;
 let b3 = 3;
 let incrementedA = ++a3;
 console.log(incrementedA + b3);
+// örnek değişiklik (önemli değildir)
