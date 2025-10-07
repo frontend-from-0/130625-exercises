@@ -251,6 +251,40 @@ checkProtocol('https://nurbasakalbeyoglu.com');
      - Log the matched day or "Invalid day" if out of range.
 */
 
+function getDayOfWeek(num) {
+  if (typeof num !== "number") {
+    console.log("Please provide a number.");
+    return;
+  }
+  switch (num) {
+    case 1:
+      console.log("Monday");
+      break;
+    case 2:
+      console.log("Tuesday");
+      break;
+    case 3:
+      console.log("Wednesday");
+      break;
+    case 4:
+      console.log("Thursday");
+      break;
+    case 5:
+      console.log("Friday");
+      break;
+    case 6:
+      console.log("Saturday");
+      break;
+    case 7:
+      console.log("Sunday");
+      break;
+    default:
+      console.log("Invalid day");
+  }
+}
+
+getDayOfWeek(3);
+
 // value == value
 /// value and type === value and type
 
