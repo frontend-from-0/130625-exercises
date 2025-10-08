@@ -469,6 +469,20 @@ trafficLight("green");
    - Log "Long string" or "Short string".
 */
 
+function isLongString(str){
+  if(typeof str !== 'string'){
+    console.log('Please provide a string value.');
+    return;
+  } if ( str.length > 10){
+    console.log('Long string');
+  } else {
+    console.log('Short string');
+  }
+}
+
+isLongString('functionality');
+isLongString('array');
+
 /*
 22. Convert to Lowercase Then Check
    - Define a function `isSpam(text)` that converts the text to lowercase
