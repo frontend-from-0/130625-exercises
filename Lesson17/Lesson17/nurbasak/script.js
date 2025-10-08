@@ -396,6 +396,16 @@ gradeChecker(87);
    - Log the result.
 */
 
+function replaceCharacter(str, oldChar, newChar) {
+  if (typeof str !== 'string' || typeof oldChar !== 'string' || typeof newChar !== 'string') {
+    console.log('Please provide string values.');
+    return;
+  }
+  console.log(str.replaceAll(oldChar, newChar));
+}
+
+replaceCharacter('IZMIR','R','T');
+
 /*
 19. Title Case a Sentence
    - Define a function `titleCase(sentence)` that:
