@@ -369,6 +369,26 @@ sliceLastN('JavaScript String', 3);
    - Log the grade.
 */
 
+function gradeChecker(score) {
+  if (typeof score !== "number") {
+    console.log("Please provide a number!");
+    return;
+  }
+  if (score >= 90) {
+    console.log("A");
+  } else if (score >= 80) {
+    console.log("B");
+  } else if (score >= 70) {
+    console.log("C");
+  } else if (score >= 60) {
+    console.log("D");
+  } else {
+    console.log("F");
+  }
+}
+
+gradeChecker(87);
+
 /*
 18. Character Replacement
    - Define a function `replaceCharacter(str, oldChar, newChar)` that uses .replaceAll()
