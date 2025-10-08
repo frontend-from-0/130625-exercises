@@ -46,10 +46,7 @@ const firstWord = 'Hello';
 const secondWord = 'World';
 console.log('Ex.7.', `${firstWord} ${secondWord}`);
 
-<<<<<<< HEAD
-=======
 
->>>>>>> f1fc241 (Ex.15 resolved)
 // 8. Check the type of a variable, e.g., let x = 42. Log the type using typeof.
 // CODE HERE
 let x = 42;
@@ -122,10 +119,6 @@ const divisor = 3;
 const divisionResult = dividend / divisor;
 const differenceResult = dividend - divisor;
 console.log('Ex.18.', divisionResult, differenceResult);
-<<<<<<< HEAD
-
-=======
->>>>>>> f1fc241 (Ex.15 resolved)
 // 19. Declare firstName and lastName. Create fullName by concatenating them with a space and log it.
 // CODE HERE
 const namen = 'Alice';
@@ -137,18 +130,10 @@ console.log(`${namen} ${surname }`);
 const firstFactor = 7;
 const secondfactor = 2;
 console.log(firstFactor * secondfactor);
-<<<<<<< HEAD
-
-=======
->>>>>>> f1fc241 (Ex.15 resolved)
 // 21. Log the value of Math.PI.
 // CODE HERE
 const pi = Math.PI;
 console.log(pi);
-<<<<<<< HEAD
-
-=======
->>>>>>> f1fc241 (Ex.15 resolved)
 // 22. Declare counter=0. Increment it using three different methods (e.g., counter++, counter+=1, counter=counter+1) and log the result each time.
 // CODE HERE
 const counterEx = 0;
@@ -159,58 +144,35 @@ newCounter += 1;
 console.log(newCounter);
 newCounter = newCounter + 1;
 console.log(newCounter);
-<<<<<<< HEAD
-
-=======
->>>>>>> f1fc241 (Ex.15 resolved)
 // 23. Declare initialTemperature=20. Increase it by 5 and log the result.
 // CODE HERE
 const initialTemperature = 20;
 const resolutTemperature = initialTemperature + 5;
 console.log(resolutTemperature);
-<<<<<<< HEAD
-
-=======
->>>>>>> f1fc241 (Ex.15 resolved)
 // 24. Declare numberEx9=6. Increment it using the prefix ++ operator and log both the variable and the incremented value.
 // CODE HERE
 let numberEx9 = 6;
 let incrementedNumber = ++numberEx9; // Prefix increment
 console.log(numberEx9, incrementedNumber);
-<<<<<<< HEAD
-
-=======
->>>>>>> f1fc241 (Ex.15 resolved)
 // 25. Declare numberEx10=8. Increment it using the postfix ++ operator and log both the original variable and the incremented value.
 // CODE HERE
 let numberEx10 = 8;
 let incrementedNumber2 = numberEx10++;
-<<<<<<< HEAD
-console.log(numberEx10, incrementedNumber2);
-=======
 console.log(numberEx10, incrementedNumber2); 
->>>>>>> f1fc241 (Ex.15 resolved)
 
 
-// here why is answer 9 and 8? I thought it would be 8 and 9.
+// here why is answer 9 and 8? I thought it would be 8 and 9
 
 
 // 26. Declare numberEx11=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value. 
 let numberEx11 = -3;
 let incrementedNumber3 = ++numberEx11;
 console.log(incrementedNumber3 * 2);
-<<<<<<< HEAD
-
-
-=======
->>>>>>> f1fc241 (Ex.15 resolved)
 // 27. Declare a=2 and b=3. Increment a using the prefix ++ operator, then add b to the result and log it.
 // CODE HERE
 let a3 = 2;
 let b3 = 3;
 let incrementedA = ++a3;
 console.log(incrementedA + b3);
-<<<<<<< HEAD
-// örnek değişiklik (önemli değildir)
-=======
->>>>>>> f1fc241 (Ex.15 resolved)
+
+işlem
