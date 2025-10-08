@@ -491,6 +491,22 @@ isLongString('array');
    - Otherwise, log "This text is not spam."
 */
 
+function isSpam(text) {
+  if (typeof text !== 'string') {
+    console.log('Please provide a string value.');
+    return;
+  }
+  const lowerText = text.toLowerCase();
+  if (lowerText.includes('spam')) {
+    console.log('This text is spam.');
+  } else {
+    console.log('This text is not spam.');
+  }
+}
+
+isSpam('This is a SPAM message');
+isSpam('Hello, how are you?');
+
 /*
 23. Extract Initials
    - Define a function `getInitials(fullName)` that uses .split() to get each name part,
