@@ -349,6 +349,15 @@ startsWithA('Boolean');
    - Log the result.
 */
 
+function sliceLastN(text, n) {
+  if (typeof text !== 'string' &&  typeof n !== 'number' || n < 0) {
+    console.log('Please provide a string and a number!');
+    return;
+  }
+  console.log(text.slice(-n));
+}
+
+sliceLastN('JavaScript String', 3);
 /*
 17. Switch: Grade Checker
    - Define a function `gradeChecker(score)` that uses a switch (or if-else chain):
