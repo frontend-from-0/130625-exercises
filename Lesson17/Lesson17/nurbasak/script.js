@@ -439,6 +439,29 @@ titleCase('What goes around comes around');
      - anything else -> "Invalid color"
 */
 
+function trafficLight(color) {
+  if (typeof color !== "string") {
+    console.log("Please provide a string.");
+    return;
+  }
+  switch (color) {
+    case "red":
+      console.log("Stop");
+      break;
+    case "yellow":
+      console.log("Caution");
+      break;
+    case "green":
+      console.log("Go");
+      break;
+    default:
+      console.log("Invalid color");
+  }
+}
+
+trafficLight("red");
+trafficLight("green");
+
 /*
 21. Check String Length (if-else)
    - Define a function `isLongString(str)` that checks if the string length
