@@ -312,6 +312,15 @@ repeatWord('hello word ', 3);
    - Log the censored sentence.
 */
 
+function censorWord(sentence,target){
+  if (typeof sentence !== 'string' || typeof target !== 'string') {
+    console.log('Please provide a string!');
+    return;
+  }console.log(sentence.replaceAll(target,'****'))
+}
+
+censorWord('Get your Gemini API Key','Gemini')
+
 /*
 15. Check First Character (if-else)
    - Define a function `startsWithA(str)` that checks if the string starts with 'A'
