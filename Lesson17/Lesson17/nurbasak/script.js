@@ -328,6 +328,20 @@ censorWord('Get your Gemini API Key','Gemini')
    - Log "Starts with A" or "Does not start with A".
 */
 
+function startsWithA(str){
+  if (typeof str !== 'string') {
+    console.log('Please provide a string!');
+    return;
+  }
+  if (str.charAt(0) === 'A') {
+    console.log('Starts with A');
+  } else {
+    console.log('Does not start with A');
+  }
+}
+
+startsWithA('Array');
+startsWithA('Boolean');
 /*
 16. Slice Last N Characters
    - Define a function `sliceLastN(text, n)` that uses .slice(-n) to extract
