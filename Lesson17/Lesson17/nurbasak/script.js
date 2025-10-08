@@ -133,7 +133,7 @@ checkFileExtension('myassignment.pdf');
      - Logs "Numbers are equal" if they are the same
 */
 function compareNumbers(a, b) {
-  if (typeof a,b !== 'numbers') {
+  if (typeof a !== 'number' && b !=='number') {
     console.log('Please provide a number value.');
     return;
   }
@@ -146,9 +146,9 @@ function compareNumbers(a, b) {
   }
 }
 
-compareNumbers(9, 5);
-compareNumbers(5, 6);
-compareNumbers(4, 4);
+compareNumbers(9,5);
+compareNumbers(5,6);
+compareNumbers(4,4);
 
 /*
 8. Palindrome Check
@@ -414,6 +414,21 @@ replaceCharacter('IZMIR','R','T');
      - Joins them back
    - Log the transformed string.
 */
+
+function titleCase(sentence) {
+  if (typeof sentence !== 'string') {
+    console.log('Please provide a string.');
+    return;
+  } 
+  sentence = sentence.toLowerCase().split(' ');
+  for(let i=0; i<sentence.length; i++){
+    sentence[i] = sentence[i].charAt(0).toUpperCase() + sentence[i].slice(1);
+  }
+  console.log(sentence.join(' '));
+}
+
+titleCase('What goes around comes around');
+
 
 /*
 20. Switch: Traffic Light
