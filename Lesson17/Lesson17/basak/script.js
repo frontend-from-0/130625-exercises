@@ -606,6 +606,7 @@ containsNumber('Happy 34th birthday!');
    - Log the padded string.
 */
 
+
 /*
 27. If-Else: Voting Eligibility
    - Define a function `canVote(age)` that logs:
