@@ -698,3 +698,26 @@ findWordPosition('God morgon','morgon');
      - Otherwise -> "Invalid operator"
    - Log the result.
 */
+
+function calculate(a, operator, b) {
+  switch (operator) {
+    case '+':
+      console.log(a + b);
+      break;
+    case '-':
+      console.log(a - b);
+      break;
+    case '*':
+      console.log(a * b);
+      break;
+    case '/':
+      console.log(a / b);
+      break;
+    default:
+      console.log('Invalid operator');
+  }
+}
+
+calculate(5 , '-' , 3);
+calculate(5 , '*' , 3);
+calculate(5 , '%' , 3);
