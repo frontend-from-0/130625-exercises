@@ -650,6 +650,22 @@ canVote(32);
    - Log the result.
 */
 
+function reverseWords(sentence){
+  if(typeof sentence !== 'string'){
+    console.log('Please provide a string.');
+    return;
+  } 
+  let words = sentence.split(' ');
+  for(let i = 0; i < words.length; i++){
+    words[i] = words[i].split('').reverse().join('');
+  }
+  console.log(words.join(' '));
+}
+
+reverseWords('How I met your mother!');
+
+
+
 /*
 29. Check Substring Position
    - Define a function `findWordPosition(sentence, word)` that uses .indexOf(word)
