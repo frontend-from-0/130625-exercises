@@ -504,7 +504,7 @@ function isSpam(text) {
   }
 }
 
-isSpam('This is a SPAM message');
+isSpam('This is a spam message');
 isSpam('Hello, how are you?');
 
 /*
@@ -513,6 +513,25 @@ isSpam('Hello, how are you?');
      then logs the capitalized first letter of each.
    - Example: "John Doe" -> "J.D."
 */
+
+function getInitials(fullName){
+  if(typeof fullName !== 'string'){
+    console.log('Please provide a string.');
+    return;
+  }
+  const parts = fullName.split(' ');
+  let initials = ' ';
+  for (let i = 0; i < parts.length; i++) {
+    if (parts[i].length > 0) {
+      initials += parts[i][0].toUpperCase() + '.';
+    }
+  } if (initials.endsWith('.')) {
+    initials = initials.slice(0, -1) + '.';
+  }
+  console.log(initials);
+}
+
+getInitials('Nur Basak Albeyoglu');
 
 /*
 24. Switch: Month to Season
