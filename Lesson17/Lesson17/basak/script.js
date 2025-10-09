@@ -627,6 +627,20 @@ padString('12345', 8);
      - "Too young to vote" otherwise
 */
 
+function canVote(age){
+  if(typeof age !== 'number'){
+    console.log('Please provide a number value.');
+    return;
+  } if(age>=18){
+    console.log('Can vote');
+  }else {
+    console.log('Too young to vote');
+  }
+}
+
+canVote(17);
+canVote(32);
+
 /*
 28. Reverse Words in a Sentence
    - Define a function `reverseWords(sentence)` that:
