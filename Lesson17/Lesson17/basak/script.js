@@ -606,6 +606,11 @@ containsNumber('Happy 34th birthday!');
    - Log the padded string.
 */
 
+function padString(str,maxLength){
+  if(typeof str !== 'string' && maxLength !== 'number');
+  console.log('Please provide a string & number value.');
+  return;
+} for 
 
 /*
 27. If-Else: Voting Eligibility
