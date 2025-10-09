@@ -673,6 +673,21 @@ reverseWords('How I met your mother!');
    - Log the index or log "Not found" if it's -1.
 */
 
+function findWordPosition(sentence, word) {
+  if (typeof sentence !== 'string' || typeof word !== 'string') {
+    console.log('Please provide string values.');
+    return;
+  }
+  const index = sentence.indexOf(word);
+  if (index !== -1) {
+    console.log(index);
+  } else {
+    console.log('Not found');
+  }
+}
+
+findWordPosition('God morgon','morgon');
+
 /*
 30. Switch: Simple Calculator
    - Define a function `calculate(a, operator, b)` that uses switch to handle:
