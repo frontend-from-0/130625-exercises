@@ -585,6 +585,20 @@ getSeason(1);
    - Log "Contains number" or "No number found".
 */
 
+
+function containsNumber(str) {
+  if (typeof str !== 'string') {
+    console.log('Please provide a string value.');
+    return;
+  }
+  if (str.match(/\d/)) {
+    console.log('Contains number');
+  } else {
+    console.log('No number found');
+  }
+}
+
+containsNumber('Happy 34th birthday!');
 /*
 26. Pad a String
    - Define a function `padString(str, maxLength)` that if str.length < maxLength,
