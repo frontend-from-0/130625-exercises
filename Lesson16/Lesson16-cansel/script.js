@@ -474,5 +474,6 @@ function updateTodoList(todoList, startIndex, deleteCount, ...newTasks) {
     console.log("Updated To-Do List:", todoList);
 }
 
+
 // Example usage:
 const todoList = ['Study JS', 'Eat breakfast', 'Walk dog'];
