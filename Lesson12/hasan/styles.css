@@ -308,11 +308,8 @@ footer {
     padding: 0 70px;
   }
 
-  .hero__content {
-    display: flex;
-    padding: 0 130px;
-    allign-items: center;
-  }
+  
+
 
   .hero__cta {
     display: flex;
@@ -374,10 +371,6 @@ footer {
     flex-direction: row;
   }
 
-  .bag {
-    margin: 0;
-    allign-items: left;
-  }
 
   h1 {
     text-align: left;
