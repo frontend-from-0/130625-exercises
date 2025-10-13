@@ -405,7 +405,7 @@ sumDigits("Frontend123");
 function averageArray(numbers) {
   let sum = 0;
 
-  for (i = 0; i < numbers.length; i++) {
+  for (let i = 0; i < numbers.length; i++) {
     sum += numbers[i];
     {
       sum / numbers.length;
