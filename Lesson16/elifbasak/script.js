@@ -282,7 +282,7 @@ reverseWords("Hello I am Elif");
 
 function filterLongWords(words, minLength) {
   const longWords = [];
-  for (i = 0; i < words.length; i++) {
+  for (let i = 0; i < words.length; i++) {
     if (typeof words[i] === "string" && words[i].length >= minLength) {
       longWords.push(words[i]);
     }
