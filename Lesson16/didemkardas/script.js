@@ -221,7 +221,7 @@ function sumWithDoWhile(numbers) {
     let i = 0; 
 
     if (numbers.length === 0) {
-        console.log(0); 
+        console.log('Provided array is empty'); 
         return;
     }
 
