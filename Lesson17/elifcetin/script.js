@@ -563,6 +563,7 @@ padString("AYAYa", 10)
   console.log(result);  // got AI's help
 }
 
+
 /*
 29. Check Substring Position
    - Define a function `findWordPosition(sentence, word)` that uses .indexOf(word)
