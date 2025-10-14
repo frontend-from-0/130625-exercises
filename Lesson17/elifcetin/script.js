@@ -515,6 +515,7 @@ containsNumber("hellooo123")
 */ function padString(str, maxLength){
 
 
+  
 if (typeof str !== "string") {
     console.log("Please provide a string.");
     return;
