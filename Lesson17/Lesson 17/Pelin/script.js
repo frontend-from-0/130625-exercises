@@ -150,7 +150,7 @@ compareNumbers(4, 4);
    - Otherwise, log: "<str> is not a palindrome"
 */
 function isPalindrome(str) {
-  const normalizeStr = str.toLowerCase ();
+  const normalizeStr = str.toLowerCase();
   const reversedStr = normalizeStr.split('').reverse().join('');
   if (normalizeStr === reversedStr) {
     console.log("<str> is a palindrome");
