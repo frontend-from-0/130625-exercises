@@ -352,10 +352,10 @@ console.log(replaceCharacter("Birds fly over mountains", "mountains", "rivers"))
    - Log the transformed string.
 */
 function titleCase(sentence) {
-  let words = sentence.split(" ");
-  let titleCasedWords = words.map (word => {
-    let firstLetter = word.charAt(0).toUpperCase();
-    let restOfWord = word.slice(1).toLowerCase();
+  const words = sentence.split(" ");
+  const titleCasedWords = words.map (word => {
+    const firstLetter = word.charAt(0).toUpperCase();
+    const restOfWord = word.slice(1).toLowerCase();
     return firstLetter + restOfWord;
   });
   return titleCasedWords.join(" ");
