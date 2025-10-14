@@ -153,7 +153,7 @@ function isPalindrome(str) {
   const normalizeStr = str.toLowerCase();
   const reversedStr = normalizeStr.split('').reverse().join('');
   if (normalizeStr === reversedStr) {
-    console.log("<str> is a palindrome");
+    console.log(`${str} is a palindrome`);
   } else {
     console.log("<str> is not a palindrome");
   }
