@@ -110,7 +110,13 @@ reverseArray([1,2,3,4,5]);
      an array of numbers and creates a new array without any negative values.
    - Log the new array.
 */
-
+function timesFive(num) {
+  return num*5;
+  
+}
+timesFive(5);
+timesFive(2);
+timesFive(0);
 /*
 7. Double the Values (For-of Loop)
    - Define a function `doubleValues(numbers)` that uses a for-of loop
