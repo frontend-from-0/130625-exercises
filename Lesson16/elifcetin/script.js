@@ -356,6 +356,7 @@ sumDigits("hiiii78")
     sum = sum + numbers[i] ;
     average = sum / numbers[i]
   }
+  
   console.log(average)
 }
 
