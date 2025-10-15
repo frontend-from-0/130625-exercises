@@ -348,7 +348,7 @@ sumDigits("hiiii78")
     - Define a function `averageArray(numbers)` that uses a loop
       to calculate the average (sum / length).
     - Log the average.
-    
+
 */ function averageArray(numbers){
   let sum = 0;
   let average = 0;
@@ -358,6 +358,8 @@ sumDigits("hiiii78")
   }
   console.log(average)
 }
+
+
 averageArray([1,2,3,4,5,6,7])  
 
 /*
