@@ -366,8 +366,9 @@ averageArray([1,2,3,4,5,6,7])
 22. Flatten a 2D Array (Nested Loops)
     - Define a function `flattenArray(twoDArray)` that takes an array of arrays
       (e.g., [[1,2],[3,4]]) and uses nested loops to create a new one-dimensional array.
-    - Log the flattened array..
+    - Log the flattened array.
 */
+
 function flattenArray(twoDArray){
   let flatArr = []
   for(let i = 0; i < twoDArray.length; i++){
