@@ -362,8 +362,6 @@ sumDigits("hiiii78")
 
 averageArray([1,2,3,4,5,6,7])  
 
-
-
 /*
 22. Flatten a 2D Array (Nested Loops)
     - Define a function `flattenArray(twoDArray)` that takes an array of arrays
