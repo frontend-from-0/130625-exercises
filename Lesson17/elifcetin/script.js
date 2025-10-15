@@ -514,7 +514,6 @@ containsNumber("hellooo123")
    - Log the padded string.
 */ function padString(str, maxLength){
 
-
   
 if (typeof str !== "string") {
     console.log("Please provide a string.");
