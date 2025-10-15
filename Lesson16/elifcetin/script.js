@@ -449,8 +449,8 @@ function updateTodoList(todoList, startIndex, deleteCount, ...newTasks){
   todoList.splice(startIndex, deleteCount);
   todoList.push(...newTasks);
   console.log(todoList)
-  
 }
+
 
 const todoList = ['Study JS', 'Eat breakfast', 'Walk dog'];
 updateTodoList(todoList, 1, 2, 'dance' );
