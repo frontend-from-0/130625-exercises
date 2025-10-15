@@ -452,6 +452,7 @@ function updateTodoList(todoList, startIndex, deleteCount, ...newTasks){
 }
 
 
+
 const todoList = ['Study JS', 'Eat breakfast', 'Walk dog'];
 updateTodoList(todoList, 1, 2, 'dance' );
 
