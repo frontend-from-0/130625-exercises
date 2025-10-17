@@ -54,6 +54,13 @@ Function: displayAllRecipes()
   Cooking Time: 20 minutes
 */
 
+function displayAllRecipes () {
+  for (let i=0; i<recipes.length; i++) {
+    console.log('Name: ' + recipes[i].name);
+    console.log('Ingredients: ' + recipes[i].ingredients);
+    console.log('Cooking Time: ' + recipes[i].cookingTime);
+  }
+}
 
 /*
 -----------------------------------------------------------
