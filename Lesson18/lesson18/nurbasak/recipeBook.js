@@ -26,6 +26,22 @@ Run this file in Node.js or the browser console to test.
    - cookingTime (number, in minutes)
 */
 
+const recipes = [ {
+  name: 'Tomato bruschetta',
+  ingredients:['Tomatoes', 'Red Onion', 'Garlic', ' Basil', ' Olive Oil', 'Balsamic Vinegar', 'Baguette'],
+  cookingTime: 15
+},
+{
+  name: 'Caprese Salad',
+  ingredients: ['Tomatoes', 'Mozzarella', 'Basil', 'Olive Oil', 'Balsamic Vinegar'],
+  cookingTime: 10
+},
+{ 
+  name: 'Minestrone Soup',
+  ingredients: [ 'Olive Oil', 'Onion', 'Celery Stick', 'Carrot', 'Courgette', 'Pancetta', 'Garlic', 'Oregano', 'Canneli Beans', 'Tomatoes', 'Vegetable Stock', 'Pasta', 'Parmesan'],
+  cookingTime: 50
+}
+  ]
 
 /*
 -----------------------------------------------------------
