@@ -78,6 +78,22 @@ Function: addRecipe(name, ingredients, cookingTime)
 - ingredients should be an array like ['egg', 'milk', 'flour']
 */
 
+function addRecipe (name, ingredients, cookingTime) {
+  for (let i = 0; i < recipes.length; i++) {
+    if (recipes[i].name === name) {
+      console.log('This recipe already exists.');
+      return;
+    }
+  }
+  recipes.push({
+    name: name,
+    ingredients: ingredients,
+    cookingTime: cookingTime,
+  });
+  console.log('Recipe added successfully.');
+}
+
+addRecipe('Arancini', ['Unsalted Butter', 'Garlic', 'Rissotto Rice', 'Stock', 'Parmesan', 'Flour', 'Eggs', 'Breadcrumbs', 'Olive Oil', 'Mozarella'], 40);
 
 /*
 -----------------------------------------------------------
