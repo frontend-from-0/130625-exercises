@@ -28,17 +28,17 @@ Run this file in Node.js or the browser console to test.
 
 const recipes = [ {
   name: 'Tomato bruschetta',
-  ingredients:['Tomatoes', 'Red Onion', 'Garlic', ' Basil', ' Olive Oil', 'Balsamic Vinegar', 'Baguette'],
+  ingredients:['Tomatoes ', 'Red Onion ', 'Garlic ', 'Basil ', ' Olive Oil ', 'Balsamic Vinegar ', 'Baguette '],
   cookingTime: 15
 },
 {
   name: 'Caprese Salad',
-  ingredients: ['Tomatoes', 'Mozzarella', 'Basil', 'Olive Oil', 'Balsamic Vinegar'],
+  ingredients: ['Tomatoes ', 'Mozzarella ', 'Basil ', 'Olive Oil ', 'Balsamic Vinegar '],
   cookingTime: 10
 },
 { 
   name: 'Minestrone Soup',
-  ingredients: [ 'Olive Oil', 'Onion', 'Celery Stick', 'Carrot', 'Courgette', 'Pancetta', 'Garlic', 'Oregano', 'Canneli Beans', 'Tomatoes', 'Vegetable Stock', 'Pasta', 'Parmesan'],
+  ingredients: [ 'Olive Oil ', 'Onion ', 'Celery Stick ', 'Carrot ', 'Courgette ', 'Pancetta ', 'Garlic ', 'Oregano ', 'Canneli Beans ', 'Tomatoes' , 'Vegetable Stock ', 'Pasta ', 'Parmesan '],
   cookingTime: 50
 }
   ]
@@ -56,9 +56,14 @@ Function: displayAllRecipes()
 
 function displayAllRecipes () {
   for (let i=0; i<recipes.length; i++) {
+    console.log(' ');
     console.log('Name: ' + recipes[i].name);
+    console.log(' ');
     console.log('Ingredients: ' + recipes[i].ingredients);
-    console.log('Cooking Time: ' + recipes[i].cookingTime);
+    console.log(' ');
+    console.log('Cooking Time: ' + recipes[i].cookingTime + ' minutes');
+    console.log(' ');
+    console.log(' ');
   }
 }
 
@@ -116,3 +121,9 @@ Function: filterByIngredient(ingredient)
 Function: filterByMaxTime(maxMinutes)
 - Shows recipes that take <= maxMinutes to cook.
 */
+
+// --- Demo / Auto-run when executed with Node ---
+// This file defines functions but didn't call any of them.
+// Add a simple call so running `node recipeBook.js` prints output.
+console.log('--- Displaying all recipes ---');
+displayAllRecipes();
