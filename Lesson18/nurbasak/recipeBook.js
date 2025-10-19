@@ -56,7 +56,7 @@ Function: displayAllRecipes()
   Cooking Time: 20 minutes
 */
   console.log(" ");
-  console.log("DISPLAYING ALL RECIPES FROM BOOK. ");
+  console.log("STEP 2 : DISPLAYING ALL RECIPES FROM BOOK. ");
   function displayAllRecipes() {
     for (let i = 0; i < recipes.length; i++) {
       console.log(" ");
@@ -66,7 +66,7 @@ Function: displayAllRecipes()
       console.log(" ");
   
     }
-    console.log("END OF THE RECIPES.");
+    
   }
 
   displayAllRecipes();
@@ -82,7 +82,7 @@ Function: addRecipe(name, ingredients, cookingTime)
 - ingredients should be an array like ['egg', 'milk', 'flour']
 */
 console.log(" ");
-console.log("ADDING NEW RECIPE. ");
+console.log("STEP 3 : ADDING NEW RECIPE.");
 console.log(" ");
 function addRecipe (name, ingredients, cookingTime) {
   for (let i = 0; i < recipes.length; i++) {
@@ -98,9 +98,9 @@ function addRecipe (name, ingredients, cookingTime) {
     cookingTime: cookingTime,
   });
   console.log(`${name} recipe added successfully.`);
+  
+}console.log(' ');
   console.log(' ');
-  console.log(' ');
-}
 
 addRecipe('Arancini', ['Unsalted Butter', 'Garlic', 'Rissotto Rice', 'Stock', 'Parmesan', 'Flour', 'Eggs', 'Breadcrumbs', 'Olive Oil', 'Mozarella'], 40);
 addRecipe('Caprese Salad', ['Unsalted Butter', 'Garlic', 'Rissotto Rice', 'Stock', 'Parmesan', 'Flour', 'Eggs', 'Breadcrumbs', 'Olive Oil', 'Mozarella'], 40);
@@ -114,26 +114,24 @@ Function: viewRecipe(name)
 - If not found, shows a message.
 */
 
-function viewRecipe(name){
-  let found = false;
-  for(let i = 0; i < recipes.length ; i++){
-    if(recipes[i].name === name){
-      console.log (recipes[i]);
-      console.log(' ');
-    console.log(' ');
-    found = true;
-    }
-  }
-  if (!found) {
-    console.log(`There is no recipe of + ${name}`);
-    console.log(' ');
-    console.log(' ');
-  }
+console.log(" ");
+console.log("STEP 4 : VIEW A RECIPE BY NAME.");
+console.log(" ");
+
+function viewRecipe(name) {
+  for(let i=0; i<recipes.length;i++) {
+    if(recipes[i].name===name) {
+      console.log(recipes[i]);
+      return;
+    } 
+  } 
+  console.log(`Recipe with name ${name} not found.`);
 }
 
-viewRecipe('Arancini');
+viewRecipe('Minestrone Soup');
 viewRecipe('Bruschetta');
 
+/* When I log STEP 4, it looks in terminal with curly brackets and square brackets as well. I couldn't find out why. */
 
 /*
 -----------------------------------------------------------
@@ -144,7 +142,23 @@ Function: updateRecipe(name, newIngredients, newCookingTime)
 - Updates ingredients and cookingTime.
 - Logs success or error message.
 */
+console.log(" ");
+console.log("STEP 5 : UPDATE A RECIPE.");
+console.log(" ");
+function updateRecipe(name,newIngredients,newCookingTime) {
+for(let i = 0; i < recipes.length; i++){
+  if(recipes[i].name === name){
+    recipes[i].ingredients = newIngredients;
+    recipes[i].cookingTime = newCookingTime;
+    console.log( `${name} recipe is updated.`);
+    return;
+  } 
+} 
+console.log(`Recipe with name ${name} is not found.`);
+}
 
+updateRecipe('Arancini', ['Unsalted Butter', 'Garlic', 'Rissotto Rice', 'Stock', 'Parmesan', 'Flour', 'Eggs', 'Breadcrumbs', 'Olive Oil', 'Mozarella'], 45);
+updateRecipe('Bruschetta', ['Tomatoes ', 'Red Onion ', 'Garlic ', 'Basil ', ' Olive Oil ', 'Balsamic Vinegar ', 'Baguette '], 20);
 
 /*
 -----------------------------------------------------------
