@@ -128,36 +128,59 @@ console.log(`${personName} (${age}) lives in ${city}`);
 
 // 17. Declare variables x=5, y=10, z=15. Log their total sum.
 // CODE HERE
+// Ex.17 – Summing multiple variables example
+// Üç sayının (x, y, z) toplamını hesaplıyoruz.
+// This example shows how to add multiple variables together.
 const x1 = 5;
 const y1 = 10;
 const z1 = 15;
 const totalSum = x1 +  y1 + z1;
 console.log('Ex.17.', totalSum); 
+
 // 18. Declare dividend=10 and divisor=3. Log the quotient (divisionResult) and difference (differenceResult).
 // CODE HERE
+// Ex.18 – Division and subtraction example
+// İki sayının bölümünü ve farkını hesaplıyoruz (divisionResult, differenceResult).
+// This example demonstrates how to perform division and subtraction operations.
 const dividend = 10;
 const divisor = 3;
 const divisionResult = dividend / divisor;
 const differenceResult = dividend - divisor;
 console.log('Ex.18.', 'Division Result:', divisionResult, 'Difference Result:', differenceResult);
+
 // 19. Declare firstName and lastName. Create fullName by concatenating them with a space and log it.
 // CODE HERE
+// Ex.19 – String concatenation and template literals example
+// firstName ve lastName değişkenlerini birleştirerek fullName oluşturuyoruz.
+// This example shows how to combine strings using template literals.
 const firstName = 'Emine Şule';
 const lastName = 'Öztemiz';
 const fullName = `${firstName} ${lastName}`;
 console.log('Ex.19.', fullName);
+
 // 20. Declare firstFactor=7 and secondFactor=2. Log the product.
 // CODE HERE
+// Ex.20 – Multiplication (çarpma) operator example
+// İki sayıyı çarparak sonuç değişkenine atıyoruz (product = firstFactor * secondFactor).
+// This example demonstrates how to multiply two numbers in JavaScript.
 const firstFactor = 7;
 const secondFactor = 2;
 const product = firstFactor * secondFactor;
 console.log('Ex.20.', product);
+
 // 21. Log the value of Math.PI.
 // CODE HERE
+// Ex.21 – Using Math.PI constant example
+// Math.PI sabiti, pi sayısının (~3.14159) JavaScript’teki hazır değeridir.
+// This example shows how to access and log the constant value of Math.PI.
 const piValue = Math.PI;
 console.log('Ex.21.', piValue);
+
 // 22. Declare counter=0. Increment it using three different methods (e.g., counter++, counter+=1, counter=counter+1) and log the result each time.
 // CODE HERE
+// Ex.22 – Incrementing a number in different ways example
+// Bir değişkeni 1 artırmak için üç farklı yöntem (++, += 1, counterValue = counterValue + 1) gösterilmektedir.
+// This example demonstrates three ways to increment a number by one in JavaScript.
 let counterValue = 0;
 counterValue++;
 console.log('Ex.22 - Method 1:', counterValue);
@@ -165,6 +188,7 @@ counterValue += 1;
 console.log('Ex.22 - Method 2:', counterValue);
 counterValue = counterValue + 1;
 console.log('Ex.22 - Method 3:', counterValue);
+
 // 23. Declare initialTemperature=20. Increase it by 5 and log the result.
 // CODE HERE
 let initialTemperature = 20;
