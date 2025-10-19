@@ -27,7 +27,7 @@ Run this file in Node.js or the browser console to test.
 */
 
 const recipes = [ {
-  name: 'Tomato bruschetta',
+  name: 'Tomato Bruschetta',
   ingredients:['Tomatoes ', 'Red Onion ', 'Garlic ', 'Basil ', ' Olive Oil ', 'Balsamic Vinegar ', 'Baguette '],
   cookingTime: 15
 },
@@ -198,7 +198,45 @@ Function: filterByIngredient(ingredient)
 Function: filterByMaxTime(maxMinutes)
 - Shows recipes that take <= maxMinutes to cook.
 */
+console.log(" ");
+console.log("STEP 7 : FILTER RECIPES BY INGREDIENT.");
+console.log(" ");
+
+function filterByIngredient(ingredient) {
+  console.log(`Recipes with ingredient: ${ingredient}`);
+  for (let i = 0; i < recipes.length; i++) {
+    if (recipes[i].ingredients.includes(ingredient)) {
+      console.log (recipes[i].name);
+    }
+  } console.log(`${ingredient} is not found in any recipe.`);
+}
+
+filterByIngredient('Olive Oil');
+filterByIngredient('Chicken');
+
+
+/* I couldn't find why it shows only 1 recipe. Below it shows all, and I see them same.*/
+
+console.log(" ");
+console.log("STEP 7 : FILTER RECIPES BY MAX COOKING TIME.");
+console.log(" ");
+
+function filterByMaxTime(maxMinutes) {
+  console.log(`Recipes with max cooking time: ${maxMinutes} minutes`);
+  for (let i = 0; i < recipes.length; i++) {
+    if (recipes[i].cookingTime <= maxMinutes) {
+      console.log(recipes[i].name);
+    }
+  }
+}
+
+filterByMaxTime(30);
+filterByMaxTime(60);
 
 // --- Demo / Auto-run when executed with Node ---
 // This file defines functions but didn't call any of them.
 // Add a simple call so running `node recipeBook.js` prints output.
+
+ 
+
+
