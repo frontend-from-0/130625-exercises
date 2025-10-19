@@ -67,8 +67,8 @@ console.log(typeof string, num, string, string21321);
 // 10. Convert the string "50" to a number and log its type to confirm the conversion.
 // CODE HERE
 
-const str = "10";
-const number = parseInt(str, 10);
+const str = "50";
+const number = parseInt(str, 50);
 console.log(typeof str, str, typeof number, number);
 
 // 11. Generate a random integer between 50 and 60 and log it.
