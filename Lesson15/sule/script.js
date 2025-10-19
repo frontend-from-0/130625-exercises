@@ -196,14 +196,22 @@ initialTemperature += 5;
 console.log('Ex.23.', initialTemperature);
 // 24. Declare numberEx9=6. Increment it using the prefix ++ operator and log both the variable and the incremented value.
 // CODE HERE
+// Ex.24 – Prefix increment (ön ek artırma) example
+// ++numberEx9 ifadesi önce sayıyı 1 artırır, ardından yeni değeri döndürür.
+// This example demonstrates the prefix increment operator (++variable).
 let numberEx9 = 6;
 let prefixResult24 = ++numberEx9;
 console.log('Ex.24:', 'prefixResult24 =', prefixResult24, ', numberEx9 =', numberEx9);
+
 // 25. Declare numberEx10=8. Increment it using the postfix ++ operator and log both the original variable and the incremented value.
 // CODE HERE
+// Ex.25 – Postfix increment (son ek artırma) example
+// numberEx10++ ifadesi önce mevcut değeri kullanır, ardından artırır.
+// This example shows the postfix increment operator (variable++).
 let numberEx10 = 8;
 let postfixResult25 = numberEx10++;
 console.log('Ex.25:', 'postfixResult25 =', postfixResult25, ', numberEx10 =', numberEx10);
+
 // 26. Declare numberEx11=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value.
 // CODE HERE
 let numberEx11 = -3;
