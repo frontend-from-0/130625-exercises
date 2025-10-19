@@ -214,11 +214,18 @@ console.log('Ex.25:', 'postfixResult25 =', postfixResult25, ', numberEx10 =', nu
 
 // 26. Declare numberEx11=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value.
 // CODE HERE
+// Ex.26 – Prefix increment and multiplication example
+// numberEx11 değişkenini ++ operatörüyle 1 artırıyoruz ve sonucu 2 ile çarpıyoruz.
+// This example shows how to increment a number using prefix ++ and then multiply it.
 let numberEx11 = -3;
 let result26 = ++numberEx11 * 2;
 console.log('Ex.26:', result26);
+
 // 27. Declare a=2 and b=3. Increment a using the prefix ++ operator, then add b to the result and log it.
 // CODE HERE
+// Ex.27 – Prefix increment and addition example
+// a27 değişkenini ++ operatörüyle artırıyoruz, ardından b27 ile topluyoruz.
+// This example demonstrates using the prefix ++ operator and adding another variable.
 let a27 = 2;
 let b27 = 3;
 let result27 = ++a27 + b27;
