@@ -183,11 +183,11 @@ console.log('Ex.21.', piValue);
 // This example demonstrates three ways to increment a number by one in JavaScript.
 let counterValue = 0;
 counterValue++;
-console.log('Ex.22 - Method 1:', counterValue);
+console.log('Ex.22. - Method 1:', counterValue);
 counterValue += 1;
-console.log('Ex.22 - Method 2:', counterValue);
+console.log('Ex.22. - Method 2:', counterValue);
 counterValue = counterValue + 1;
-console.log('Ex.22 - Method 3:', counterValue);
+console.log('Ex.22. - Method 3:', counterValue);
 
 // 23. Declare initialTemperature=20. Increase it by 5 and log the result.
 // CODE HERE
@@ -201,7 +201,7 @@ console.log('Ex.23.', initialTemperature);
 // This example demonstrates the prefix increment operator (++variable).
 let numberEx9 = 6;
 let prefixResult24 = ++numberEx9;
-console.log('Ex.24:', 'prefixResult24 =', prefixResult24, ', numberEx9 =', numberEx9);
+console.log('Ex.24.', 'prefixResult24 =', prefixResult24, ', numberEx9 =', numberEx9);
 
 // 25. Declare numberEx10=8. Increment it using the postfix ++ operator and log both the original variable and the incremented value.
 // CODE HERE
@@ -210,7 +210,7 @@ console.log('Ex.24:', 'prefixResult24 =', prefixResult24, ', numberEx9 =', numbe
 // This example shows the postfix increment operator (variable++).
 let numberEx10 = 8;
 let postfixResult25 = numberEx10++;
-console.log('Ex.25:', 'postfixResult25 =', postfixResult25, ', numberEx10 =', numberEx10);
+console.log('Ex.25.', 'postfixResult25 =', postfixResult25, ', numberEx10 =', numberEx10);
 
 // 26. Declare numberEx11=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value.
 // CODE HERE
@@ -219,7 +219,7 @@ console.log('Ex.25:', 'postfixResult25 =', postfixResult25, ', numberEx10 =', nu
 // This example shows how to increment a number using prefix ++ and then multiply it.
 let numberEx11 = -3;
 let result26 = ++numberEx11 * 2;
-console.log('Ex.26:', result26);
+console.log('Ex.26.', result26);
 
 // 27. Declare a=2 and b=3. Increment a using the prefix ++ operator, then add b to the result and log it.
 // CODE HERE
@@ -229,4 +229,4 @@ console.log('Ex.26:', result26);
 let a27 = 2;
 let b27 = 3;
 let result27 = ++a27 + b27;
-console.log('Ex.27:', result27);
+console.log('Ex.27.', result27);
