@@ -80,30 +80,52 @@ console.log('randomNumber', randomNumber);
 
 // 12. Round the number 3.7 down using Math.floor and 3.2 up using Math.ceil, log both.
 // CODE HERE
+// Ex.12 – Rounding numbers with Math.floor() and Math.ceil()
+// Math.floor() → sayıyı aşağı yuvarlar (örnek: 3.7 → 3)
+// Math.ceil() → sayıyı yukarı yuvarlar (örnek: 3.2 → 4)
+// This example shows how to round numbers up and down in JavaScript.
 const num1 = 3.7;
 const num2 = 3.2;
 console.log('Ex.12.', Math.floor(num1), Math.ceil(num2));
+
 // 13. Declare a boolean variable isStudent = true. Log it.
 // CODE HERE
+// Ex.13 – Boolean variable example
+// Burada true/false değeri tutan bir değişken oluşturuyoruz.
+// "typeof" ile değişkenin türünü kontrol ediyoruz.
+// This example demonstrates a boolean variable and checking its type.
 const isStudent = true;
 console.log('Ex.13.', isStudent, '-', typeof isStudent);
 
 // 14. Initialize counter = 0, then increment it by 1 using counter++ and log it.
 // CODE HERE
+// Ex.14 – Increment (arttırma) operator example
+// counter değişkeni başlangıçta 0’dır. ++ operatörü sayıyı 1 artırır.
+// This example shows how to increment a number by one using the ++ operator.
 let counter=0;
 counter++;
 console.log('Ex.14.', counter);
+
 // 15. Initialize points = 10, add 5 to it using points += 5, then log points.
 // CODE HERE
+// Ex.15 – Addition assignment (+=) operator example
+// points değişkeni 10 olarak başlar, += 5 ifadesi mevcut değere 5 ekler.
+// This example demonstrates how to add a value to a variable using the += operator.
 let points = 10;
 points += 5;
 console.log('Ex.15.', points);
+
 // 16. Declare name="Alice", age=30, city="Paris". Log "Alice (30) lives in Paris" using template literals.
 // CODE HERE
+// Ex.16 – Template literals and variable interpolation example
+// Template literal (``) kullanarak değişkenleri metin içine yerleştiriyoruz.
+// ${} yapısı değişkenleri string içinde dinamik olarak göstermeyi sağlar.
+// This example shows how to use template literals to embed variables inside strings.
 let personName = "Alice";
 let age = 30;
 let city = "Paris";
 console.log(`${personName} (${age}) lives in ${city}`);
+
 // 17. Declare variables x=5, y=10, z=15. Log their total sum.
 // CODE HERE
 const x1 = 5;
