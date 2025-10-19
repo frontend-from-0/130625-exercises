@@ -129,7 +129,7 @@ function viewRecipe(name) {
 }
 
 viewRecipe('Minestrone Soup');
-viewRecipe('Bruschetta');
+viewRecipe('Pasta');
 
 /* When I log STEP 4, it looks in terminal with curly brackets and square brackets as well. I couldn't find out why. */
 
@@ -157,8 +157,10 @@ for(let i = 0; i < recipes.length; i++){
 console.log(`Recipe with name ${name} is not found.`);
 }
 
+console.log(" ");
+
 updateRecipe('Arancini', ['Unsalted Butter', 'Garlic', 'Rissotto Rice', 'Stock', 'Parmesan', 'Flour', 'Eggs', 'Breadcrumbs', 'Olive Oil', 'Mozarella'], 45);
-updateRecipe('Bruschetta', ['Tomatoes ', 'Red Onion ', 'Garlic ', 'Basil ', ' Olive Oil ', 'Balsamic Vinegar ', 'Baguette '], 20);
+updateRecipe('Pasta', ['Tomatoes ', 'Red Onion ', 'Garlic ', 'Basil ', ' Olive Oil ', 'Balsamic Vinegar ', 'Baguette '], 20);
 
 /*
 -----------------------------------------------------------
@@ -169,6 +171,22 @@ Function: deleteRecipe(name)
 - Logs success or error message.
 */
 
+console.log(" ");
+console.log("STEP 6 : DELETE A RECIPE.");
+console.log(" ");
+
+function deleteRecipe(name){
+  for ( let i = 0; i<recipes.length; i++){
+    if(recipes[i].name === name){
+      recipes.splice(i, 1);
+      console.log(`${name} recipe deleted.`);
+      return;
+    }
+  } console.log(`${name} recipe is not found.` );
+}
+
+deleteRecipe('Caprese Salad');
+deleteRecipe('Pasta');
 
 /*
 -----------------------------------------------------------
