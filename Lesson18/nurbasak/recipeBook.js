@@ -43,6 +43,8 @@ const recipes = [ {
 }
   ]
 
+  
+
 /*
 -----------------------------------------------------------
   STEP 2: Display All Recipes
@@ -53,19 +55,21 @@ Function: displayAllRecipes()
   Ingredients: pasta, tomato, garlic
   Cooking Time: 20 minutes
 */
-
-function displayAllRecipes () {
-  for (let i=0; i<recipes.length; i++) {
-    console.log(' ');
-    console.log('Name: ' + recipes[i].name);
-    console.log(' ');
-    console.log('Ingredients: ' + recipes[i].ingredients);
-    console.log(' ');
-    console.log('Cooking Time: ' + recipes[i].cookingTime + ' minutes');
-    console.log(' ');
-    console.log(' ');
+  console.log(" ");
+  console.log("DISPLAYING ALL RECIPES FROM BOOK. ");
+  function displayAllRecipes() {
+    for (let i = 0; i < recipes.length; i++) {
+      console.log(" ");
+      console.log("Name: " + recipes[i].name);
+      console.log("Ingredients: " + recipes[i].ingredients);
+      console.log("Cooking Time: " + recipes[i].cookingTime + " minutes");
+      console.log(" ");
+  
+    }
+    console.log("END OF THE RECIPES.");
   }
-}
+
+  displayAllRecipes();
 
 /*
 -----------------------------------------------------------
@@ -77,11 +81,14 @@ Function: addRecipe(name, ingredients, cookingTime)
 - If not, add the new recipe and log success.
 - ingredients should be an array like ['egg', 'milk', 'flour']
 */
-
+console.log(" ");
+console.log("ADDING NEW RECIPE. ");
+console.log(" ");
 function addRecipe (name, ingredients, cookingTime) {
   for (let i = 0; i < recipes.length; i++) {
     if (recipes[i].name === name) {
-      console.log('This recipe already exists.');
+      console.log(`${name} recipe already exist.`);
+      console.log(' ');
       return;
     }
   }
@@ -90,10 +97,13 @@ function addRecipe (name, ingredients, cookingTime) {
     ingredients: ingredients,
     cookingTime: cookingTime,
   });
-  console.log('Recipe added successfully.');
+  console.log(`${name} recipe added successfully.`);
+  console.log(' ');
+  console.log(' ');
 }
 
 addRecipe('Arancini', ['Unsalted Butter', 'Garlic', 'Rissotto Rice', 'Stock', 'Parmesan', 'Flour', 'Eggs', 'Breadcrumbs', 'Olive Oil', 'Mozarella'], 40);
+addRecipe('Caprese Salad', ['Unsalted Butter', 'Garlic', 'Rissotto Rice', 'Stock', 'Parmesan', 'Flour', 'Eggs', 'Breadcrumbs', 'Olive Oil', 'Mozarella'], 40);
 
 /*
 -----------------------------------------------------------
@@ -104,6 +114,25 @@ Function: viewRecipe(name)
 - If not found, shows a message.
 */
 
+function viewRecipe(name){
+  let found = false;
+  for(let i = 0; i < recipes.length ; i++){
+    if(recipes[i].name === name){
+      console.log (recipes[i]);
+      console.log(' ');
+    console.log(' ');
+    found = true;
+    }
+  }
+  if (!found) {
+    console.log(`There is no recipe of + ${name}`);
+    console.log(' ');
+    console.log(' ');
+  }
+}
+
+viewRecipe('Arancini');
+viewRecipe('Bruschetta');
 
 
 /*
@@ -141,5 +170,3 @@ Function: filterByMaxTime(maxMinutes)
 // --- Demo / Auto-run when executed with Node ---
 // This file defines functions but didn't call any of them.
 // Add a simple call so running `node recipeBook.js` prints output.
-console.log('--- Displaying all recipes ---');
-displayAllRecipes();
