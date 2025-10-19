@@ -69,7 +69,7 @@ console.log(typeof string, num, string, string21321);
 
 const str = "50";
 const number = parseInt(str, 10);
-console.log(typeof str, str, typeof number, number);
+console.log('Ex.10.', typeof str, str, typeof number, number);
 
 
 // 11. Generate a random integer between 50 and 60 and log it.
