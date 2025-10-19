@@ -207,6 +207,7 @@ function filterByIngredient(ingredient) {
   for (let i = 0; i < recipes.length; i++) {
     if (recipes[i].ingredients.includes(ingredient)) {
       console.log (recipes[i].name);
+      return;
     }
   } console.log(`${ingredient} is not found in any recipe.`);
 }
@@ -237,6 +238,6 @@ filterByMaxTime(60);
 // This file defines functions but didn't call any of them.
 // Add a simple call so running `node recipeBook.js` prints output.
 
- 
-
-
+console.log(' ');
+console.log('Recipe Book Ends Here');
+console.log(' ');
