@@ -28,17 +28,17 @@ Run this file in Node.js or the browser console to test.
 
 const recipes = [ {
   name: 'Tomato Bruschetta',
-  ingredients:['Tomatoes ', 'Red Onion ', 'Garlic ', 'Basil ', ' Olive Oil ', 'Balsamic Vinegar ', 'Baguette '],
+  ingredients:['Tomatoes', 'Red Onion', 'Garlic', 'Basil', 'Olive Oil', 'Balsamic Vinegar', 'Baguette'],
   cookingTime: 15
 },
 {
   name: 'Caprese Salad',
-  ingredients: ['Tomatoes ', 'Mozzarella ', 'Basil ', 'Olive Oil ', 'Balsamic Vinegar '],
+  ingredients: ['Tomatoes', 'Mozzarella', 'Basil', 'Olive Oil', 'Balsamic Vinegar'],
   cookingTime: 10
 },
 { 
   name: 'Minestrone Soup',
-  ingredients: [ 'Olive Oil ', 'Onion ', 'Celery Stick ', 'Carrot ', 'Courgette ', 'Pancetta ', 'Garlic ', 'Oregano ', 'Canneli Beans ', 'Tomatoes' , 'Vegetable Stock ', 'Pasta ', 'Parmesan '],
+  ingredients: [ 'Olive Oil', 'Onion', 'Celery Stick', 'Carrot', 'Courgette', 'Pancetta', 'Garlic', 'Oregano', 'Canneli Beans', 'Tomatoes' , 'Vegetable Stock', 'Pasta', 'Parmesan'],
   cookingTime: 50
 }
   ]
@@ -121,7 +121,9 @@ console.log(" ");
 function viewRecipe(name) {
   for(let i=0; i<recipes.length;i++) {
     if(recipes[i].name===name) {
-      console.log(recipes[i]);
+      console.log("Name: " + recipes[i].name);
+      console.log("Ingredients: " + recipes[i].ingredients.join(', '));
+      console.log("Cooking Time: " + recipes[i].cookingTime + " minutes");
       return;
     } 
   } 
@@ -157,8 +159,8 @@ for(let i = 0; i < recipes.length; i++){
 console.log(`Recipe with name ${name} is not found.`);
 }
 
-console.log(" ");
-
+updateRecipe('Arancini', ['Unsalted Butter', 'Garlic', 'Rissotto Rice', 'Stock', 'Parmesan', 'Flour', 'Eggs', 'Breadcrumbs', 'Olive Oil', 'Mozarella'], 45);
+updateRecipe('Pasta', ['Tomatoes', 'Red Onion', 'Garlic', 'Basil', 'Olive Oil', 'Balsamic Vinegar', 'Baguette'], 20);
 updateRecipe('Arancini', ['Unsalted Butter', 'Garlic', 'Rissotto Rice', 'Stock', 'Parmesan', 'Flour', 'Eggs', 'Breadcrumbs', 'Olive Oil', 'Mozarella'], 45);
 updateRecipe('Pasta', ['Tomatoes ', 'Red Onion ', 'Garlic ', 'Basil ', ' Olive Oil ', 'Balsamic Vinegar ', 'Baguette '], 20);
 
@@ -203,13 +205,17 @@ console.log("STEP 7 : FILTER RECIPES BY INGREDIENT.");
 console.log(" ");
 
 function filterByIngredient(ingredient) {
+  let found=0;
   console.log(`Recipes with ingredient: ${ingredient}`);
   for (let i = 0; i < recipes.length; i++) {
     if (recipes[i].ingredients.includes(ingredient)) {
-      console.log (recipes[i].name);
-      return;
+      console.log(recipes[i].name);
+      found++;
     }
-  } console.log(`${ingredient} is not found in any recipe.`);
+  }
+  if (found === 0) {
+    console.log(`${ingredient} is not found in any recipe.`);
+  }
 }
 
 filterByIngredient('Olive Oil');
