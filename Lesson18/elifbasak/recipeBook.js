@@ -85,7 +85,7 @@ Function: displayAllRecipes()
 */
 
 function displayAllRecipes() {
-  console.log("Displaying the recipes...");
+  console.log("Displaying recipes...");
   for (const recipe of recipes) {
     console.log(`
       Recipe Name: ${recipe.name}, 
