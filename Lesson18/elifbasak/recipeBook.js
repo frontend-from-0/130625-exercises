@@ -93,7 +93,7 @@ function displayAllRecipes() {
       Cooking Time: ${recipe.cookingTime} minutes`);
   }
 
-  console.log("End of the recipes.");
+  console.log("End of recipes.");
   console.log("");
   console.log("");
 }
