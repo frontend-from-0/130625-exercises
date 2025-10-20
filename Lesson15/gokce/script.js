@@ -159,13 +159,13 @@ console.log("Ex.23.", initialTemperature);
 // 24. Declare numberEx9=6. Increment it using the prefix ++ operator and log both the variable and the incremented value.
 // CODE HERE
 let numberEx9 = 6;
-let newPrefixVersion = ++numberEx9;
+const newPrefixVersion = ++numberEx9;
 console.log("Ex.24.", numberEx9, newPrefixVersion);
 
 // 25. Declare numberEx10=8. Increment it using the postfix ++ operator and log both the original variable and the incremented value.
 // CODE HERE
 let numberEx10 = 8;
-let postfixVersion = numberEx10++;
+const postfixVersion = numberEx10++;
 console.log("Ex.25.", numberEx10, postfixVersion);
 // 26. Declare numberEx11=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value.
 // CODE HERE
@@ -177,7 +177,7 @@ console.log("Ex.26", numberEx11);
 // 27. Declare a=2 and b=3. Increment a using the prefix ++ operator, then add b to the result and log it.
 // CODE HERE
 let t = 2;
-let s = 3;
+const s = 3;
 ++t;
-let result27 = t + s;
+const result27 = t + s;
 console.log("Ex.27.", result27);
