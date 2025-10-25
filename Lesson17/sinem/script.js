@@ -831,4 +831,4 @@ function calculate(a, operator, b) {
 calculate(2, "+", 2);
 calculate(2, "-", 2);
 calculate(2, "*", 2);
-calculate(2, "/", 2);
+calculate(4, "/", 2);
