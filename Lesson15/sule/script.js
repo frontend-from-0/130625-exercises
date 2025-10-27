@@ -214,8 +214,8 @@ console.log('Ex.24 – prefixResult24 =', prefixResult24, ', numberEx9 =', numbe
 // numberEx10++ ifadesi önce mevcut değeri kullanır, ardından artırır.
 // This example shows the postfix increment operator (variable++).
 let numberEx10 = 8;
-let postfixResult25 = numberEx10++;
-console.log('Ex.25.', 'postfixResult25 =', postfixResult25, ', numberEx10 =', numberEx10);
+const postfixResult25 = numberEx10++; // postfix: önce mevcut değeri döndürür, sonra artırır
+console.log('Ex.25 – postfixResult25 =', postfixResult25, ', numberEx10 =', numberEx10);
 
 // 26. Declare numberEx11=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value.
 // CODE HERE
