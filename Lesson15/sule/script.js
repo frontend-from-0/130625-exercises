@@ -122,10 +122,13 @@ console.log('Ex.15.', points);
 // Template literal (``) kullanarak değişkenleri metin içine yerleştiriyoruz.
 // ${} yapısı değişkenleri string içinde dinamik olarak göstermeyi sağlar.
 // This example shows how to use template literals to embed variables inside strings.
-let personName = "Alice";
-let age = 30;
-let city = "Paris";
+
+const personName = "Alice";
+const age = 30;
+const city = "Paris";
+
 console.log(`${personName} (${age}) lives in ${city}`);
+
 
 // 17. Declare variables x=5, y=10, z=15. Log their total sum.
 // CODE HERE
