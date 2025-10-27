@@ -233,6 +233,7 @@ console.log('Ex.26 – result26 =', result26, ', numberEx11 =', numberEx11);
 // a27 değişkenini ++ operatörüyle artırıyoruz, ardından b27 ile topluyoruz.
 // This example demonstrates using the prefix ++ operator and adding another variable.
 let a27 = 2;
-let b27 = 3;
-let result27 = ++a27 + b27;
-console.log('Ex.27.', result27);
+const b27 = 3;
+const result27 = ++a27 + b27;
+console.log('Ex.27 – result27 =', result27, ', a27 =', a27, ', b27 =', b27);
+
