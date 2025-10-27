@@ -204,8 +204,9 @@ console.log('Ex.23.', initialTemperature);
 // ++numberEx9 ifadesi önce sayıyı 1 artırır, ardından yeni değeri döndürür.
 // This example demonstrates the prefix increment operator (++variable).
 let numberEx9 = 6;
-let prefixResult24 = ++numberEx9;
-console.log('Ex.24.', 'prefixResult24 =', prefixResult24, ', numberEx9 =', numberEx9);
+const prefixResult24 = ++numberEx9; // prefix: önce artırır, sonra değeri döndürür
+console.log('Ex.24 – prefixResult24 =', prefixResult24, ', numberEx9 =', numberEx9);
+
 
 // 25. Declare numberEx10=8. Increment it using the postfix ++ operator and log both the original variable and the incremented value.
 // CODE HERE
