@@ -6,16 +6,17 @@
    - Otherwise, log: "Password is too short."
    - Call the function with different passwords and log the result.
 */
+
 function checkPassword(password) {
-  if (password.toString().length >= 8) {
-    console.log('Password length is sufficient.');
+  if (password.length >= 8) {
+    console.log("Password length is sufficient.");
   } else {
-    console.log('Password is too short.');
+    console.log("Password is too short.");
   }
 }
-
-checkPassword('123456');
-checkPassword('123456789');
+checkPassword('1'); 
+checkPassword('123456789'); 
+checkPassword('1234asdfc');
 
 /*
 2. Uppercase Name
@@ -24,15 +25,17 @@ checkPassword('123456789');
    - Example: "John Doe" -> "JOHN DOE"
 */
 function uppercaseName(name) {
-  if (typeof name !== 'string') {
-    console.log('Please prvide a string value');
-    return;
-  } else {
-    console.log(name.toUpperCase());
-  }
+if (typeof name !== 'string') {
+  console.log("Please provide a string value");
+  return;
+} else {
+  console.log(name.toUpperCase());
 }
-uppercaseName();
-uppercaseName('hasan');
+}
+
+uppercaseName(123);
+uppercaseName('emine sule');
+uppercaseName('emine123');
 
 /*
 3. Lowercase Email
@@ -40,7 +43,17 @@ uppercaseName('hasan');
    - Log the normalized email to the console.
    - Example: "USER@Example.COM" -> "user@example.com"
 */
+function normalizeEmail(email) {
+  if (typeof email !== 'string') {
+    console.log("Please provide a string value");
+    return;
+  } else {
+    console.log(email.toLowerCase());
+  }
+}
 
+normalizeEmail('1A2B3C');
+normalizeEmail('SuLE@gmail.com');
 /*
 4. Extract Domain
    - Define a function `getDomain(email)` that uses `slice` or `substring` to
