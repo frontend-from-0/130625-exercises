@@ -150,7 +150,11 @@ checkFileExtension(19992000);
      - Logs "Numbers are equal" if they are the same
 */
 function compareNumbers(a, b) {
-  // TODO: check that a and b are numbers
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    console.log('Please provide two numbers.');
+    return;
+  }
+
   if (a > b) {
     console.log('a is bigger');
   } else if (b > a) {
@@ -160,9 +164,12 @@ function compareNumbers(a, b) {
   }
 }
 
-compareNumbers(9, 5);
+compareNumbers(0, 00);
+compareNumbers(5, 5);
+compareNumbers(3, 'a');
+compareNumbers(0, -4);
 compareNumbers(5, 6);
-compareNumbers(4, 4);
+compareNumbers(9, 2);
 
 /*
 8. Palindrome Check
@@ -171,6 +178,33 @@ compareNumbers(4, 4);
    - If it is, log: "<str> is a palindrome"
    - Otherwise, log: "<str> is not a palindrome"
 */
+function isPalindrome(str) {
+  if (typeof str !== 'string') {
+    console.log("Please provide a string value");
+    return;
+  } else {
+    str = str.toLowerCase();
+    const reversed = str.split('').reverse().join('');
+     if (str === reversed) {
+    console.log(str + " is a palindrome");
+  } else {
+    console.log(str + " is not a palindrome");
+  }
+}
+}
+console.log("✅ Palindrome Tests:");
+isPalindrome("mom");
+isPalindrome("dad");
+isPalindrome("a3aa3a");
+isPalindrome("98766789");
+isPalindrome("000");
+isPalindrome("A8b404b8A");
+
+
+console.log("❌ Not Palindrome Tests:");
+isPalindrome("computer");
+isPalindrome("javascript");
+isPalindrome("program");
 
 /*
 9. String Truncation
@@ -178,6 +212,41 @@ compareNumbers(4, 4);
      cut the string to `maxLength` characters, then appends "..." if it was too long.
    - Log the final truncated string.
 */
+
+function truncateString(text, maxLength) {
+  if (typeof text !== 'string' || typeof maxLength !== 'number') {
+    console.log("Please provide (text: string, maxLength: number)");
+    return;
+  }
+
+  if (text.length <= maxLength) {
+    console.log(text);
+    return;
+  } else {
+    const truncated = text.slice(0, maxLength) + "...";
+    console.log(truncated);
+  }
+}
+
+console.log("\n--- TURKISH CTA MESSAGES ---");
+
+
+truncateString("Tüm içeriği görmek için buraya tıklayın", 25);
+truncateString("Daha fazla bilgi almak için tıklayın", 20);
+truncateString("Devamını görüntüle", 10);
+truncateString("Detaylı diyet planı için bizimle iletişime geçin", 30);
+truncateString("Hemen randevu oluşturun", 15);
+truncateString("Tüm özellikleri keşfetmek için tıklayın", 22); 
+
+console.log("\n--- ENGLISH CTA MESSAGES ---");
+
+
+truncateString("View full content", 8);
+truncateString("Learn more", 5);
+truncateString("Read more", 6);
+truncateString("Contact for a personalized plan", 15);
+truncateString("Book your appointment", 10);
+truncateString("Explore all features", 12);
 
 /*
 10. Check Even or Odd (if-else)
