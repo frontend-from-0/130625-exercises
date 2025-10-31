@@ -254,6 +254,31 @@ truncateString("Explore all features", 12);
      - Logs "Even" if the number is even
      - Logs "Odd" if the number is odd
 */
+function evenOrOdd(number) {
+  if (typeof number !== 'number') {
+    console.log("Please provide a number");
+    return;
+  }
+
+  if (!Number.isInteger(number)) {
+    console.log("Please provide an integer (no decimals)");
+    return;
+  }
+
+  if (number % 2 === 0) {
+    console.log("Even");
+  } else {
+    console.log("Odd");
+  }
+}
+
+evenOrOdd(4);
+evenOrOdd(-3);
+evenOrOdd(0);
+evenOrOdd(2.5);
+evenOrOdd(-7.2);
+evenOrOdd('10');
+
 
 /*
 11. URL Protocol Checker
@@ -261,6 +286,32 @@ truncateString("Explore all features", 12);
      and checks if it starts with "https" using .startsWith().
    - Log "Secure connection" if true, otherwise "Unsecure connection".
 */
+
+function checkProtocol(url) {
+  if (typeof url !== 'string') {
+    console.log("Please provide a string value");
+    return;
+  }
+
+  url = url.toLowerCase();
+
+  if (url.startsWith("https")) {
+    console.log("Secure connection");
+  } else {
+    console.log("Unsecure connection");
+  }
+}
+
+// ✅ Working examples
+checkProtocol("https://dietitian.com");
+checkProtocol("HTTPS://secure-health.net");
+checkProtocol("https://github.com/suleoztemiz");
+
+// ❌ Failing examples
+checkProtocol("http://example.com");
+checkProtocol(12345);
+checkProtocol(["https://array.com"]);
+
 
 /*
 12. Switch: Day of the Week
@@ -271,6 +322,52 @@ truncateString("Explore all features", 12);
      7 -> "Sunday"
      - Log the matched day or "Invalid day" if out of range.
 */
+
+function getDayOfWeek(num) {
+  if (typeof num !== 'number') {
+    console.log("Please provide a number");
+    return;
+  }
+
+  switch (num) {
+    case 1:
+      console.log("Monday");
+      break;
+    case 2:
+      console.log("Tuesday");
+      break;
+    case 3:
+      console.log("Wednesday");
+      break;
+    case 4:
+      console.log("Thursday");
+      break;
+    case 5:
+      console.log("Friday");
+      break;
+    case 6:
+      console.log("Saturday");
+      break;
+    case 7:
+      console.log("Sunday");
+      break;
+    default:
+      console.log("Invalid day number");
+  }
+}
+
+// ✅ Correct examples
+getDayOfWeek(1);
+getDayOfWeek(5);
+getDayOfWeek(7);
+
+// ❌ Incorrect examples
+getDayOfWeek(9);
+getDayOfWeek("3");
+getDayOfWeek(-1);
+getDayOfWeek("summer");
+getDayOfWeek(2025);
+
 
 // value == value
 /// value and type === value and type
