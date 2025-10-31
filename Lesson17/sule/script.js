@@ -14,6 +14,7 @@ function checkPassword(password) {
     console.log("Password is too short.");
   }
 }
+
 checkPassword('1'); 
 checkPassword('123456789'); 
 checkPassword('1234asdfc');
@@ -43,6 +44,7 @@ uppercaseName('emine123');
    - Log the normalized email to the console.
    - Example: "USER@Example.COM" -> "user@example.com"
 */
+
 function normalizeEmail(email) {
   if (typeof email !== 'string') {
     console.log("Please provide a string value");
@@ -54,6 +56,7 @@ function normalizeEmail(email) {
 
 normalizeEmail('1A2B3C');
 normalizeEmail('SuLE@gmail.com');
+
 /*
 4. Extract Domain
    - Define a function `getDomain(email)` that uses `slice` or `substring` to
@@ -61,20 +64,20 @@ normalizeEmail('SuLE@gmail.com');
    - Log the domain to the console.
    - Example: "user@example.com" -> "example.com"
 */
+
 function getDomain(email) {
   if (typeof email !== 'string') {
-    console.log('Please prvide a string value');
+    console.log("Please provide a string value");
     return;
+  } else {
+    const result = email.split('@');
+    console.log(result[1]);
   }
-  //   const startIndex = email.indexOf('@') + 1;
-
-  //   const domain = email.substring(startIndex);
-  //   console.log(domain);
-
-  const result = email.split('@');
-  console.log(result[1]);
 }
-getDomain('jjasdasdas@example.com');
+
+getDomain(1999);
+getDomain("sulemine@gmail.com");
+getDomain("test@example.org");
 
 /*
 5. Check Substring
@@ -88,16 +91,17 @@ getDomain('jjasdasdas@example.com');
 // true && false && true && true => false
 // || -
 // true || false || true => true (is like +)
+
 function containsWord(sentence, word) {
   if (typeof sentence !== 'string' || typeof word !== 'string') {
-    console.log('Please provide sentece and word parameters as string.');
+    console.log("Please provide sentence and word parameters as string.");
     return;
   }
 
   if (sentence.includes(word)) {
-    console.log(word + ' found in sentence.');
+    console.log(word + " found in sentence.");
   } else {
-    console.log(word + ' not found in the sentence.');
+    console.log(word + " not found in the sentence.");
   }
 }
 
@@ -105,6 +109,9 @@ containsWord('<word> found in sentence.', ' ');
 containsWord('<word> found in sentence.', 'comma found in sentence.');
 containsWord('<word> found in sentence.', true);
 containsWord(124321321312, 12);
+containsWord("Hello world", "world");
+containsWord("this color is yellow", "white");
+containsWord("Are you twenty-six years old?", "26");
 
 /*
 6. File Extension Check
@@ -114,15 +121,26 @@ containsWord(124321321312, 12);
    - Otherwise, log: "Not a PDF file."
 */
 function checkFileExtension(filename) {
-  // TODO: add type
-  if (filename.endsWith('.pdf')) {
-    console.log('This is a PDF file.');
+  if (typeof filename !== 'string') {
+    console.log("Please provide a string value");
+    return;
   } else {
-    console.log('Not a PDF file.');
+    const lowerFile = filename.trim().toLowerCase();
+
+    if (lowerFile.endsWith('.pdf')) {
+      console.log("This is a PDF file.");
+    } else {
+      console.log("Not a PDF file.");
+    }
   }
 }
 
+
 checkFileExtension('myassignment.pdf');
+checkFileExtension("reportthat.PDF");
+checkFileExtension("photosule.png");
+checkFileExtension(19992000);
+
 
 /*
 7. Compare Numbers (if-else)
