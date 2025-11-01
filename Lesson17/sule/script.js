@@ -563,6 +563,30 @@ replaceCharacter('02121234567', '2', '#');
    - Log the transformed string.
 */
 
+function titleCase(sentence) {
+  if (typeof sentence !== 'string' || sentence.trim() === '') {
+    console.log('Please provide a valid sentence.');
+    return;
+  }
+
+  const result = sentence
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
+
+  console.log(result);
+}
+
+
+
+titleCase('hello world from sule');              
+titleCase('diyetisyen emine şule öztemiz');     
+titleCase('front end developer journey');         
+titleCase('learning javascript is fun');          
+titleCase(12345);                                 
+titleCase('');  
+titleCase('12345');  
+
 /*
 20. Switch: Traffic Light
    - Define a function `trafficLight(color)` that uses a switch statement:
@@ -572,12 +596,66 @@ replaceCharacter('02121234567', '2', '#');
      - anything else -> "Invalid color"
 */
 
+function trafficLight(color) {
+  if (typeof color !== 'string') {
+    console.log('Please provide a color name as text.');
+    return;
+  }
+  color = color.toLowerCase();
+
+  switch (color) {
+    case 'red':
+      console.log('Stop');
+      break;
+    case 'yellow':
+      console.log('Caution');
+      break;
+    case 'green':
+      console.log('Go');
+      break;
+    default:
+      console.log('Invalid color');
+  }
+}
+
+trafficLight('red');     
+trafficLight('yellow'); 
+trafficLight('green');  
+trafficLight('RED');      
+trafficLight('table');     
+trafficLight('door');   
+trafficLight(123);        
+
+
 /*
 21. Check String Length (if-else)
    - Define a function `isLongString(str)` that checks if the string length
      is more than 10.
    - Log "Long string" or "Short string".
 */
+
+function isLongString(str) {
+  if (typeof str !== 'string' || str.trim() === '') {
+    console.log('Please provide a valid string.');
+    return;
+  }
+
+  const cleanedStr = str.trim().replace(/\s+/g, ' ');
+
+  if (cleanedStr.length > 10) {
+    console.log('Long string');
+  } else {
+    console.log('Short string');
+  }
+}
+
+isLongString('hello sule');         
+isLongString('hello  sule');         
+isLongString('front end developer'); 
+isLongString('          ');          
+isLongString('');                    
+isLongString(12345);                 
+
 
 /*
 22. Convert to Lowercase Then Check
