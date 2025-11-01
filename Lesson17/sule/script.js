@@ -379,6 +379,29 @@ getDayOfWeek(2025);
    - Log the repeated result.
 */
 
+function repeatWord(word, times) {
+  // Check that 'word' is a string
+  if (typeof word !== 'string') {
+    console.log('Please provide a string as the first argument.');
+    return;
+  }
+
+  // Check that 'times' is a non-negative number
+  if (typeof times !== 'number' || times < 0) {
+    console.log('Please provide a non-negative number as the second argument.');
+    return;
+  }
+
+  // Repeat and log the word
+  console.log(word.repeat(times));
+}
+
+repeatWord('aa', 3);
+repeatWord('by', 2);
+repeatWord('yo', -1);
+repeatWord(42, 3);
+repeatWord(123, 'five');
+
 /*
 14. Replace Substring
    - Define a function `censorWord(sentence, target)` that replaces `target`
@@ -386,12 +409,36 @@ getDayOfWeek(2025);
    - Log the censored sentence.
 */
 
+function censorWord(sentence, target) {
+  const result = sentence.replaceAll(target, '****');
+  console.log(result);
+}
+
+censorWord('Please do not share your password with anyone.', 'password');
+censorWord('The meeting link is private, keep it private please.', 'private');
+censorWord('The API key must remain secret at all times.', 'secret');
+censorWord('Credit card number detected: 1234-5678-9012-3456', '1234-5678-9012-3456');
+
 /*
 15. Check First Character (if-else)
    - Define a function `startsWithA(str)` that checks if the string starts with 'A'
      (use .charAt(0) or [0]).
    - Log "Starts with A" or "Does not start with A".
 */
+
+function startsWithS(str) {
+  if (str.charAt(0).toUpperCase() === 'S') {
+    console.log('Starts with S');
+  } else {
+    console.log('Does not start with S');
+  }
+}
+
+startsWithS('start');
+startsWithS('Sule');
+startsWithS('developer');
+startsWithS('software');
+
 
 /*
 16. Slice Last N Characters
