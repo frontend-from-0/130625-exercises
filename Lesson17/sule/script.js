@@ -708,7 +708,6 @@ getInitials('frontend developer');
 getInitials('');                           
 getInitials(123);                            
 
-
 /*
 24. Switch: Month to Season
    - Define a function `getSeason(monthNum)` (1-12). Use switch or if-else:
@@ -730,7 +729,6 @@ function getSeason(monthNum) {
     console.log('Invalid month');
     return;
   }
-
 
   switch (monthNum) {
     case 12:
@@ -769,13 +767,39 @@ getSeason(13);
 getSeason('5'); 
 getSeason(2.5); 
 
-
 /*
 25. Check If String Contains Number
    - Define a function `containsNumber(str)` that uses a loop or a method like
      .match() to check if there's any digit in the string.
    - Log "Contains number" or "No number found".
 */
+
+function containsNumber(str) {
+  if (typeof str !== 'string' || str.trim() === '') {
+    console.log('Please provide a string.');
+    return;
+  }
+
+  const cleaned = str.trim();
+
+
+  const hasDigit = /\d/.test(cleaned);
+
+
+  if (hasDigit) {
+    console.log('Contains number');
+  } else {
+    console.log('No number found');
+  }
+}
+
+containsNumber('Room number: 007');
+containsNumber('Price: 3.50$');   
+containsNumber('abc0def');           
+containsNumber('   42  ');            
+containsNumber('');                    
+containsNumber(12345);         
+containsNumber('fourfivesix');
 
 /*
 26. Pad a String
@@ -784,12 +808,63 @@ getSeason(2.5);
    - Log the padded string.
 */
 
+function padString(str, maxLength) {
+
+  if (typeof str !== 'string' || str.trim() === '') {
+    console.log('Please provide a valid string.');
+    return;
+  }
+
+  if (typeof maxLength !== 'number' || maxLength <= 0) {
+    console.log('Please provide a positive number for maxLength.');
+    return;
+  }
+
+  if (str.length > maxLength) {
+    console.log(str.slice(0, maxLength));
+    return;
+  }
+
+  const totalStars = maxLength - str.length; 
+  const half = Math.floor(totalStars / 2);   
+  const padded = '*'.repeat(half) + str + '*'.repeat(totalStars - half);
+
+  console.log(padded);
+}
+
+padString('JavaScript', 15);
+padString('  Emine  ', 12);
+padString('0530', 11);
+padString('FrontendDeveloper', 10);
+padString('9876', 16);
+
 /*
 27. If-Else: Voting Eligibility
    - Define a function `canVote(age)` that logs:
      - "Can vote" if age >= 18
      - "Too young to vote" otherwise
 */
+
+function canVote(age) {
+  if (typeof age !== 'number' || age < 0) {
+    console.log('Please provide a valid age.');
+    return;
+  }
+
+  if (age >= 18) {
+    console.log('Can vote');
+  } else {
+    console.log('Too young to vote');
+  }
+}
+
+canVote(25);   
+canVote(17);   
+canVote('six');   
+canVote('seven');   
+canVote(18);   
+canVote(-5);   
+canVote('20'); 
 
 /*
 28. Reverse Words in a Sentence
