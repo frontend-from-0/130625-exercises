@@ -447,6 +447,25 @@ startsWithS('software');
    - Log the result.
 */
 
+function sliceLastN(text, n) {
+  if (typeof text !== 'string') {
+    console.log('Please provide a string as the first argument.');
+    return;
+  } else if (typeof n !== 'number' || n <= 0) {
+    console.log('Please provide a positive number as the second argument.');
+    return;
+  }
+
+  const result = text.slice(-n);
+  console.log(result);
+}
+
+sliceLastN('Front-End Developer', 9);  
+sliceLastN('Healthy Lifestyle', 4);    
+sliceLastN('JavaScript Project', 7);
+sliceLastN(12345, 2);                 
+sliceLastN('Portfolio', -3);
+
 /*
 17. Switch: Grade Checker
    - Define a function `gradeChecker(score)` that uses a switch (or if-else chain):
@@ -458,12 +477,82 @@ startsWithS('software');
    - Log the grade.
 */
 
+// ===========================
+// 17. Grade Checker (IF–ELSE)
+// ===========================
+
+function gradeChecker(score) {
+  if (score >= 90) {
+    console.log('A');
+  } else if (score >= 80) {
+    console.log('B');
+  } else if (score >= 70) {
+    console.log('C');
+  } else if (score >= 60) {
+    console.log('D');
+  } else {
+    console.log('F');
+  }
+}
+
+gradeChecker(96); 
+gradeChecker(83); 
+gradeChecker(72); 
+gradeChecker(62); 
+gradeChecker(49); 
+
+// ===========================
+// 17. Grade Checker (SWITCH–CASE)
+// ===========================
+
+function gradeCheckerSwitch(score) {
+  let grade;
+
+  switch (true) {
+    case (score >= 90):
+      grade = 'A';
+      break;
+    case (score >= 80):
+      grade = 'B';
+      break;
+    case (score >= 70):
+      grade = 'C';
+      break;
+    case (score >= 60):
+      grade = 'D';
+      break;
+    default:
+      grade = 'F';
+  }
+
+  console.log(grade);
+}
+
+gradeCheckerSwitch(96);
+gradeCheckerSwitch(83);
+gradeCheckerSwitch(72);
+gradeCheckerSwitch(62);
+gradeCheckerSwitch(49);
+
 /*
 18. Character Replacement
    - Define a function `replaceCharacter(str, oldChar, newChar)` that uses .replaceAll()
      (or a loop) to swap all occurrences of oldChar with newChar.
    - Log the result.
 */
+
+function replaceCharacter(str, oldChar, newChar) {
+  const result = str.replaceAll(oldChar, newChar);
+  console.log(result);
+}
+
+replaceCharacter('çiçek', 'ç', 'c');    
+replaceCharacter('Şule', 'Ş', 'S');    
+replaceCharacter('düşünce', 'ü', 'u'); 
+replaceCharacter('gözlük', 'ö', 'o');   
+replaceCharacter('5556123456', '6', '*');   
+replaceCharacter('05341234567', '3', 'x');  
+replaceCharacter('02121234567', '2', '#');  
 
 /*
 19. Title Case a Sentence
