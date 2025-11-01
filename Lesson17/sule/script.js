@@ -875,12 +875,59 @@ canVote('20');
    - Log the result.
 */
 
+function reverseWords(sentence) {
+ 
+  if (typeof sentence !== 'string' || sentence.trim() === '') {
+    console.log('Please provide a valid sentence.');
+    return;
+  }
+
+
+  const words = sentence.split(' ');
+  const reversedWords = words.map(word =>
+    word.split('').reverse().join('')
+  );
+
+
+  const result = reversedWords.join(' ');
+  console.log(result);
+}
+
+reverseWords('hello sule');        
+reverseWords('daire no:009');       
+reverseWords('front end developer'); 
+reverseWords('block 42 door 7');     
+reverseWords('');                    
+reverseWords(12345);                 
+
 /*
 29. Check Substring Position
    - Define a function `findWordPosition(sentence, word)` that uses .indexOf(word)
      to find the starting index. If not found, return -1.
    - Log the index or log "Not found" if it's -1.
 */
+
+function findWordPosition(sentence, word) {
+  if (typeof sentence !== 'string' || typeof word !== 'string') {
+    console.log('Please provide valid strings.');
+    return;
+  }
+
+  const position = sentence.indexOf(word);
+
+  if (position === -1) {
+    console.log('Not found');
+  } else {
+    console.log(position);
+  }
+}
+
+findWordPosition('I love JavaScript', 'JavaScript'); 
+findWordPosition('Front end developer journey', 'developer'); 
+findWordPosition('Hello Sule', 'sule'); 
+findWordPosition('Learning JavaScript is fun', 'Python');
+findWordPosition(12345, '5'); 
+findWordPosition('Hello world', 10); 
 
 /*
 30. Switch: Simple Calculator
@@ -892,3 +939,46 @@ canVote('20');
      - Otherwise -> "Invalid operator"
    - Log the result.
 */
+
+function calculate(a, operator, b) {
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    console.log('Please provide valid numbers.');
+    return;
+  }
+
+
+  switch (operator) {
+    case '+':
+      console.log(a + b);
+      break;
+
+    case '-':
+      console.log(a - b);
+      break;
+
+    case '*':
+      console.log(a * b);
+      break;
+
+    case '/':
+      if (b === 0) {
+        console.log('Cannot divide by zero.');
+      } else {
+        console.log(a / b);
+      }
+      break;
+
+    default:
+      console.log('Invalid operator.');
+  }
+}
+
+calculate(12.5, '+', 7.3);       
+calculate(100, '/', 3);        
+calculate(5, '*', -4);           
+calculate(0, '+', 45);     
+calculate(200, '/', 0);     
+calculate('20', '+', 5);         
+calculate(30, '#', 5);         
+calculate(15.75, '-', 5.25);
+
