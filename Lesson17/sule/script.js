@@ -25,6 +25,7 @@ checkPassword('1234asdfc');
    - Log the uppercase result to the console.
    - Example: "John Doe" -> "JOHN DOE"
 */
+
 function uppercaseName(name) {
 if (typeof name !== 'string') {
   console.log("Please provide a string value");
@@ -120,6 +121,7 @@ containsWord("Are you twenty-six years old?", "26");
    - If it does, log: "This is a PDF file."
    - Otherwise, log: "Not a PDF file."
 */
+
 function checkFileExtension(filename) {
   if (typeof filename !== 'string') {
     console.log("Please provide a string value");
@@ -135,12 +137,10 @@ function checkFileExtension(filename) {
   }
 }
 
-
 checkFileExtension('myassignment.pdf');
 checkFileExtension("reportthat.PDF");
 checkFileExtension("photosule.png");
 checkFileExtension(19992000);
-
 
 /*
 7. Compare Numbers (if-else)
@@ -149,6 +149,7 @@ checkFileExtension(19992000);
      - Logs "b is bigger" if b > a
      - Logs "Numbers are equal" if they are the same
 */
+
 function compareNumbers(a, b) {
   if (typeof a !== 'number' || typeof b !== 'number') {
     console.log('Please provide two numbers.');
@@ -178,6 +179,7 @@ compareNumbers(9, 2);
    - If it is, log: "<str> is a palindrome"
    - Otherwise, log: "<str> is not a palindrome"
 */
+
 function isPalindrome(str) {
   if (typeof str !== 'string') {
     console.log("Please provide a string value");
@@ -192,7 +194,9 @@ function isPalindrome(str) {
   }
 }
 }
+
 console.log("✅ Palindrome Tests:");
+
 isPalindrome("mom");
 isPalindrome("dad");
 isPalindrome("a3aa3a");
@@ -202,6 +206,7 @@ isPalindrome("A8b404b8A");
 
 
 console.log("❌ Not Palindrome Tests:");
+
 isPalindrome("computer");
 isPalindrome("javascript");
 isPalindrome("program");
@@ -230,7 +235,6 @@ function truncateString(text, maxLength) {
 
 console.log("\n--- TURKISH CTA MESSAGES ---");
 
-
 truncateString("Tüm içeriği görmek için buraya tıklayın", 25);
 truncateString("Daha fazla bilgi almak için tıklayın", 20);
 truncateString("Devamını görüntüle", 10);
@@ -239,7 +243,6 @@ truncateString("Hemen randevu oluşturun", 15);
 truncateString("Tüm özellikleri keşfetmek için tıklayın", 22); 
 
 console.log("\n--- ENGLISH CTA MESSAGES ---");
-
 
 truncateString("View full content", 8);
 truncateString("Learn more", 5);
@@ -254,6 +257,7 @@ truncateString("Explore all features", 12);
      - Logs "Even" if the number is even
      - Logs "Odd" if the number is odd
 */
+
 function evenOrOdd(number) {
   if (typeof number !== 'number') {
     console.log("Please provide a number");
@@ -278,7 +282,6 @@ evenOrOdd(0);
 evenOrOdd(2.5);
 evenOrOdd(-7.2);
 evenOrOdd('10');
-
 
 /*
 11. URL Protocol Checker
@@ -311,7 +314,6 @@ checkProtocol("https://github.com/suleoztemiz");
 checkProtocol("http://example.com");
 checkProtocol(12345);
 checkProtocol(["https://array.com"]);
-
 
 /*
 12. Switch: Day of the Week
@@ -367,7 +369,6 @@ getDayOfWeek("3");
 getDayOfWeek(-1);
 getDayOfWeek("summer");
 getDayOfWeek(2025);
-
 
 // value == value
 /// value and type === value and type
@@ -438,7 +439,6 @@ startsWithS('start');
 startsWithS('Sule');
 startsWithS('developer');
 startsWithS('software');
-
 
 /*
 16. Slice Last N Characters
@@ -577,8 +577,6 @@ function titleCase(sentence) {
   console.log(result);
 }
 
-
-
 titleCase('hello world from sule');              
 titleCase('diyetisyen emine şule öztemiz');     
 titleCase('front end developer journey');         
@@ -626,7 +624,6 @@ trafficLight('table');
 trafficLight('door');   
 trafficLight(123);        
 
-
 /*
 21. Check String Length (if-else)
    - Define a function `isLongString(str)` that checks if the string length
@@ -656,7 +653,6 @@ isLongString('          ');
 isLongString('');                    
 isLongString(12345);                 
 
-
 /*
 22. Convert to Lowercase Then Check
    - Define a function `isSpam(text)` that converts the text to lowercase
@@ -665,12 +661,53 @@ isLongString(12345);
    - Otherwise, log "This text is not spam."
 */
 
+function isSpam(text) {
+  if (typeof text !== 'string' || text.trim() === '') {
+    console.log('Please provide valid text.');
+    return;
+  }
+
+  const lowerText = text.toLowerCase();
+  if (lowerText.includes('spam')) {
+    console.log('This text is spam.');
+  } else {
+    console.log('This text is not spam.');
+  }
+}
+
+isSpam('Buy SPAM now!');        
+isSpam('Fresh salad recipe');     
+isSpam('Limited offer: SPam & eggs'); 
+isSpam('');                     
+isSpam(12345);                     
+
 /*
 23. Extract Initials
    - Define a function `getInitials(fullName)` that uses .split() to get each name part,
      then logs the capitalized first letter of each.
    - Example: "John Doe" -> "J.D."
 */
+
+function getInitials(fullName) {
+  if (typeof fullName !== 'string' || fullName.trim() === '') {
+    console.log('Please provide a valid name.');
+    return;
+  }
+
+  const parts = fullName.trim().split(' ');
+  const initials = parts.map(word => word.charAt(0).toUpperCase());
+  const result = initials.join('.') + '.';
+
+  console.log(result);
+}
+
+getInitials('John Doe');                     
+getInitials('Emine Şule Öztemiz');           
+getInitials('diyetisyen emine şule');      
+getInitials('frontend developer');            
+getInitials('');                           
+getInitials(123);                            
+
 
 /*
 24. Switch: Month to Season
@@ -681,6 +718,57 @@ isLongString(12345);
      - 9, 10, 11 -> "Autumn"
    - Log the season or "Invalid month" if out of range.
 */
+
+function getSeason(monthNum) {
+
+  if (typeof monthNum !== 'number' || !Number.isInteger(monthNum)) {
+    console.log('Please provide an integer between 1 and 12.');
+    return;
+  }
+
+  if (monthNum < 1 || monthNum > 12) {
+    console.log('Invalid month');
+    return;
+  }
+
+
+  switch (monthNum) {
+    case 12:
+    case 1:
+    case 2:
+      console.log('Winter');
+      break;
+
+    case 3:
+    case 4:
+    case 5:
+      console.log('Spring');
+      break;
+
+    case 6:
+    case 7:
+    case 8:
+      console.log('Summer');
+      break;
+
+    case 9:
+    case 10:
+    case 11:
+      console.log('Autumn');
+      break;
+  }
+}
+
+getSeason(1);   
+getSeason(4);   
+getSeason(7);   
+getSeason(10);  
+getSeason(12); 
+getSeason(0);   
+getSeason(13);  
+getSeason('5'); 
+getSeason(2.5); 
+
 
 /*
 25. Check If String Contains Number
