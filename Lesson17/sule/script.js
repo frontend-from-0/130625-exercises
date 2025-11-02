@@ -427,6 +427,9 @@ censorWord('Credit card number detected: 1234-5678-9012-3456', '1234-5678-9012-3
    - Log "Starts with A" or "Does not start with A".
 */
 
+// 💬 NOTE: I customized this example to check for the letter "S" instead of "A".
+
+
 function startsWithS(str) {
   if (str.charAt(0).toUpperCase() === 'S') {
     console.log('Starts with S');
@@ -945,7 +948,6 @@ function calculate(a, operator, b) {
     console.log('Please provide valid numbers.');
     return;
   }
-
 
   switch (operator) {
     case '+':
