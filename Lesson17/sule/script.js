@@ -397,6 +397,8 @@ function repeatWord(word, times) {
   console.log(word.repeat(times));
 }
 
+// 💬 NOTE: Tested with negative and decimal values to observe .repeat() behavior
+
 repeatWord('aa', 3);
 repeatWord('by', 2);
 repeatWord('yo', -1);
