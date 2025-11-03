@@ -90,7 +90,7 @@ class ShoppingCart {
     console.log("Adding new item to the cart...");
     for (const item of this.#items) {
       if (name === item.name) {
-        console.log("increase the quantity.");
+        console.log("Item found in the cart, increasing the quantity.");
         item.quantity++;
         return;
       }
@@ -102,6 +102,7 @@ class ShoppingCart {
 
   // In real life, we usually use id to find elements or do any manipulations
   removeItem(name) {
+    console.log("Removing the item...");
     for (let i = 0; i < this.#items.length; i++) {
       const currentElement = this.#items[i];
       if (name.toLowerCase() === currentElement.name.toLowerCase()) {
@@ -123,19 +124,21 @@ class ShoppingCart {
 
   applyDiscount({ discountCode, discountPercentage }) {
     console.log("Applying discount....");
+    const discountCodes = { SAVE10: 0.1, SAVE20: 0.2 };
     if (typeof discountCode !== "string") {
-    console.log("Please provide the discount code in a string format.");
-    return;
-  }
-   if (typeof discountPercentage !== "number") {
-    console.log("Please provide the discount percentage in a number format.");
-    return;
-  }
-    const totalAmount = this.getTotal();
-    const discountedTotal = totalAmount - totalAmount * discountPercentage;
-    console.log(
-      `After the discount, the new total is ${discountedTotal}`
-    );
+      console.log("Please provide the discount code in a string format.");
+      return;
+    }
+    if (typeof discountPercentage !== "number") {
+      console.log("Please provide the discount percentage in a number format.");
+      return;
+    }
+    if (discountCodes.hasOwnProperty(discountCode)) {
+      const totalAmount = this.getTotal();
+      const discountedTotal = totalAmount - totalAmount * discountPercentage;
+      console.log(`After the discount, the new total is ${discountedTotal}`);
+    }
+    else {console.log("The discount code is not valid.");}
   }
 }
 
@@ -158,4 +161,5 @@ console.log("");
 console.log("");
 myCart.applyDiscount({ discountCode: "SAVE10", discountPercentage: 0.1 });
 myCart.applyDiscount({ discountCode: "SAVE20", discountPercentage: 0.2 });
+myCart.applyDiscount({ discountCode: "SAVE40", discountPercentage: 0.4 });
 myCart.applyDiscount({ discountCode: 10, discountPercentage: 0.1 });
