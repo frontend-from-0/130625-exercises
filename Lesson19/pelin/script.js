@@ -27,6 +27,12 @@ Node.js or a browser console.
    array `#items` to store the cart items.
 3. Add a `viewCart` method to display all items in the cart.
 */
+const DISCOUNT_CODES = {
+  save10: 0.1,
+  save20: 0.2,
+  free30: 0.3,
+  max50: 0.5,
+};
 
 class ShoppingCart {
   #items;
@@ -125,29 +131,25 @@ SO I GOT HELP ABOUT THIS FROM GEMINI.
 */
 
   applyDiscount(code) {
-    this.#discountValue = 0;
-    const percentageString = code.replace(/\D/g, "");
-    const percentage = parseInt(percentageString);
+    const cleanCode = code.toLowerCase();
+    const discountRate = DISCOUNT_CODES[cleanCode];
 
-    if (isNaN(percentage) || percentage <= 0) {
-      console.log(
-        `Error: Invalid discount code: ${code}. No valid percentage found.`
-      );
+    if (discountRate) {
+      console.log(`Applying approved discount code: ${code}...`);
       this.#discountValue = 0;
-      return;
+      const total = this.getTotal();
+      const discountAmount = total * discountRate;
+      this.#discountValue = discountAmount;
+      const percentage = discountRate * 100;
+      console.log(
+        `Discount applied! ${percentage}% (${discountAmount.toFixed(
+          2
+        )} TRY) has been saved.`
+      );
+    } else {
+      this.#discountValue = 0;
+      console.log(`Error: Invalid or unapproved discount code: ${code}`);
     }
-
-    console.log(`Applying dynamic discount: ${percentage}%...`);
-
-    const total = this.getTotal();
-    const discountAmount = total * (percentage / 100);
-    this.#discountValue = discountAmount;
-
-    console.log(
-      `Discount applied! ${discountAmount.toFixed(
-        2
-      )} TRY discount has been saved.`
-    );
   }
   getTotal() {
     const subTotal = this.#items.reduce((accumulator, item) => {
@@ -180,10 +182,10 @@ console.log("");
 myCart.applyDiscount("SAVE10");
 console.log("Final Cart Total:", myCart.getTotal(), "TRY");
 console.log("");
-myCart.applyDiscount("FREE40");
+myCart.applyDiscount("FREE30");
 console.log("Final Cart Total:", myCart.getTotal(), "TRY");
 console.log("");
-myCart.applyDiscount("VIP25");
+myCart.applyDiscount("Max50");
 console.log("Final Cart Total:", myCart.getTotal(), "TRY");
 console.log("");
 myCart.applyDiscount("DEAL110");
