@@ -481,7 +481,9 @@ manageQueue(line, "Ali");
 
 function updateTodoList(todoList, startIndex, deleteCount, ...newTasks) {
   console.log("Current To-Do List:", todoList);
-  todoList.splice(startIndex, deleteCount, ...newTasks);
+todoList.splice(startIndex, deleteCount);
+todoList.push(...newTasks);
+
   console.log("Updated To-Do List:", todoList);
 }
 const todoList = ["Study JS", "Eat breakfast", "Walk dog"];
