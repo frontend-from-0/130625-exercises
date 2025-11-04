@@ -8,7 +8,7 @@
 */
 function checkPassword(password) {
   if (typeof password !== "string") {
-    console.log("Please prvide a string value");
+    console.log("Please provide a string value");
     return;
   }
   if (password.toString().length >= 8) {
@@ -29,7 +29,7 @@ checkPassword("123456789");
 */
 function uppercaseName(name) {
   if (typeof name !== "string") {
-    console.log("Please prvide a string value");
+    console.log("Please provide a string value");
     return;
   } else {
     console.log(name.toUpperCase());
@@ -59,7 +59,7 @@ normalizeEmail("GOKCEEMSAL34@gmail.cOm");
 */
 function getDomain(email) {
   if (typeof email !== "string") {
-    console.log("Please prvide a string value");
+    console.log("Please provide a string value");
     return;
   }
   //   const startIndex = email.indexOf('@') + 1;
@@ -144,8 +144,8 @@ checkFileExtension("myassignment.pdf");
 */
 function compareNumbers(a, b) {
   // TODO: check that a and b are numbers
-  if (typeof a !== "string" || typeof b !== "string") {
-    console.log("Please prvide a number value");
+  if (typeof a !== "number" || typeof b !== "number") {
+    console.log("Please provide a number value");
     return;
   }
   if (a > b) {
@@ -387,9 +387,9 @@ function sliceLastN(text, n) {
   console.log(`Ex.16.The sliced word is: ${lastNCharacters}`);
 }
 
-sliceLastN("JavaScript", -6);
-sliceLastN("Hello World", -5);
-sliceLastN(12345, -2);
+sliceLastN("JavaScript", 6);  
+sliceLastN("Hello World", 5);
+sliceLastN(12345, 2);
 
 /*
 17. Switch: Grade Checker
@@ -428,9 +428,7 @@ gradeChecker(59);
 */
 function replaceCharacter(str, oldChar, newChar) {
   let changeChar = "";
-  for (const char of str) {
-    changeChar += char.replaceAll(oldChar, newChar);
-  }
+  changeChar += str.replaceAll(oldChar, newChar);
   console.log(`Ex.18. ${changeChar}`);
 }
 replaceCharacter("banana", "a", "o");
@@ -688,9 +686,9 @@ reverseWords("Hello World from JavaScript");
    - Log the index or log "Not found" if it's -1.
 */
 function findWordPosition(sentence, word) {
-  findIndex = sentence.indexOf(word);
-  if (findIndex) {
-    console.log(`Ex.29.${findIndex}`);
+  const index = sentence.indexOf(word);
+  if (index !== -1) {
+    console.log(`Ex.29.${index}`);
   } else {
     console.log("Not found");
   }
