@@ -112,7 +112,7 @@ reverseArray([1, 2, 3, 4, 5]);
 function filterNegative(numbers) {
   let positiveNumbers = [];
   for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > 0) {
+    if (numbers[i] >= 0) {
       positiveNumbers.push(numbers[i]);
     }
   }
