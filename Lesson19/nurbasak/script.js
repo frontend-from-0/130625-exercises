@@ -88,6 +88,14 @@ class ShoppingCart {
       }
     }
   }
+  
+  getTotal() {
+    let total = 0;
+    for (const item of this.#items) {
+      total += item.price.amount * item.quantity;
+    }
+    return total;
+  }
 }
 
 const myCart = new ShoppingCart();
@@ -124,3 +132,5 @@ myCart.viewCart();
      code is valid.
 3. Use an object to store discount codes and their values.
 */
+
+
