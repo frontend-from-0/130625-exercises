@@ -417,9 +417,6 @@ findWordsWithLetter(["apple", "cherry", "break"], "r" )
    let poppedElement = arr.pop();
    console.log(poppedElement);
    console.log(arr)
-   
-   
-   
 }
 console.log(pushPopExample([1,2,3,4], 6))
 
