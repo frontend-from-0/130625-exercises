@@ -50,6 +50,31 @@ Node.js or a browser console.
    - Remove the item from the `#items` array if it exists.
 */
 
+
+
+/*
+-----------------------------------------------------------
+  STEP 4: Calculate the Total Cost
+-----------------------------------------------------------
+1. Add a `getTotal` method to the `ShoppingCart` class.
+2. The method should:
+   - Calculate and return the total cost of all items in 
+     the cart.
+*/
+
+
+/*
+-----------------------------------------------------------
+  STEP 5: Apply a Discount
+-----------------------------------------------------------
+1. Add an `applyDiscount` method to the `ShoppingCart` class.
+2. The method should:
+   - Accept a discount code (e.g., 'SAVE10', 'SAVE20').
+   - Apply a percentage discount to the total cost if the 
+     code is valid.
+3. Use an object to store discount codes and their values.
+*/
+
 class ShoppingCart {
   #items;
 
@@ -80,6 +105,7 @@ class ShoppingCart {
 
   // In real life, we usually use id to find elements or do any manipulations
   removeItem(name) {
+    console.log('Removing an item from the cart...');
     for (let i = 0; i < this.#items.length; i++) {
       const currentElement = this.#items[i];
       if (name.toLowerCase() === currentElement.name.toLowerCase()) {
@@ -88,14 +114,35 @@ class ShoppingCart {
       }
     }
   }
-  
   getTotal() {
-    let total = 0;
-    for (const item of this.#items) {
-      total += item.price.amount * item.quantity;
-    }
-    return total;
+  console.log('Calculating total cost of items in the cart...');
+  let total=0; 
+  for (let item of this.#items) {
+    total += item.price.amount * item.quantity;
+  
   }
+  console.log(`Total cost is ${total}`);
+  return total;
+}
+
+applyDiscount(code) {
+  console.log('Applying discount code...');
+  const discounts = {
+    'SAVE10': 10,
+    'SAVE20': 20,
+  };
+  const discountPercentage = discounts[code];
+  if (discountPercentage) {
+    const total = this.getTotal();
+    const discountAmount = (total * discountPercentage) / 100;
+    const newTotal = total - discountAmount;
+    console.log(`Discount applied! New total is ${newTotal}`);
+    return newTotal;
+  } else {
+    console.log('Invalid discount code. No discount applied.');
+    return this.getTotal();
+  }
+}
 }
 
 const myCart = new ShoppingCart();
@@ -109,28 +156,3 @@ myCart.viewCart();
 myCart.removeItem('Dress');
 
 myCart.viewCart();
-
-
-/*
------------------------------------------------------------
-  STEP 4: Calculate the Total Cost
------------------------------------------------------------
-1. Add a `getTotal` method to the `ShoppingCart` class.
-2. The method should:
-   - Calculate and return the total cost of all items in 
-     the cart.
-*/
-
-/*
------------------------------------------------------------
-  STEP 5: Apply a Discount
------------------------------------------------------------
-1. Add an `applyDiscount` method to the `ShoppingCart` class.
-2. The method should:
-   - Accept a discount code (e.g., 'SAVE10', 'SAVE20').
-   - Apply a percentage discount to the total cost if the 
-     code is valid.
-3. Use an object to store discount codes and their values.
-*/
-
-
