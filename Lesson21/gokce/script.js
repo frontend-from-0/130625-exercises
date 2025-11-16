@@ -12,9 +12,17 @@ const timeslotButtons = document.querySelectorAll(".slot");
 const selectedTimeOutput = document.getElementById("selected-time");
 const form = document.getElementById("booking_form");
 const confirmation = document.getElementById("confirmation");
+const confirmedName = document.getElementById("confirmed-name");
+const confirmedEmail = document.getElementById("confirmed-email");
 const confirmedDate = document.getElementById("confirmed-date");
 const confirmedTime = document.getElementById("confirmed-time");
 const confirmButton = document.getElementById("confirm");
+const nameInput = document.getElementById("name");
+const nameOutput = document.getElementById("display-name");
+const hiddenPersonalInfoPart = document.getElementById("personal-div");
+const clientNamePart = document.getElementById("hidden-name-part");
+const emailInput = document.getElementById("email");
+const emailOutput = document.getElementById("display-email");
 
 // TODO: set min date for tomorrow or any other future date
 const today = new Date();
@@ -29,7 +37,7 @@ maxDate.setDate(maxDate.getDate() + 30); // Tarihi 30 gün ileri taşı
 
 // date kısmına yazabilmek için bu şekle getirmemiz gerekiyot:(YYYY-MM-DD Metin Formatı)
 
-const minDateString = `${minDate.getFullYear()}-${(minDate.getMonth() + 1)
+const minDateString = `${minDate.getFullYear()}-${(minDate.getMonth() + 1) //month olduğunda 1 ekliyoruz. pad startı da tarihlerin başında 0 olacağı için koyuyoruz
   .toString()
   .padStart(2, "0")}-${minDate.getDate().toString().padStart(2, "0")}`;
 
@@ -42,9 +50,30 @@ dateInput.min = minDateString;
 dateInput.max = maxDateString;
 
 const data = {
+  name: null,
+  email: null,
   date: null,
   time: null,
 };
+
+function togglePersonalInfoPart() {
+  nameOutput.textContent = nameInput.value.trim();
+  data.name = nameInput.value.trim();
+  emailOutput.textContent = emailInput.value.trim();
+  data.email = emailInput.value.trim();
+  if (nameInput.value.trim() !== "" && emailInput.value.trim() !== "") {
+    hiddenPersonalInfoPart.style.display = "none";
+    clientNamePart.style.display = "block";
+  } else {
+    hiddenPersonalInfoPart.style.display = "block";
+    clientNamePart.style.display = "none";
+    nameOutput.textContent = "";
+    emailOutput.textContent = "";
+  }
+  allowSubmit();
+}
+nameInput.addEventListener("blur", togglePersonalInfoPart);
+emailInput.addEventListener("blur", togglePersonalInfoPart);
 
 dateInput.addEventListener("change", () => {
   dateOutput.textContent = dateInput.value;
@@ -75,7 +104,7 @@ function showSelectedTime(element) {
 }
 
 function allowSubmit() {
-  if (data.date && data.time) {
+  if (data.date && data.time && data.name && data.email) {
     // confirmButton.removeAttribute("disabled");
     confirmButton.disabled = false;
   } else {
@@ -85,10 +114,12 @@ function allowSubmit() {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (!data.date && !data.time) return;
 
   form.classList.add("hidden");
   confirmation.classList.remove("hidden");
   confirmedDate.textContent = data.date;
   confirmedTime.textContent = data.time;
+  confirmedName.textContent = data.name;
+  confirmedEmail.textContent = data.email;
+  clientNamePart.style.display = "none";
 });
