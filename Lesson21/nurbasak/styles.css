@@ -20,9 +20,18 @@ header {
 }
 
 .booking {
-  display: flex;
   gap: 2rem;
 }
+
+.personal-info {
+  background: white;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
 
 .calendar {
   flex: 2;
