@@ -88,6 +88,46 @@ class ShoppingCart {
       }
     }
   }
+getTotal() {
+    let totalAmount = 0;
+    // Sepetteki her öğe için döngü
+    for (const item of this.#items) {
+      // Toplam fiyata (fiyat * miktar) ekle
+      totalAmount += item.price.amount * item.quantity;
+    }
+    // Para birimini (currency) ilk öğeden al, yoksa 'USD' varsay
+    const currency = this.#items.length > 0 ? this.#items[0].price.currency : 'TRY';
+    
+    // Toplamı ve para birimini içeren bir obje döndür
+    return { amount: totalAmount, currency: currency };
+  }
+
+applyDiscount(code) {
+    const validDiscounts = {
+      'SAVE10': 0.10, 
+      'SAVE20': 0.20, 
+      'KURS30': 0.30  
+    };
+
+    if (!validDiscounts[code]) {
+      console.log(`Error: Invalid discount code: ${code}`);
+      return this.getTotal(); 
+      }
+    const discountRate = validDiscounts[code];
+    const originalTotal = this.getTotal();
+    
+    const discountedAmount = originalTotal.amount * (1 - discountRate);
+
+    console.log(`Discount code ${code} applied successfully!`);
+  
+    return { 
+      amount: discountedAmount, 
+      currency: originalTotal.currency,
+      discountApplied: discountRate * 100 
+    };
+}
+
+
 }
 
 const myCart = new ShoppingCart();
@@ -102,6 +142,16 @@ myCart.removeItem('Dress');
 
 myCart.viewCart();
 
+const total = myCart.getTotal();
+console.log('Total:', `${total.amount} ${total.currency}`);
+
+const discountedTotal = myCart.applyDiscount('SAVE10');
+console.log('Discounted Total:', `${discountedTotal.amount} ${discountedTotal.currency}`);
+
+myCart.applyDiscount('INVALIDCODE');
+
+const finalTotal = myCart.getTotal();
+console.log('Final Total (Discounted):', `${finalTotal.amount} ${finalTotal.currency}`);
 
 /*
 -----------------------------------------------------------
