@@ -112,14 +112,7 @@ myCart.viewCart();
    - Calculate and return the total cost of all items in 
      the cart.
 */
-getTotal() {
-    console.log("Calculating total cost...");
-    const total = this.#items.reduce((sum, item) => {
-      return sum + (item.price.amount * item.quantity);
-    }, 0);
 
-    return total;
-  }
 /*
 -----------------------------------------------------------
   STEP 5: Apply a Discount
@@ -131,28 +124,3 @@ getTotal() {
      code is valid.
 3. Use an object to store discount codes and their values.
 */
-applyDiscount(code) {
-    const discounts = {
-      'SAVE10': 0.10,
-      'SAVE20': 0.20  
-    };
-
-    const discountPercentage = discounts[code];
-    const currentTotal = this.getTotal();
-    
-    const currency = this.#items.length > 0 ? this.#items[0].price.currency : 'TRY';
-
-    if (discountPercentage) {
-      const discountAmount = currentTotal * discountPercentage;
-      const newTotal = currentTotal - discountAmount;
-      
-      console.log(`Discount applied! ${discountPercentage * 100}% off.`);
-      console.log(`New total: ${newTotal} ${currency}`);
-      return newTotal;
-    } else {
-      console.log('Invalid discount code.');
-      console.log(`Total remains: ${currentTotal} ${currency}`);
-      return currentTotal;
-    }
-  }
-
