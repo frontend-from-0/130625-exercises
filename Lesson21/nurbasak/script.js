@@ -38,9 +38,19 @@ dateInput.addEventListener('change', () => {
   allowSubmit();
 });
 
+//added deselect function for timeslot buttons
+
 timeslotButtons.forEach(function (element) {
-  element.addEventListener('click', () => showSelectedTime(element));
+  element.addEventListener('click', () => {
+    timeslotButtons.forEach(slot => {
+      slot.classList.remove('selected');
+    });
+    element.classList.add('selected');
+    showSelectedTime(element);
+  });
 });
+
+
 
 function showSelectedTime(element) {
   element.classList.add('selected');
