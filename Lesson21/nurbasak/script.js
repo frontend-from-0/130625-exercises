@@ -24,6 +24,13 @@ const data = {
   time: null,
 };
 
+//added functionality to show date line on click if supported
+
+dateInput.addEventListener('click',() => {
+  if(typeof dateInput.showPicker === 'function'){
+    dateInput.showPicker();
+  }
+})
 dateInput.addEventListener('change', () => {
   dateOutput.textContent = dateInput.value;
   data.date = dateInput.value;
