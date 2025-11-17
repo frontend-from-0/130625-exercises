@@ -16,7 +16,6 @@ const confirmedDate = document.getElementById('confirmed-date');
 const confirmedTime = document.getElementById('confirmed-time');
 const confirmButton = document.getElementById('confirm');
 
-
 // TODO: set min date for tomorrow or any other future date
 
 const data = {
