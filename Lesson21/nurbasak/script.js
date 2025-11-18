@@ -132,7 +132,7 @@ form.addEventListener('submit', (event) => {
 
   form.classList.add('hidden');
   confirmation.classList.remove('hidden');
-  confirmedName.textContent=data.name.textContent;
+  confirmedName.textContent=data.name;
   confirmedEmail.textContent=data.email;
   confirmedDate.textContent = data.date;
   confirmedTime.textContent = data.time;
