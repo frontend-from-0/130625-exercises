@@ -74,9 +74,11 @@ Node.js or a browser console.
 
 class ShoppingCart {
   #items;
+  #discountCodes;
 
   constructor() {
     this.#items = [];
+    this.#discountCodes = { SAVE10: 0.1, SAVE20: 0.2, SAVE30: 0.3 }; // I added the codes as a private property on the class.
   }
 
   viewCart() {
@@ -122,23 +124,22 @@ class ShoppingCart {
     return total;
   }
 
-  applyDiscount({ discountCode, discountPercentage }) {
+  applyDiscount(discountCode) {
     console.log("Applying discount....");
-    const discountCodes = { SAVE10: 0.1, SAVE20: 0.2 };
     if (typeof discountCode !== "string") {
       console.log("Please provide the discount code in a string format.");
       return;
     }
-    if (typeof discountPercentage !== "number") {
-      console.log("Please provide the discount percentage in a number format.");
-      return;
-    }
-    if (discountCodes.hasOwnProperty(discountCode)) {
+    const discountRate = this.#discountCodes[discountCode];
+    if (this.#discountCodes[discountCode]) {     //Error validation is simplified.
       const totalAmount = this.getTotal();
-      const discountedTotal = totalAmount - totalAmount * discountPercentage;
-      console.log(`After the discount, the new total is ${discountedTotal}`);
+      const discountedTotal = totalAmount - totalAmount * discountRate;
+      console.log(`After the ${discountRate * 100}% discount, the new total is ${discountedTotal}`);
+    return discountedTotal;
+    } else {
+      console.log("The discount code is not valid.");
+      return this.getTotal();
     }
-    else {console.log("The discount code is not valid.");}
   }
 }
 
@@ -159,7 +160,4 @@ console.log("");
 myCart.getTotal();
 console.log("");
 console.log("");
-myCart.applyDiscount({ discountCode: "SAVE10", discountPercentage: 0.1 });
-myCart.applyDiscount({ discountCode: "SAVE20", discountPercentage: 0.2 });
-myCart.applyDiscount({ discountCode: "SAVE40", discountPercentage: 0.4 });
-myCart.applyDiscount({ discountCode: 10, discountPercentage: 0.1 });
+myCart.applyDiscount("SAVE10", 0.1);
