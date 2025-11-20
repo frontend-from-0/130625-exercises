@@ -91,6 +91,34 @@ dateInput.addEventListener('click',() => {
     dateInput.showPicker();
   }
 })
+
+//added min date functionality. But it is help with ai and I thought I found easier way but it didnt work at all
+
+function getTomorrowDate() {
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  return tomorrow;
+}
+
+function setMinDateToTomorrow() {
+  const t = getTomorrowDate();
+  const yyyy = t.getFullYear();
+  const mm = String(t.getMonth() + 1).padStart(2, '0');
+  const dd = String(t.getDate()).padStart(2, '0');
+  const minDate = `${yyyy}-${mm}-${dd}`;
+
+  dateInput.min = minDate;
+
+  if (!dateInput.value || dateInput.value < minDate) {
+    dateInput.value = minDate;
+    dateOutput.textContent = dateInput.value;
+    data.date = dateInput.value;
+  }
+}
+
+setMinDateToTomorrow();
+
 dateInput.addEventListener('change', () => {
   dateOutput.textContent = dateInput.value;
   data.date = dateInput.value;
@@ -98,7 +126,7 @@ dateInput.addEventListener('change', () => {
   allowSubmit();
 });
 
-//added deselect function for timeslot buttons
+//added deselect after new selection function for timeslot buttons
 
 timeslotButtons.forEach(function (element) {
   element.addEventListener('click', () => {
@@ -110,7 +138,7 @@ timeslotButtons.forEach(function (element) {
   });
 });
 
-
+//ADD MIN DATE FUNCTIONALITY
 
 function showSelectedTime(element) {
   element.classList.add('selected');
