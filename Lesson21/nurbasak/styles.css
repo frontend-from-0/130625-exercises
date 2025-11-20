@@ -128,3 +128,17 @@ fieldset {
 .hidden {
   display: none;
 }
+
+#confirmation {
+  text-align: center;
+  margin-top: 5rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  font-size: larger;
+}
+
+.confirmed-info {
+  text-align: center;
+  padding: 2rem;
+}
