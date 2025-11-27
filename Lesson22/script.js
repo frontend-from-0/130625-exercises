@@ -3,6 +3,7 @@ const phonePattern = /^\+?\d(?:\s?\d){9,19}$/;
 const onlyLetters = /^[a-zA-Z\s-]+$/;
 const cardPattern = /^(\d{4}\s){3}\d{4}$/;
 const expDatePattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
+const cvvPattern = /^\d{3}$/;
 /* 
 - What are required input fields? - all fields are required here
 - Select elements in JS
@@ -22,8 +23,10 @@ const lastNameError = document.getElementById('lastNameError');
 const cardInput = document.getElementById('cardNumber');
 const cardNumberError = document.getElementById('cardNumberError');
 
-const expDate = document.getElementById('expDate');
+const expDateInput = document.getElementById('expDate');
 const expDateError = document.getElementById('expDateError');
+const cvvInput =document.getElementById('cvv');
+const cvvError = document.getElementById('cvvError');
 
 let formValid = true;
 
@@ -90,13 +93,28 @@ function validateExpDate(date) {
   }
 }
 
-emailInput.addEventListener('input', () => validateEmail(emailInput.value));
-phoneInput.addEventListener('input', () => validatePhone(phoneInput.value));
-firstNameInput.addEventListener('input', () =>
-  validateName(firstNameInput.value, firstNameError),
+function validateCvv(cvv) {
+  if (!cvvPattern.test(cvv)) {
+    cvvError.innerText= 
+    'Please enter a CVV number in the following format: 123 or 1234';
+    cvvError.classList.remove('hidden');
+    formValid=false;
+  } else {
+    cvvError.innerText='';
+    cvvError.classList.add('hidden');
+  }
+}
+
+emailInput.addEventListener("input", () => validateEmail(emailInput.value));
+phoneInput.addEventListener("input", () => validatePhone(phoneInput.value));
+firstNameInput.addEventListener("input", () =>
+  validateName(firstNameInput.value, firstNameError)
 );
-lastNameInput.addEventListener('input', () =>
-  validateName(lastNameInput.value, lastNameError),
+lastNameInput.addEventListener("input", () =>
+  validateName(lastNameInput.value, lastNameError)
 );
-cardInput.addEventListener('input', () => validateCard(cardInput.value));
-expDate.addEventListener('input', () => validateExpDate(expDate.value));
+cardInput.addEventListener("input", () => validateCard(cardInput.value));
+expDateInput.addEventListener("input", () =>
+  validateExpDate(expDateInput.value)
+);
+cvvInput.addEventListener('input', () => validateCvv(cvvInput.value));
