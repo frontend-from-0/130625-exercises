@@ -2,14 +2,8 @@ const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const phonePattern = /^\+?\d(?:\s?\d){9,19}$/;
 const onlyLetters = /^[a-zA-Z\s-]+$/;
 const cardPattern = /^(\d{4}\s){3}\d{4}$/;
-const expDatePattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
-const cvvPattern = /^\d{3}$/;
-/* 
-- What are required input fields? - all fields are required here
-- Select elements in JS
-- trigger validation on form submit
-- trigger validation on input change or on blur
-*/
+const expDatePattern = /^(0[1-9]|1[0-2])\/(2[5-9]|[3-9]\d)$/; // Revised this pattern after a little research to 2025-2099.
+const cvvPattern = /^\d{3}$/; // Revised this pattern after a little research to 3 or 4 digits.
 
 const emailInput = document.getElementById('email');
 const emailError = document.getElementById('emailError');
@@ -27,6 +21,12 @@ const expDateInput = document.getElementById('expDate');
 const expDateError = document.getElementById('expDateError');
 const cvvInput =document.getElementById('cvv');
 const cvvError = document.getElementById('cvvError');
+const inputGroups =document.querySelectorAll('.input-group');
+const form = document.getElementById("checkoutForm");
+const submitButton = document.getElementById('submitBtn');
+
+
+const successMessage = document.getElementById("success");
 
 let formValid = true;
 
@@ -105,6 +105,73 @@ function validateCvv(cvv) {
   }
 }
 
+function validateForm() {                      
+  if (
+    emailPattern.test(emailInput.value) &&
+    phonePattern.test(phoneInput.value) &&
+    onlyLetters.test(firstNameInput.value) &&
+    onlyLetters.test(lastNameInput.value) &&
+    cardPattern.test(cardInput.value) &&
+    expDatePattern.test(expDateInput.value) &&
+    cvvPattern.test(cvvInput.value)
+  ) {
+    formValid = true;
+  } else {
+    formValid = false;
+  }
+  enableSubmit();
+}
+
+function enableSubmit() {
+  if (formValid) {
+    submitButton.removeAttribute("disabled");
+  } else {
+    submitButton.setAttribute("disabled", "true");
+  }
+}
+
+
+function generateOrderNumber() {
+  let lastOrderNumber = localStorage.getItem('lastOrderNumber');
+  if (!lastOrderNumber) {
+    lastOrderNumber = 1000;
+  } else {
+    lastOrderNumber = parseInt(lastOrderNumber, 10) + 1;
+  }
+  localStorage.setItem('lastOrderNumber', lastOrderNumber);
+  return lastOrderNumber;
+}
+
+function showOrderDetails() {
+  const lastOrderNumber = generateOrderNumber();
+  const orderNumber = document.getElementById('confirmed-number');
+  const confirmedDate = document.getElementById('confirmed-date');
+
+  if (orderNumber) orderNumber.textContent = lastOrderNumber;
+
+  const today = new Date();
+  const deliveryDate = new Date();
+  deliveryDate.setDate(today.getDate() + 4);
+
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  if (confirmedDate) confirmedDate.textContent = deliveryDate.toLocaleDateString(undefined, options);
+}
+
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  validateForm();
+  if (formValid) {
+    form.classList.add("hidden");
+    successMessage.classList.remove("hidden");
+    showOrderDetails();
+  }
+});
+
+
+
+
+
 emailInput.addEventListener("input", () => validateEmail(emailInput.value));
 phoneInput.addEventListener("input", () => validatePhone(phoneInput.value));
 firstNameInput.addEventListener("input", () =>
@@ -118,3 +185,7 @@ expDateInput.addEventListener("input", () =>
   validateExpDate(expDateInput.value)
 );
 cvvInput.addEventListener('input', () => validateCvv(cvvInput.value));
+
+inputGroups.forEach(group =>  {
+  group.addEventListener('input', validateForm);
+});

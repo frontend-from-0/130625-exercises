@@ -69,9 +69,18 @@
       <button type="submit"  id="submitBtn" class="btn-success" disabled>Place Order</button>
     </form>
     <div class="hidden" id="success">
-      <p>Success!</p>
+      <h1>Success!</h1>
+      <p>Your order has been placed successfully.</p>
+      
+      <div class="order-details">
+        <h2>Order Details</h2>
+        <p>Order Number: <span id="confirmed-number"></span></p>
+        <p>Estimated Delivery Date: <span id="confirmed-date"></span></p>
+      </div>
+      
     </div>
     </main>
     <script src="./script.js"></script>
   </body>
 </html>
+
