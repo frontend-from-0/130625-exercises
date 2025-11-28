@@ -53,6 +53,25 @@ input {
   text-align: center;
 }
 
+#success p {
+  font-size: larger;
+
+}
+
+.order-details {
+  margin-top: 100px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background: #4dad8f;
+}
+ .order-details h2 {
+  margin-bottom: 40px;
+  font-size: xx-large;
+ }
+
+ .order-details p {
+  gap: 50px;
+ }
 
 .hidden {
   display: none;
