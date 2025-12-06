@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TECH BLOG</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>Tech Blog</h1>
+      <p>Find the latest tech news and tutorials</p>
+      <div class="nav-container">
+        <button id="toggle-nav" aria-label="Toggle navigation menu">☰</button>
+        <ul>
+          <li><a class="navigator" href="index.html">Home</a></li>
+          <li><a class="navigator" href="#">Tools</a></li>
+          <li><a class="navigator" href="#">Learn</a></li>
+          <li><a class="navigator" href="#">About</a></li>
+        </ul>
+      </div>
+    </header>
+    <h2 class="latest-text">Latest Posts</h2>
+    <main>
+      <div id="status-message" aria-live="polite"></div>
+      <div id="posts-container"></div>
+    </main>
+    <footer>
+      <p>© 2025 Tech Blog. All rights reserved.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
