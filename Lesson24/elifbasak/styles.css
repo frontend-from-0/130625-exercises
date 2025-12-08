@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body{
+  padding:10px;
+}
+
+.container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+}
+
+.posts{
+  border-radius: 12px;
+  padding:10px;
+  position: relative;
+}
+
+
+.deletebutton{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+
+  background-color: #C92103;
+  color:#fff;
+  border: #DD2403;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.deletemessage {
+  color:#C92103;
+  font-weight: 500;
+}
+
+@media all and (min-width: 768.98px) {
+.container{
+  display: grid;
+  grid-template-columns:repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  gap:18px;
+}
+
+body{
+  padding:20px;
+}
+}
