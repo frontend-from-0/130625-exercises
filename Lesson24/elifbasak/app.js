@@ -11,7 +11,7 @@ function getPosts() {
 }
 
 function addAndRemovePosts(posts) {
-  const container = document.getElementById("postsContainer");
+  const mainContainer = document.getElementById("mainContainer");
   const colors = [
     "#FEC5BB",
     "#FCD5CE",
@@ -24,37 +24,61 @@ function addAndRemovePosts(posts) {
     "#FFD7BA",
     "#FEC89A",
   ];
-  for (let i = 0; i < posts.length; i++) {
-    const newP = document.createElement("p");
-    newP.style.backgroundColor = colors[i];
-    newP.classList.add("posts");
-    newP.innerHTML = `<strong> ID: </strong> ${posts[i].id}<br><br>
-   <strong> title: </strong> ${posts[i].title} <br>
-   <strong> body: </strong> ${posts[i].body}`;
+
+
+  posts.forEach((post,colorindex) => {
+    const postContainer = document.createElement("div");
+    postContainer.style.backgroundColor = colors[colorindex];
+    postContainer.classList.add("post");
+
+    const postId = document.createElement("p");
+    postId.innerText = post.id;
+    postId.classList.add("postid")
+
+    const postTitle = document.createElement("p");
+    postTitle.innerText = post.title;
+    postTitle.classList.add("posttitle");
+
+    const postBody = document.createElement("p");
+    postBody.innerText = post.body;
+    postBody.classList.add("postbody")
 
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("deletebutton");
     deleteButton.innerText = "Delete";
-    deleteButton.setAttribute("aria-label", `Delete post with ID ${posts[i].id}`);
+    deleteButton.setAttribute("aria-label", `Delete post with ID ${post.id}`);
 
     const deleteMessage = document.createElement("p");
-    deleteMessage.setAttribute("role", "status"); 
-    deleteMessage.innerText = `Post with ID number ${posts[i].id} has been deleted.`;
-    deleteMessage.classList.add("deletemessage", "hidden");
+    deleteMessage.setAttribute("role", "status");
+    deleteMessage.innerText = `Post with ID number ${post.id} has been deleted.`;
+    deleteMessage.classList.add("message", "hidden");
 
-    deleteButton.addEventListener("click", () => {
-      fetch(`${BASE_URL}posts/${posts[i].id}`, {
-        method: "DELETE",
-      });
-      newP.classList.add("hidden");
-      deleteMessage.classList.remove("hidden");
-    });
+    deleteButton.addEventListener("click", () => deletePost(post.id,postContainer,deleteMessage));
 
-    newP.appendChild(deleteButton);
-    container.appendChild(newP);
-    container.appendChild(deleteMessage);
-    
-  }
+    mainContainer.appendChild(postContainer);
+    postContainer.appendChild(postId);
+    postContainer.appendChild(postTitle);
+    postContainer.appendChild(postBody);
+    postContainer.appendChild(deleteButton);
+    mainContainer.appendChild(deleteMessage);
+  });
 }
+
+function deletePost(postId,containerElement,deleteMessageElement) {
+ fetch(`${BASE_URL}posts/${postId}`, {
+        method: "DELETE",
+      })
+.then((res) => {
+    if (res.ok) {
+      console.log('Post deleted successfully.');
+      containerElement.classList.add("hidden");
+      deleteMessageElement.classList.remove("hidden");
+    } else {
+      console.log('Attempt to delete a post was unsuccessful.');
+    }
+  });
+
+}
+
 
 document.addEventListener("DOMContentLoaded", () => getPosts());

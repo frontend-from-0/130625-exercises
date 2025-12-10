@@ -2,35 +2,56 @@
   box-sizing: border-box;
 }
 
-
-body{
-  padding:10px;
+body {
+  padding: 10px;
+  font-family: "Nunito", sans-serif;
 }
 
-.container{
-  display:flex;
+h1 {
+  text-align: center;
+}
+
+.maincontainer {
+  display: flex;
   flex-direction: column;
   justify-content: center;
- 
+  align-items: stretch;
+  gap: 16px;
 }
 
-.posts{
+.post {
   border-radius: 12px;
-  padding:10px;
+  padding: 8px 8px 16px;
   position: relative;
 }
 
+.postid {
+  margin: 6px 0;
+}
 
-.deletebutton{
+.posttitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 0px;
+  margin-bottom: 4px;
+}
+
+.postbody {
+  font-size: 12px;
+  padding-bottom: 8px;
+  margin-top: 8px;
+}
+
+.deletebutton {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 6px;
+  bottom: 6px;
 
-  background-color: #C92103;
-  color:#fff;
-  border: #DD2403;
+  background-color: #c92103;
+  color: #fff;
+  border: #dd2403;
   padding: 8px;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
@@ -38,20 +59,20 @@ body{
   display: none;
 }
 
-.deletemessage {
-  color:#C92103;
+.message {
+  color: #c92103;
   font-weight: 500;
 }
 
 @media all and (min-width: 768.98px) {
-.container{
-  display: grid;
-  grid-template-columns:repeat(5, 1fr);
-  grid-template-columns: repeat(5, 1fr);
-  gap:18px;
-}
+  .maincontainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 18px;
+  }
 
-body{
-  padding:20px;
-}
+  body {
+    padding: 20px;
+  }
 }
