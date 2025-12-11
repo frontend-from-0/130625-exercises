@@ -16,7 +16,6 @@
           type="email"
           placeholder="email@example.com"
           name="email"
-          autocomplete="email"
         />
         <p id="emailError" class="input-error hidden"></p>
       </div>
@@ -27,7 +26,6 @@
           type="tel"
           placeholder="555 123 4567"
           name="phoneNumber"
-          autocomplete="phone"
         />
         <p id="phoneError" class="input-error hidden"></p>
       </div>
@@ -38,14 +36,13 @@
           type="text"
           placeholder="Sophia"
           name="firstname"
-          autocomplete="given-name"
           
         />
         <p id="firstNameError" class="input-error hidden"></p>
       </div>
       <div class="input-group">
         <label for="lastname">Last Name</label>
-        <input id="lastname" type="text" placeholder="Clark" name="lastname" autocomplete="family-name" />
+        <input id="lastname" type="text" placeholder="Clark" name="lastname" />
         <p id="lastNameError" class="input-error hidden"></p>
       </div>
 
@@ -56,35 +53,24 @@
           type="text"
           placeholder="1234 5678 9101 1121"
           name="cardnumber"
-          autocomplete="off"
         />
         <p id="cardNumberError" class="input-error hidden"></p>
       </div>
       <div class="input-group">
         <label for="expDate">Expiration Date</label>
-        <input id="expDate" type="text" placeholder="MM/YY" name="expDate" autocomplete="off" />
+        <input id="expDate" type="text" placeholder="MM/YY" name="expDate" />
       <p id="expDateError" class="input-error hidden"></p>
       </div>
       <div class="input-group">
         <label for="cvv">CVV</label>
-        <input id="cvv" type="text" placeholder="123" name="cvv" autocomplete="off" />
-        <p id="cvvError" class="input-error hidden"></p>
+        <input id="cvv" type="text" placeholder="123" name="cvv" />
       </div>
       <button type="submit"  id="submitBtn" class="btn-success" disabled>Place Order</button>
     </form>
     <div class="hidden" id="success">
-      <h1>Success!</h1>
-      <p>Your order has been placed successfully.</p>
-      
-      <div class="order-details">
-        <h2>Order Details</h2>
-        <p>Order Number: <span id="confirmed-number"></span></p>
-        <p>Estimated Delivery Date: <span id="confirmed-date"></span></p>
-      </div>
-      
+      <p>Success!</p>
     </div>
     </main>
     <script src="./script.js"></script>
   </body>
 </html>
-

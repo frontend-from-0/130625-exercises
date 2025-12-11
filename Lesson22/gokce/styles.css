@@ -10,11 +10,19 @@ body {
 
 main {
   max-width: 960px;
-  margin: 96px auto;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
 }
 
 form {
   max-width: 448px;
+  width: 100%;
+}
+
+header {
+  text-align: center;
+  margin-top: 48px;
 }
 
 .input-group {
@@ -26,15 +34,18 @@ form {
 
 input {
   background: #4dad8f;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 8px;
   padding: 16px;
-  color: #8fccb8;
+  color: #fff;
 }
 
 .input-error {
-  color: rgb(98, 37, 37);
+  color: white;
   font-size: 14px;
+  border: 1px solid white;
+  padding: 8px;
+  border-radius: 8px;
 }
 
 .btn-success {
@@ -49,9 +60,22 @@ input {
   background-color: #fff;
 }
 
-
-
-
 .hidden {
   display: none;
+}
+
+.invalid {
+  border: 2px solid #ff0000;
+}
+
+#success {
+  border: 2px solid #fff;
+  padding: 20px 10px;
+}
+
+#success::after {
+  content: "\2714";
+  color: white;
+  margin-right: 10px;
+  font-size: 24px;
 }
