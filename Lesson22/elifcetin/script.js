@@ -175,3 +175,36 @@ function validateAll() {
   }
 
 }
+
+
+/* WRONG PRACTICE
+const emailInput = document.getElementById('email')
+const emailError = document.getElementById('emailError')
+*/
+/*
+function validateEmail(emailInput) {
+  console.log('email validation triggered')
+  if (!emailPattern.test(emailInput.value)) {
+    emailError.innerText = "Please enter valid email adress";
+    emailError.classList.remove("hidden");
+    formValid = false
+  } else {
+    emailError.innerText = "";
+    emailError.classList.add("hidden");
+  }
+}
+*/
+
+emailInput.addEventListener("input", () => validateEmail(emailInput.value));
+phoneInput.addEventListener("input", () => validatePhone(phoneInput.value));
+firstNameInput.addEventListener("input", () =>
+  validateFirstname(firstNameInput.value, firstNameError)
+);
+lastNameInput.addEventListener("input", () =>
+  validateFirstname(lastNameInput.value, lastNameError)
+);
+cardNumberInput.addEventListener('input', ()=>validateCard(cardNumberInput.value));
+cardExpirationInput.addEventListener('input', ()=> validateExpressionDate(cardExpirationInput.value))
+cardCvvInput.addEventListener('input', ()=> validateCvv(cardCvvInput.value))
+// show the confirmation of the page when everything is successful
+// make sure it is ok with accessibility rules
