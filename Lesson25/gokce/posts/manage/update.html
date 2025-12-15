@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Textify</title>
+    <link rel="stylesheet" type="text/css" href="update.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a class="header-link" href="../../index.html">
+      <img src="../../logo.svg" alt="Textify Logo" class="icon" width="78" height="78" />
+      <h1 class="title">Textify</h1></a>
+    </header>
+    <main>
+    <section>
+    <h1>Update post page</h1>
+    <div class="updatesvg"> 
+    <img src="../../update.svg" alt="Update Post Illustration" width="100" height="100"/>
+      </div>
+    </section>
+    <form id="updatePostForm">
+      <label for="text-title">Title:</label>
+      <input type="text" aria-describedby="titleError" id="text-title" name="title" />
+      <p id="titleError" class="inputTitleError hidden"></p>
+      <label for="text-body">Body:</label>
+      <textarea id="text-body" aria-describedby="bodyError" name="body"></textarea>
+      <p id="bodyError" class="inputBodyError hidden"></p>
+      <button id="updatePostBtn" type="button">
+        Save the changes in the post
+      </button>
+    </form>
+    <p id="success" aria-live="polite"></p>
+    </main>
+    <script src="update.js"></script>
+  </body>
+</html>
