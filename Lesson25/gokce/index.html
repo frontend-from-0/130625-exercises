@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Textify</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header class="header">
+      <img src="logo.svg" alt="Textify Logo" class="icon" width="78" height="78" />
+      <h1 class="title">Textify</h1>
+    </header>
+
+    <div class="container">
+      <div class="create-post">
+        <div class="photo">
+        <img src="create.svg" alt="Create Post Illustration" width="250" height="250"/>
+        </div>
+        <a class="button button--success" href="create.html">Create a post</a>
+      </div>
+      <div class="getPost">
+        <div class="photo">
+         <img src="update.svg" alt="Get Posts Illustration" width="250" height="250"/> 
+        </div>
+        <button class="button button--success" id="getPostsBtn">
+          Get Posts
+        </button>
+      </div>
+      <!--
+      Fetch all posts and display them on the page.
+      For every post, add a button to update the post and delete a post.
+      When the update button is clicked, redirect user to the update post page with a form to update the post.
+      When the delete button is clicked, send request to delete the post.
+      Add a button to create a new post. When the button is clicked, redirect user to the create post page with a form to create a new post.
+     
+    --></div>
+    <div class="posts-list">
+      <p id="success" aria-live="polite"></p>
+      <ul id="postsContainer"></ul>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
