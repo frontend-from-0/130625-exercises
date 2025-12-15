@@ -53,7 +53,7 @@ function handleDelete(id, createPost) {
     method: "DELETE",
   })
     .then((response) => {
-      if (!response.ok) throw new Error("Network response was not ok");
+      if (!response.ok) throw new Error("Network response was not OK");
     createPost.classList.add("deleted");
       statusMessage.textContent = `Post : ${id} has been deleted successfully.`;
       setTimeout(() => {
@@ -62,6 +62,6 @@ function handleDelete(id, createPost) {
     }) 
     .catch((error) =>
       console.error("There was a problem with the delete request:", error),
-    ) //Eğer 2. adımda hata fırlatılırsa, zincir buraya atlar ve hatayı konsola yazar (Kullanıcıya bilgi verir).
+    ) 
     ;
 }
