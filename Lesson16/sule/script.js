@@ -4,32 +4,55 @@
      to sum all elements in an array of numbers.
    - Log the final sum.
 */
-function sumArray(numbers) {
-  let sum = 0;
+
+function sumArray(numbers) { 
+  let sum = 0; 
   for (let i = 0; i < numbers.length; i++) {
-    sum = sum + numbers[i];
+    sum = sum + numbers[i]
   }
-  console.log(sum);
+  console.log(sum)
 }
 
-sumArray([1, 2, 3, 4]);
+sumArray([10, 20, 30]);
+sumArray([100]);
+sumArray([-5, -10, -3]);
+sumArray(["1", 2, 3]);
+sumArray([1, true, 2, false]);
+sumArray(["dietetian", "healty", "nutrition"]);
+const dailyCalories = [1800, 1950, 2100, 1850];
+sumArray(dailyCalories);
+const prices = [199, 349, 129, 89];
+sumArray(prices); 
+sumArray([]);
+
+
 /*
 2. Find Maximum Number in an Array
    - Define a function `findMax(numbers)` that uses a for loop to iterate
      through an array and find the largest value.
    - Log the largest value.
 */
-function findMax(numbers) {
-  let max = numbers[0];
-  for (let i = 1; i < numbers.length; i++) {
-    if (numbers[i] > max) {
-      max = numbers[i];
+
+function findMax(numbers){
+    let max = numbers[0];
+    for (let i = 1; i < numbers.length; i++){
+        if (numbers[i] > max){
+            max = numbers[i];
+        }
     }
-  }
-  console.log('Maximum number is:', max);
+    console.log(max);
 }
 
-findMax([3, 5, 7, 2, 8]);
+findMax(["5", 2, 10]);
+findMax(["abc", 2, 10]);
+findMax(["one", "two", "three"]);
+const weightChanges = [-1, 0.3, 0.8, -0.5, 1.2];
+findMax(weightChanges);  
+const pricesforMax = [199, 349, 129, 89];
+findMax(pricesforMax);  
+const scores = [5000, 12000, 9000, 14000];
+findMax(scores);  
+
 
 /*
 3. Count Odd and Even Numbers
@@ -43,16 +66,23 @@ function countOddEven(numbers) {
   let even = 0;
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] % 2 === 0) {
-      ++even;
+      even++;
     } else {
-      ++odd;
+      odd++;
     }
   }
-
-  console.log('Odd:', odd, 'Even:', even);
+  console.log("Odd:", odd, "Even:", even);
 }
 
-countOddEven([1, 2, 3, 4, 5]);
+countOddEven([61, 62, 63, 64, 65, 66]);
+countOddEven([8450, 10020, 9321, 7820, 11003]);
+countOddEven([-1, -2, -3, -4]);
+countOddEven([]);
+countOddEven(["10", "21", "32"]);
+countOddEven(["bread", 12, 7]);
+countOddEven([true, false, 3]);
+countOddEven([1, "2", null, undefined, 5, "calories"]);
+
 
 /*
 4. Sum of Numbers in a Range (While Loop)
@@ -60,32 +90,41 @@ countOddEven([1, 2, 3, 4, 5]);
      to sum all integers from `start` to `end` (inclusive).
    - Log the final sum.
 */
+
 function sumRange(start, end) {
   let sum = start;
 
   if (start < end) {
-    let i = start + 1; // i  is for index
+    let i = start + 1;
+
     while (i <= end) {
-      console.log('While loop iteration:', i);
-      sum += i; // sum = sum + i;
-      i++;
+     sum += i
+       i++ 
     }
+
   } else {
     let i = start - 1;
+
     while (i >= end) {
-      console.log('While loop iteration:', i);
-      sum += i; // sum = sum + i;
-      i--;
+       sum += i 
+       i-- 
     }
   }
 
   console.log(sum);
 }
 
-sumRange(5, 13);
+console.log("Test (18 → 4):", sumRange(18, 4));
+console.log("Test (10 → 10):", sumRange(10, 10));
+console.log("Invalid input (start = 'a'):", sumRange("a", 10));
+console.log("Missing parameter:", sumRange(5));
+console.log("Floating values:", sumRange(2.5, 6.5));
+console.log("Range from -3 to 3:", sumRange(-3, 3));  
+console.log("Range from 3 to -3:", sumRange(3, -3));  
+console.log("Total steps between day 5 and 10:", sumRange(5, 10));
+console.log("Total calories from day 1 to 7:", sumRange(1, 7));
+console.log("Total monthly payments (1 to 12):", sumRange(1, 12));
 
-sumRange(13, 5);
-sumRange(13, 13);
 
 /*
 5. Reverse an Array
@@ -93,15 +132,23 @@ sumRange(13, 13);
      of an array manually using a for loop (without using .reverse()).
    - Log the reversed array.
 */
+
 function reverseArray(arr) {
-  let reversedArray = [];
+  let reversed = [];
+
   for (let i = arr.length - 1; i >= 0; i--) {
-    reversedArray.push(arr[i]);
+    reversed.push(arr[i]);
+
   }
 
-  console.log('Reversed array is', reversedArray);
+  console.log(reversed);
 }
+
 reverseArray([1,2,3,4,5]);
+reverseArray(["a", "b", "c"]);
+reverseArray([10]);
+reverseArray([]);
+reverseArray(["diet", "health", "energy"]);
 
 
 /*
@@ -110,13 +157,31 @@ reverseArray([1,2,3,4,5]);
      an array of numbers and creates a new array without any negative values.
    - Log the new array.
 */
-function timesFive(num) {
-  return num*5;
-  
+function filterNegative(numbers) {
+  let filtered = [];
+
+  for (let i = 0; i < numbers.length; i++) {
+
+    if (numbers[i] >= 0) {
+      filtered.push(numbers[i]);
+    }
+  }
+
+  console.log(filtered);
 }
-timesFive(5);
-timesFive(2);
-timesFive(0);
+
+filterNegative([5, -3, 0, 12, -9, 7]);  
+filterNegative([-1, -2, -3]);           
+filterNegative([10, 20, 30]);           
+filterNegative([]);                     
+filterNegative([true, "5", -2, null]);  
+console.log("Weight changes (only gains):", filterNegative([-1, 0.3, 0.8, -0.5, 1.2]));
+console.log("Calories (valid values only):", filterNegative([1800, -1500, 2000, -300]));
+console.log("Bank deposits only:", filterNegative([-50, 200, -100, 500]));
+console.log("Empty array:", filterNegative([]));
+console.log("Mixed input:", filterNegative([4, "text", -2, true, 7]));
+
+  
 /*
 7. Double the Values (For-of Loop)
    - Define a function `doubleValues(numbers)` that uses a for-of loop
@@ -124,11 +189,56 @@ timesFive(0);
    - Log the new array.
 */
 
+function doubleValues(numbers) {
+  let doubled = [];
+
+  for (let value of numbers) {
+    doubled.push(value * 2);
+  }
+
+  console.log(doubled);
+}
+
+doubleValues([1, 2, 3, 4]);
+doubleValues([-1, -5, 10]);
+doubleValues([0, 100, 250]);
+doubleValues([]);
+doubleValues(["5", 2, "a"]);
+doubleValues([true, false, 3]);
+console.log("Double workout reps:", doubleValues([10, 15, 20]));
+console.log("Double stock amounts:", doubleValues([30, 50, 12]));
+console.log("Double calorie portions:", doubleValues([250, 350, 500]));
+console.log("Mixed types (invalid case):", doubleValues([2, "5", true]));
+console.log("Empty array:", doubleValues([]));
+console.log("Negative numbers:", doubleValues([-2, -5, -10]));
+
+
 /*
 8. Print Each Character of a String (For-of)
    - Define a function `printCharacters(str)` that uses a for-of loop
      to log each character in the string on a separate line.
 */
+
+function printCharacters(str) {
+// I added typeof checking intentionally to demonstrate input validation.
+   if (typeof str !== "string") {
+      console.log("Error: Input must be a string.");
+      return;
+   }
+
+   for (let char of str) {
+      console.log(char);
+   }
+}
+
+printCharacters("hello");
+printCharacters("JavaScript");
+printCharacters("");           
+printCharacters(123);  
+printCharacters("123");         
+printCharacters(true);         
+printCharacters("MyPass123!");
+
 
 /*
 9. Sum All Values in an Object
@@ -138,12 +248,44 @@ timesFive(0);
    - Example: {a: 10, b: 20, c: 5} -> 35
 */
 
+function sumObjectValues(obj) {
+  let sum = 0;
+
+  for (let key in obj) {
+
+    if (typeof obj[key] === "number") {
+        sum += obj[key];
+    }
+
+  }
+
+  console.log(sum);
+}
+
+sumObjectValues({a: 10, b: 20, c: 5});                   
+sumObjectValues({protein: 30, carbs: 50, fat: 20});        
+sumObjectValues({monday: 1800, tuesday: 1950, wed: "off"}); 
+sumObjectValues({score1: 100, score2: 200, bonus: true});   
+sumObjectValues({});                                      
+
+
 /*
 10. Print Keys of an Object (For-in)
     - Define a function `printObjectKeys(obj)` that uses a for-in loop
       to log each key of the object.
     - Example: { name: "Alice", age: 25 } -> logs "name", then "age"
 */
+
+function printObjectKeys(obj) {
+  for (let key in obj) {
+    console.log(key);
+  }
+}
+printObjectKeys({ name: "Alice", age: 25 });
+printObjectKeys({ brand: "Nike", price: 129, inStock: true });
+printObjectKeys({});
+printObjectKeys({ a: 1, b: 2, c: 3 });
+
 
 /*
 11. Sum Array Using do-while Loop
@@ -152,6 +294,38 @@ timesFive(0);
     - Log the total.
 */
 
+function sumWithDoWhile(numbers) {
+  if (!Array.isArray(numbers) || numbers.length === 0) {
+    console.log(0);
+    return;
+  }
+
+  let sum = 0;
+  let i = 0;
+
+  do {
+    sum += numbers[i];
+    i++;
+  } while (i < numbers.length);
+
+  console.log(sum);
+}
+
+sumWithDoWhile([1, 2, 3]);   
+sumWithDoWhile([10]);      
+sumWithDoWhile([]);              
+sumWithDoWhile([-3, 5, -2]);   
+sumWithDoWhile(["5", 2, 3]);     
+sumWithDoWhile([true, 1, 2]);    
+sumWithDoWhile([1, 2, 3, 4]);      
+sumWithDoWhile([]);           
+sumWithDoWhile(["5", 10, 20]);  
+sumWithDoWhile("text");          
+sumWithDoWhile([true, false, 3]); 
+sumWithDoWhile([100]);             
+sumWithDoWhile([-5, -10, 0, 15]);  
+
+
 /*
 12. Remove Duplicates from an Array
     - Define a function `removeDuplicates(arr)` that loops through the array
@@ -159,6 +333,41 @@ timesFive(0);
     - Hint: you could check if the item is already in the new array before pushing.
     - Log the new array without duplicates.
 */
+ function removeDuplicates(arr){
+    let unique = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        let value = arr[i];
+
+        if (!unique.includes(value)) {
+            unique.push(value);
+        }
+    }
+
+    console.log(unique);
+}
+
+removeDuplicates([1,1,2,2,3,3,4]); 
+removeDuplicates(["apple", "banana", "apple", "orange", "banana"]); 
+removeDuplicates([true, false, true]); 
+removeDuplicates([]); 
+removeDuplicates(["a", "A", "a"]); 
+removeDuplicates([1, "1", 1, "1"]); 
+removeDuplicates(["diet", "health", "diet", "energy"]); console.log("Invalid input:", 
+removeDuplicates(123));
+console.log("Unique emails:", 
+removeDuplicates([
+  "user@example.com",
+  "admin@test.com",
+  "user@example.com",
+  "info@mail.com",
+  "info@mail.com"
+]));  
+console.log("Cart items (unique):", 
+removeDuplicates([
+  "Apple", "Banana", "Apple", "Orange", "Orange", "Banana"
+]));
+ 
 
 /*
 13. Calculate Factorial (For Loop)
@@ -168,6 +377,26 @@ timesFive(0);
     - Example: factorial(5) -> 120
 */
 
+function factorial(n) {
+  let result = 1;
+
+  for (let i = n; i >= 1; i--) {
+    result = result * i;
+  }
+
+  console.log(result);
+}
+
+factorial(5);   
+factorial(3);   
+factorial(1);   
+factorial(0);   
+factorial(10);  
+factorial(-5);    
+factorial("abc");  
+factorial(null);   
+
+
 /*
 14. String -> Array -> String
     - Define a function `reverseWords(sentence)` that splits the sentence 
@@ -175,6 +404,42 @@ timesFive(0);
       a string. Use loops or built-in methods as you like.
     - Log the reversed sentence.
 */
+
+function reverseWords(sentence) {
+  // Optional guard: make sure input is a string
+  if (typeof sentence !== "string") {
+    console.log("Error: Input must be a string.");
+    return;
+  }
+
+  let words = sentence.split(" ");
+
+ 
+  let reversed = [];
+
+ 
+  for (let i = words.length - 1; i >= 0; i--) {
+    reversed.push(words[i]);
+  }
+
+  let result = reversed.join(" ");
+
+  console.log(result);
+  return result;
+}
+
+reverseWords("I love JavaScript");
+reverseWords("Frontend development is fun");
+reverseWords("Dietitian turned developer");
+reverseWords("Hello");
+reverseWords("");
+reverseWords(123);           
+reverseWords(undefined);     
+reverseWords(null);          
+reverseWords(true);          
+reverseWords("I  love   JS");   
+reverseWords("   Hello   world  "); 
+
 
 /*
 15. Filter Words Longer Than X
