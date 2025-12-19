@@ -34,6 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
     decrementButton.addEventListener('click', () =>
       decrement(product, productQuantity),
     );
+
+    const incrementButton = document.getElementById(`${product}_increment`);
+    incrementButton.addEventListener('click', () =>
+      increment(product, productQuantity),
+    );
   }
 
   document.getElementById('total_price').textContent = totalPrice;
@@ -68,4 +73,13 @@ function decrement(product, productQuantity) {
   } else {
     removeFromCart(product);
   }
+}
+
+function increment(product, productQuantity) {
+  console.log('Clicked increment by one.');
+
+  products[product].quantity++;
+  productQuantity.textContent = products[product].quantity;
+  totalPrice += products[product].price;
+  document.getElementById('total_price').textContent = totalPrice;
 }
