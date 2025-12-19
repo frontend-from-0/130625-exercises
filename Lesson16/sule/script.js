@@ -5,20 +5,26 @@
    - Log the final sum.
 */
 
-function sumArray(numbers) { 
-  let sum = 0; 
-  for (let i = 0; i < numbers.length; i++) {
-    sum = sum + numbers[i]
+function sumArray(numbers) {
+  if (!Array.isArray(numbers)) {
+    return; 
   }
-  console.log(sum)
+
+  if (numbers.length === 0) {
+    console.log(0);
+    return;
+  }
+
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+
+  console.log(sum);
 }
 
 sumArray([10, 20, 30]);
-sumArray([100]);
 sumArray([-5, -10, -3]);
-sumArray(["1", 2, 3]);
-sumArray([1, true, 2, false]);
-sumArray(["dietetian", "healty", "nutrition"]);
 const dailyCalories = [1800, 1950, 2100, 1850];
 sumArray(dailyCalories);
 const prices = [199, 349, 129, 89];
@@ -43,9 +49,6 @@ function findMax(numbers){
     console.log(max);
 }
 
-findMax(["5", 2, 10]);
-findMax(["abc", 2, 10]);
-findMax(["one", "two", "three"]);
 const weightChanges = [-1, 0.3, 0.8, -0.5, 1.2];
 findMax(weightChanges);  
 const pricesforMax = [199, 349, 129, 89];
@@ -62,8 +65,15 @@ findMax(scores);
 */
 
 function countOddEven(numbers) {
+
+  if (numbers.length === 0) {
+    console.log("Array is empty.");
+    return;
+  }
+
   let odd = 0;
   let even = 0;
+
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] % 2 === 0) {
       even++;
@@ -71,17 +81,14 @@ function countOddEven(numbers) {
       odd++;
     }
   }
-  console.log("Odd:", odd, "Even:", even);
+
+  console.log(`Odd: ${odd}, Even: ${even}`);
 }
 
 countOddEven([61, 62, 63, 64, 65, 66]);
 countOddEven([8450, 10020, 9321, 7820, 11003]);
 countOddEven([-1, -2, -3, -4]);
 countOddEven([]);
-countOddEven(["10", "21", "32"]);
-countOddEven(["bread", 12, 7]);
-countOddEven([true, false, 3]);
-countOddEven([1, "2", null, undefined, 5, "calories"]);
 
 
 /*
@@ -111,14 +118,11 @@ function sumRange(start, end) {
     }
   }
 
-  console.log(sum);
+return sum;
 }
 
 console.log("Test (18 → 4):", sumRange(18, 4));
 console.log("Test (10 → 10):", sumRange(10, 10));
-console.log("Invalid input (start = 'a'):", sumRange("a", 10));
-console.log("Missing parameter:", sumRange(5));
-console.log("Floating values:", sumRange(2.5, 6.5));
 console.log("Range from -3 to 3:", sumRange(-3, 3));  
 console.log("Range from 3 to -3:", sumRange(3, -3));  
 console.log("Total steps between day 5 and 10:", sumRange(5, 10));
@@ -146,8 +150,6 @@ function reverseArray(arr) {
 
 reverseArray([1,2,3,4,5]);
 reverseArray(["a", "b", "c"]);
-reverseArray([10]);
-reverseArray([]);
 reverseArray(["diet", "health", "energy"]);
 
 
@@ -170,17 +172,15 @@ function filterNegative(numbers) {
   console.log(filtered);
 }
 
-filterNegative([5, -3, 0, 12, -9, 7]);  
-filterNegative([-1, -2, -3]);           
-filterNegative([10, 20, 30]);           
-filterNegative([]);                     
-filterNegative([true, "5", -2, null]);  
-console.log("Weight changes (only gains):", filterNegative([-1, 0.3, 0.8, -0.5, 1.2]));
-console.log("Calories (valid values only):", filterNegative([1800, -1500, 2000, -300]));
-console.log("Bank deposits only:", filterNegative([-50, 200, -100, 500]));
-console.log("Empty array:", filterNegative([]));
-console.log("Mixed input:", filterNegative([4, "text", -2, true, 7]));
 
+filterNegative([5, -3, 0, 12, -9, 7]);    
+filterNegative([10, 20, 30]);                               
+console.log("Weight changes (only gains):");
+filterNegative([-1, 0.3, 0.8, -0.5, 1.2]);
+console.log("Calories (valid values only):");
+filterNegative([1800, -1500, 2000, -300]);
+console.log("Bank deposits only:");
+filterNegative([-50, 200, -100, 500]);
   
 /*
 7. Double the Values (For-of Loop)
@@ -199,18 +199,17 @@ function doubleValues(numbers) {
   console.log(doubled);
 }
 
+// Basic tests
 doubleValues([1, 2, 3, 4]);
 doubleValues([-1, -5, 10]);
 doubleValues([0, 100, 250]);
-doubleValues([]);
-doubleValues(["5", 2, "a"]);
-doubleValues([true, false, 3]);
-console.log("Double workout reps:", doubleValues([10, 15, 20]));
-console.log("Double stock amounts:", doubleValues([30, 50, 12]));
-console.log("Double calorie portions:", doubleValues([250, 350, 500]));
-console.log("Mixed types (invalid case):", doubleValues([2, "5", true]));
-console.log("Empty array:", doubleValues([]));
-console.log("Negative numbers:", doubleValues([-2, -5, -10]));
+
+// Labeled examples
+console.log("Workout reps doubled:");
+doubleValues([10, 15, 20]);
+
+console.log("Stock amounts doubled:");
+doubleValues([30, 50, 12]);
 
 
 /*
@@ -222,7 +221,7 @@ console.log("Negative numbers:", doubleValues([-2, -5, -10]));
 function printCharacters(str) {
 // I added typeof checking intentionally to demonstrate input validation.
    if (typeof str !== "string") {
-      console.log("Error: Input must be a string.");
+      console.error("Error: Input must be a string.");
       return;
    }
 
@@ -233,10 +232,8 @@ function printCharacters(str) {
 
 printCharacters("hello");
 printCharacters("JavaScript");
-printCharacters("");           
-printCharacters(123);  
-printCharacters("123");         
-printCharacters(true);         
+printCharacters("");            
+printCharacters("123");                  
 printCharacters("MyPass123!");
 
 
@@ -249,16 +246,17 @@ printCharacters("MyPass123!");
 */
 
 function sumObjectValues(obj) {
-  let sum = 0;
-
-  for (let key in obj) {
-
-    if (typeof obj[key] === "number") {
-        sum += obj[key];
-    }
-
+  if (typeof obj !== "object" || obj === null) {
+    console.error("Error: Input must be a valid object.");
+    return; 
   }
 
+  let sum = 0;
+  for (let key in obj) {
+    if (typeof obj[key] === "number") {
+      sum += obj[key];
+    }
+  }
   console.log(sum);
 }
 
@@ -283,7 +281,6 @@ function printObjectKeys(obj) {
 }
 printObjectKeys({ name: "Alice", age: 25 });
 printObjectKeys({ brand: "Nike", price: 129, inStock: true });
-printObjectKeys({});
 printObjectKeys({ a: 1, b: 2, c: 3 });
 
 
@@ -311,19 +308,10 @@ function sumWithDoWhile(numbers) {
   console.log(sum);
 }
 
-sumWithDoWhile([1, 2, 3]);   
-sumWithDoWhile([10]);      
-sumWithDoWhile([]);              
-sumWithDoWhile([-3, 5, -2]);   
-sumWithDoWhile(["5", 2, 3]);     
-sumWithDoWhile([true, 1, 2]);    
-sumWithDoWhile([1, 2, 3, 4]);      
-sumWithDoWhile([]);           
-sumWithDoWhile(["5", 10, 20]);  
-sumWithDoWhile("text");          
-sumWithDoWhile([true, false, 3]); 
-sumWithDoWhile([100]);             
 sumWithDoWhile([-5, -10, 0, 15]);  
+sumWithDoWhile([1, 2, 3]);   
+sumWithDoWhile([]);                               
+sumWithDoWhile([100]);             
 
 
 /*
@@ -333,7 +321,14 @@ sumWithDoWhile([-5, -10, 0, 15]);
     - Hint: you could check if the item is already in the new array before pushing.
     - Log the new array without duplicates.
 */
- function removeDuplicates(arr){
+
+function removeDuplicates(arr) {
+
+    if (!Array.isArray(arr)) {
+        console.log("Error: Expected an array, but received:", typeof arr);
+        return; 
+    }
+
     let unique = [];
 
     for (let i = 0; i < arr.length; i++) {
@@ -351,23 +346,8 @@ removeDuplicates([1,1,2,2,3,3,4]);
 removeDuplicates(["apple", "banana", "apple", "orange", "banana"]); 
 removeDuplicates([true, false, true]); 
 removeDuplicates([]); 
-removeDuplicates(["a", "A", "a"]); 
-removeDuplicates([1, "1", 1, "1"]); 
-removeDuplicates(["diet", "health", "diet", "energy"]); console.log("Invalid input:", 
-removeDuplicates(123));
-console.log("Unique emails:", 
-removeDuplicates([
-  "user@example.com",
-  "admin@test.com",
-  "user@example.com",
-  "info@mail.com",
-  "info@mail.com"
-]));  
-console.log("Cart items (unique):", 
-removeDuplicates([
-  "Apple", "Banana", "Apple", "Orange", "Orange", "Banana"
-]));
- 
+removeDuplicates(["a", "A", "a"]);
+
 
 /*
 13. Calculate Factorial (For Loop)
@@ -387,15 +367,10 @@ function factorial(n) {
   console.log(result);
 }
 
-factorial(5);   
-factorial(3);   
-factorial(1);   
+factorial(5);    
+factorial(12);   
 factorial(0);   
-factorial(10);  
-factorial(-5);    
-factorial("abc");  
-factorial(null);   
-
+  
 
 /*
 14. String -> Array -> String
@@ -431,14 +406,7 @@ function reverseWords(sentence) {
 reverseWords("I love JavaScript");
 reverseWords("Frontend development is fun");
 reverseWords("Dietitian turned developer");
-reverseWords("Hello");
-reverseWords("");
-reverseWords(123);           
-reverseWords(undefined);     
-reverseWords(null);          
-reverseWords(true);          
-reverseWords("I  love   JS");   
-reverseWords("   Hello   world  "); 
+reverseWords("Hello");                  
 
 
 /*
