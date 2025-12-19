@@ -42,6 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.getElementById('total_price').textContent = totalPrice;
+
+  const clearCartButton = document.getElementById('clear_cart');
+  if (clearCartButton) {
+    clearCartButton.addEventListener('click', clearCart);
+  }
 });
 
 function addToCart(product, productQuantity) {
@@ -81,5 +86,15 @@ function increment(product, productQuantity) {
   products[product].quantity++;
   productQuantity.textContent = products[product].quantity;
   totalPrice += products[product].price;
+  document.getElementById('total_price').textContent = totalPrice;
+}
+
+function clearCart() {
+  console.log('Clicked clear whole cart at once.');
+  for (let product in products) {
+    products[product].quantity = 0;
+    document.getElementById(`${product}_cart`).classList.add('hidden');
+  }
+  totalPrice = 0;
   document.getElementById('total_price').textContent = totalPrice;
 }
