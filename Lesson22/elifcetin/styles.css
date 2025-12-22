@@ -60,7 +60,7 @@ input::placeholder {
 .success-section{
   background: linear-gradient(270deg, #7dff9e, #dfffea) ;
   box-shadow: 8px 8px 20px black ;
-  outline: 2px solid green;
+  outline: 2px solid rgb(0, 130, 0);
   max-width: 448px;
   color: #0f2e24;
   padding: 1rem;
