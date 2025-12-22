@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+    <form novalidate id="checkoutForm"  method="post">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="name@gmail.com"
+          name="email"
+        />
+        <p id="emailError" class="input-error hidden"></p>
+      </div>
+      <div class="input-group">
+        <label for="phone">Phone</label>
+        <input
+          id="phone"
+          type="tel"
+          placeholder="+90 222 111 1111"
+          name="phoneNumber"
+        />
+        <p id="phoneError" class="input-error hidden"></p>
+      </div>
+      <div class="input-group">
+        <label for="firstname">First Name</label>
+        <input
+          id="firstname"
+          type="text"
+          placeholder="Clark"
+          name="firstname"
+          
+        />
+        <p id="firstNameError" class="input-error hidden"></p>
+      </div>
+      <div class="input-group">
+        <label for="lastname">Last Name</label>
+        <input id="lastname" type="text" name="lastname" placeholder="Jackson"/>
+        <p id="lastNameError" class="input-error hidden"></p>
+      </div>
+
+      <div class="input-group">
+        <label for="cardnumber">Card Number</label>
+        <input
+          id="cardNumber"
+          type="text"
+          placeholder="0000 0000 0000 0000"
+          name="cardnumber"
+        />
+        <p id="cardNumberError" class="input-error hidden"></p>
+      </div>
+      <div class="input-group">
+        <label for="expDate">Expiration Date</label>
+        <input id="expDate" type="text"  name="expDate" placeholder="MM/YY" />
+      <p id="expDateError" class="input-error hidden"></p>
+      </div>
+      <div class="input-group">
+        <label for="cvv">CVV</label>
+        <input id="cvv" type="text"  name="cvv" placeholder="123" />
+        <p id ="cvvError" class="input-error hidden"></p>
+      </div>
+      <button type="submit"  id="submitBtn" class="btn-success" disabled>Place Order</button>
+    </form>
+    <div class="success-section hidden" id="success"> 
+      <p>Success!</p>
+      <p> Name: <span id="confirmed-nameSurname">-</span></p>
+      <p> E-mail: <span id="confirmed-email">-</span></p>
+      <p> Number: <span id="confirmed-number">-</span></p>
+      
+      <p>Estimated delivery in 3-4 days </p>
+
+    </div>
+
+    <div id ="try"></div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
+
+
+
