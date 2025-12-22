@@ -176,7 +176,6 @@ function validateAll() {
 
 }
 
-
 /* WRONG PRACTICE
 const emailInput = document.getElementById('email')
 const emailError = document.getElementById('emailError')
