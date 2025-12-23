@@ -1,3 +1,11 @@
+/*
+1. Declare variable that store elements that we need to use for this task
+
+2. Add event listeners (on click - buttons , on change - inputs)
+
+3. Take data from current element and show it in the target output field.
+
+*/
 const dateInput = document.getElementById('date');
 
 const dateOutput = document.getElementById('selected-date');
@@ -9,14 +17,14 @@ const confirmation = document.getElementById('confirmation');
 const confirmedDate = document.getElementById('confirmed-date');
 const confirmedTime = document.getElementById('confirmed-time');
 const confirmButton = document.getElementById('confirm');
-let timer;
-const userNameInput = document.getElementById('firstName');
+let nameTimer; //FIXED
+let emailTimer; // FIXED
+const userNameInput = document.getElementById('fullName'); // FIXED
 const userNameOutput = document.getElementById('selected-username');
 const userEmailInput = document.getElementById('email');
 const userEmailOutput = document.getElementById('selected-email');
 const confirmedUsername = document.getElementById('confirmed-username');
 const confirmedEmail = document.getElementById('confirmed-email');
-
 
 const data = {
   date: null,
@@ -36,26 +44,31 @@ const day = String(today.getDate()).padStart(2, "0");
 dateInput.min = `${year}-${month}-${day}`;
 dateInput.max= "2026-01-31"
 
-
+clearTimeout()
 
 userNameInput.addEventListener("input", () => {
-  clearTimeout(timer);
+  clearTimeout(nameTimer); // clean the timer
 
-  timer = setTimeout(() => {
-    userNameOutput.textContent = userNameInput.value;
-  }, 400); 
- data.username = userNameInput.value.trim()
-  allowSubmit() 
+  nameTimer = setTimeout(() => { // start the new timer
+    userNameOutput.textContent = userNameInput.value; 
+    data.username = userNameInput.value.trim();
+  allowSubmit()
+    // if user doesnt write anything in a second, write the FINAL output.
+  }, 800); 
+    
 });
+  
 
 userEmailInput.addEventListener("input", () => {
-  clearTimeout(timer); // clean the timer
+  clearTimeout(emailTimer); // clean the timer
 
-  timer = setTimeout(() => { // start the new timer
-    userEmailOutput.textContent = userEmailInput.value; // if user doesnt write anything in a second, write the FINAL output.
+  emailTimer = setTimeout(() => { // start the new timer
+    userEmailOutput.textContent = userEmailInput.value;
+    data.email = userEmailInput.value.trim();
+     allowSubmit()
+    // if user doesnt write anything in a second, write the FINAL output.
   }, 400); 
- data.email = userEmailInput.value.trim()
-  allowSubmit() 
+  
 });
 
 
@@ -99,7 +112,8 @@ function allowSubmit() {
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   
-  form.classList.add('hidden');
+  form.classList.remove('booking'); //FIXED
+  form.classList.add('hidden')
   confirmation.classList.remove('hidden');
   confirmedDate.textContent = data.date
   confirmedTime.textContent = data.time

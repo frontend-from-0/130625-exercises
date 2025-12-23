@@ -64,11 +64,7 @@ fieldset {
 
 }
 
-/*.selected {
-  background-color: #0077cc;
-  color: orange
-}
-  */
+
 
 .slot:hover {
   background-color: #ddd;
@@ -98,7 +94,7 @@ fieldset {
 }
 
 .hidden {
-   display: none !important;
+   display: none ;
 }
 .appointments{
   display: flex;
@@ -155,8 +151,7 @@ fieldset {
  
 }
 
-.user-information > div > input[type="text"]{
-
+.form-input{
 background-color: rgba(0, 95, 163, 0.1);
 padding: 0.4rem;
 border-radius: 5px;
@@ -164,30 +159,12 @@ border: 0px;
 outline: 1px solid pink;
  box-shadow: 2px 3px 2px pink;
 }
-
-.user-information > div > input[type="text"]:hover{
+.form-input:hover{
   outline: 2px solid rgb(132, 212, 255);
-}
-
-.user-email > input[type="email"] {
-background-color: rgba(0, 95, 163, 0.1);
-padding: 0.4rem;
-border-radius: 5px;
-border: 0px;
-outline: 1px solid pink;
- box-shadow: 2px 3px 2px pink;
 }
 
 .user-email{
- display: flex;
-
-  
+ display: flex; 
 }
-
-
-.user-email > input[type="email"]:hover{
-  outline: 2px solid rgb(132, 212, 255);
-}
-
 
 
