@@ -416,11 +416,43 @@ reverseWords("Hello");
     - Log the resulting array.
 */
 
+function filterLongWords(words, minLength) { 
+  let result = [];
+
+  for (let i = 0; i < words.length; i++) {   
+    if (words[i].length >= minLength) { 
+      result.push(words[i]);
+    }
+  } 
+
+  console.log(result);
+}
+
+
+filterLongWords(["hi", "hello", "merhaba"], 5);
+filterLongWords(["cat", "dog", "bird"], 3);
+filterLongWords(["x", "yy", "zzz"], 4);
+filterLongWords([], 2);
+filterLongWords(["", "x", "xy", "xyz"], 1);
+
+
 /*
 16. Log Array Elements with Their Indices
     - Define a function `logElementsWithIndex(arr)` that loops through the array
       and logs "Index: i, Value: arr[i]" for each element.
 */
+
+function logElementsWithIndex(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(`Index: ${i}, Value: ${arr[i]}`);
+  }
+}
+
+logElementsWithIndex(["apple", "banana", "orange"]);
+logElementsWithIndex([10, 20, 30, 40]);
+logElementsWithIndex(["text", 42, true, null]);
+logElementsWithIndex([]);
+
 
 /*
 17. Find the Smallest Number in an Array
