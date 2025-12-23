@@ -461,6 +461,25 @@ logElementsWithIndex([]);
     - Log the smallest number.
 */
 
+function findMin(numbers) {
+  let min = numbers[0];
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < min) {
+      min = numbers[i];
+    }
+  }
+
+  console.log(min);
+}
+
+findMin([3, 1, 9]);
+findMin([-5, -10, -3]);
+findMin([7]);
+findMin([0, 4, 2, -1]);
+findMin([]);
+
+
 /*
 18. Count Occurrences of a Word in an Array
     - Define a function `countOccurrences(arr, word)` that loops through `arr`
@@ -468,12 +487,50 @@ logElementsWithIndex([]);
     - Log the count.
 */
 
+function countOccurrences(arr, word) {
+  let count = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === word) {
+      count++;
+    }
+  }
+
+  console.log(count);
+}
+
+// This example is inspired by a real-life shopping cart scenario,
+// where we need to count how many times a specific product appears in the cart.
+
+const cartItems = ["apple","banana","apple","orange","apple","banana"];
+countOccurrences(cartItems, "apple"); 
+countOccurrences(cartItems, "banana"); 
+countOccurrences(["a", "b", "a", "c", "a"], "a");
+countOccurrences(["task", "note", "task", "task"], "task");
+
 /*
 19. Remove Falsy Values
     - Define a function `removeFalsyValues(arr)` that loops through an array
       and returns a new array without falsy values (false, 0, "", null, undefined, NaN).
     - Log the new array.
 */
+
+function removeFalsyValues(arr) {
+  let result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+      result.push(arr[i]);
+    }
+  }
+
+  console.log(result);
+}
+
+removeFalsyValues([0, 1, false, 2, "", 3, null, undefined, NaN]);
+removeFalsyValues(["hello", 5, true, [], {}]);
+removeFalsyValues([]);
+
 
 /*
 20. Sum of All Digits in a String
