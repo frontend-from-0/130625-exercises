@@ -540,6 +540,24 @@ removeFalsyValues([]);
     - Example: "abc123" -> 6
 */
 
+function sumDigits(str) {
+  let sum = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    if (!isNaN(str[i])) {
+      sum += Number(str[i]);
+    }
+  }
+
+  console.log(sum);
+}
+
+sumDigits("x1y2z3");
+sumDigits("no digits here");
+sumDigits("987");
+sumDigits("a0b1c2");
+
+
 /*
 21. Average of Array Elements
     - Define a function `averageArray(numbers)` that uses a loop
