@@ -107,8 +107,6 @@ function allowSubmit() {
   }
 }
 
-
-
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   
@@ -119,8 +117,6 @@ form.addEventListener('submit', (event) => {
   confirmedTime.textContent = data.time
   confirmedEmail.textContent = data.email
   confirmedUsername.textContent = data.username
-  
-
 });
 
 
