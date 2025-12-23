@@ -565,6 +565,29 @@ sumDigits("a0b1c2");
     - Log the average.
 */
 
+function averageArray(numbers) {
+  let sum = 0;
+
+  for (let i = 0; i < numbers.length; i++) {
+    sum = sum + numbers[i];
+  }
+
+  let average = sum / numbers.length;
+  console.log(average);
+}
+
+averageArray([10, 20, 30]);  
+averageArray([5]);        
+const weeklySteps = [6500, 8200, 9000, 7800, 10200, 11000, 9500];
+averageArray(weeklySteps);
+const dailySales = [1200, 980, 1430, 1100, 1250];
+averageArray(dailySales);
+
+ 
+
+
+
+
 /*
 22. Flatten a 2D Array (Nested Loops)
     - Define a function `flattenArray(twoDArray)` that takes an array of arrays
