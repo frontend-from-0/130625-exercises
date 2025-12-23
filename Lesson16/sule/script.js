@@ -583,10 +583,6 @@ averageArray(weeklySteps);
 const dailySales = [1200, 980, 1430, 1100, 1250];
 averageArray(dailySales);
 
- 
-
-
-
 
 /*
 22. Flatten a 2D Array (Nested Loops)
@@ -595,6 +591,37 @@ averageArray(dailySales);
     - Log the flattened array.
 */
 
+function flattenArray(twoDArray) {
+  let result = [];
+
+  for (let i = 0; i < twoDArray.length; i++) {
+    for (let j = 0; j < twoDArray[i].length; j++) {
+      result.push(twoDArray[i][j]);
+    }
+  }
+
+  console.log(result);
+}
+
+flattenArray([[1, 2], [3, 4]]); 
+flattenArray([["a", "b"], ["c"]]); 
+flattenArray([[1, "a"], [], [true]]); 
+
+const weeklyActivities = [
+  ["walk", "stretch"],
+  ["run"],
+  ["yoga", "meditation"]
+];
+flattenArray(weeklyActivities);
+const courseLessons = [
+  ["HTML", "CSS"],
+  ["JavaScript Basics", "Loops"],
+  ["Arrays", "Functions"]
+];
+
+flattenArray(courseLessons);
+
+
 /*
 23. Find Words Containing a Letter
     - Define a function `findWordsWithLetter(words, letter)` that loops through
@@ -602,6 +629,25 @@ averageArray(dailySales);
       the given letter.
     - Log the filtered array.
 */
+
+function findWordsWithLetter(words, letter) {
+  let result = [];
+
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].includes(letter)) {
+      result.push(words[i]);
+    }
+  }
+
+  console.log(result);
+}
+
+findWordsWithLetter(["dog", "cat", "fish"], "o");
+findWordsWithLetter(["Apple", "avocado", "Apricot"], "a");
+findWordsWithLetter(["red", "blue", "green"], "x");
+
+
+
 
 /*
 24. Push and Pop Operations
