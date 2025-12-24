@@ -172,7 +172,6 @@ function filterNegative(numbers) {
   console.log(filtered);
 }
 
-
 filterNegative([5, -3, 0, 12, -9, 7]);    
 filterNegative([10, 20, 30]);                               
 console.log("Weight changes (only gains):");
@@ -181,7 +180,8 @@ console.log("Calories (valid values only):");
 filterNegative([1800, -1500, 2000, -300]);
 console.log("Bank deposits only:");
 filterNegative([-50, 200, -100, 500]);
-  
+ 
+
 /*
 7. Double the Values (For-of Loop)
    - Define a function `doubleValues(numbers)` that uses a for-of loop
@@ -428,7 +428,6 @@ function filterLongWords(words, minLength) {
   console.log(result);
 }
 
-
 filterLongWords(["hi", "hello", "merhaba"], 5);
 filterLongWords(["cat", "dog", "bird"], 3);
 filterLongWords(["x", "yy", "zzz"], 4);
@@ -507,6 +506,7 @@ countOccurrences(cartItems, "apple");
 countOccurrences(cartItems, "banana"); 
 countOccurrences(["a", "b", "a", "c", "a"], "a");
 countOccurrences(["task", "note", "task", "task"], "task");
+
 
 /*
 19. Remove Falsy Values
@@ -647,18 +647,6 @@ findWordsWithLetter(["Apple", "avocado", "Apricot"], "a");
 findWordsWithLetter(["red", "blue", "green"], "x");
 
 
-
-
-/*
-24. Push and Pop Operations
-    - Define a function `pushPopExample(arr, itemToPush)` that:
-      - pushes itemToPush to arr
-      - logs the updated array
-      - then pops the last element
-      - logs the popped element
-      - logs the final array
-*/
-
 /*
 25. Push and Shift Operations
     - Define a function `manageQueue(queue, newPerson)` that:
@@ -668,6 +656,23 @@ findWordsWithLetter(["red", "blue", "green"], "x");
       - logs the removed person
       - logs the final queue
 */
+
+function manageQueue(queue, newPerson) {
+  queue.push(newPerson);
+  console.log(queue);
+
+  let removedPerson = queue.shift();
+  console.log(removedPerson);
+
+  console.log(queue);
+}
+// Example: Simulating a customer service queue
+manageQueue(["Ali", "Ayşe", "Mehmet"], "Zeynep");
+// Patients waiting for appointment
+manageQueue(["Patient A", "Patient B"], "Patient C");
+// Background jobs waiting to be executed
+manageQueue(["JobA", "JobB"], "JobC");
+
 
 /*
 26. To-Do List Application 
