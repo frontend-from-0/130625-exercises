@@ -667,7 +667,7 @@ function manageQueue(queue, newPerson) {
   console.log(queue);
 }
 // Example: Simulating a customer service queue
-manageQueue(["Ali", "Ayşe", "Mehmet"], "Zeynep");
+manageQueue(["Sule", "Duygu", "İnci"], "Zeynep");
 // Patients waiting for appointment
 manageQueue(["Patient A", "Patient B"], "Patient C");
 // Background jobs waiting to be executed
@@ -684,3 +684,17 @@ manageQueue(["JobA", "JobB"], "JobC");
 */
 
 const todoList = ['Study JS', 'Eat breakfast', 'Walk dog'];
+
+
+function updateTodoList(todoList, startIndex, deleteCount, ...newTasks) {
+
+  console.log("Current todo list:", todoList);
+
+  todoList.splice(startIndex, deleteCount);
+
+  todoList.push(...newTasks);
+
+  console.log("Updated todo list:", todoList);
+}
+
+updateTodoList(todoList, 1, 1, 'Read book', 'Exercise');
