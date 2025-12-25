@@ -145,7 +145,9 @@ function showOrderDetails() {
   const orderNumber = document.getElementById("confirmed-number");
   const confirmedDate = document.getElementById("confirmed-date");
 
-  if (orderNumber) orderNumber.textContent = lastOrderNumber;
+  if (orderNumber) {
+  orderNumber.textContent = lastOrderNumber;
+  }
 
   const today = new Date();
   const deliveryDate = new Date();
