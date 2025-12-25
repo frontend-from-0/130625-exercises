@@ -154,11 +154,12 @@ function showOrderDetails() {
   deliveryDate.setDate(today.getDate() + 4);
 
   const options = { year: "numeric", month: "long", day: "numeric" };
-  if (confirmedDate)
+  if (confirmedDate) {
     confirmedDate.textContent = deliveryDate.toLocaleDateString(
       undefined,
       options
     );
+    }
 }
 
 form.addEventListener("submit", function (e) {
