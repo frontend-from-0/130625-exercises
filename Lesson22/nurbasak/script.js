@@ -44,7 +44,7 @@ function validateEmail(email) {
 function validatePhone(phone) {
   if (!phonePattern.test(phone)) {
     phoneError.innerText =
-      "Please enter phone in the following format: +90 123 456 7890";
+      "Please enter a valid phone number (e.g. 555 123 4567 or +90 555 123 4567)";
     phoneError.classList.remove("hidden");
     formValid = false;
   } else {
