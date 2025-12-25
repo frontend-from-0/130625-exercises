@@ -3,7 +3,7 @@ const phonePattern = /^\+?\d(?:\s?\d){9,19}$/;
 const onlyLetters = /^[a-zA-Z\s-]+$/;
 const cardPattern = /^(\d{4}\s){3}\d{4}$/;
 const expDatePattern = /^(0[1-9]|1[0-2])\/(2[5-9]|[3-9]\d)$/; // Revised this pattern after a little research to 2025-2099.
-const cvvPattern = /^\d{3}$/; // Revised this pattern after a little research to 3 or 4 digits.
+const cvvPattern = /^\d{3,4}$/;
 
 const emailInput = document.getElementById("email");
 const emailError = document.getElementById("emailError");
