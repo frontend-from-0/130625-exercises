@@ -76,12 +76,15 @@ function displayPosts(posts) {
   });
 }
 
-function deletePost(postId, containerElement, deleteMessageElement) {
+
+
+async function deletePost(postId, containerElement, deleteMessageElement) {
   console.log("Deleting post with id", postId);
-  const fetchRequest = fetch(`${URL}/${postId}`, {
-    method: "DELETE",
-  }).then((res) => {
-    if (res.ok) {
+  try {
+    const response = await fetch(`${URL}/${postId}`, {
+      method: "DELETE",
+    });
+    if (response.ok) {
       console.log("Post deleted successfully.");
       containerElement.innerText = "";
       deleteMessageElement.classList.remove("hidden");
@@ -90,8 +93,9 @@ function deletePost(postId, containerElement, deleteMessageElement) {
     } else {
       console.log("Attempt to delete a post was unsuccessful.");
     }
-  });
-  console.log("After the fetch request!", fetchRequest);
+  } catch (error) {
+    console.error("An error has occured", error);
+  }
 }
 
 document.getElementById("createPostsBtn").addEventListener("click", () => {
