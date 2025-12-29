@@ -58,9 +58,9 @@ function validateForm(){
   validatePostTitle(postTextTitle.value);
   validatePostBody(postTextBody.value);
 }
+const postFormElement = document.getElementById("createForm");
 
-
-submitBtn.addEventListener("click", function (e) {
+postFormElement.addEventListener("click", function (e) {
   e.preventDefault();
   validateForm();
   if(!isValid){

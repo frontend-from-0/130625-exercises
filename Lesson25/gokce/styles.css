@@ -10,7 +10,7 @@ body {
 }
 .header{
   background-color: #cfd7d0;
-  color: white;
+  color: #ffffff;
   padding: 10px 0;
   display: flex;
 
@@ -83,7 +83,7 @@ ul {
 }
 
 #success {
-  color: green;
+  color: #008000;
   text-align: center;
 }
 
@@ -109,7 +109,7 @@ ul {
 .button {
   padding: 10px 20px;
   display: inline-block; 
-  color: white;
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   font-size: 16px;

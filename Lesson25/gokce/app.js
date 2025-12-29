@@ -18,6 +18,7 @@ HTTP status codes are three-digit numbers that the server sends in response to a
 */
 
 const URL = "https://jsonplaceholder.typicode.com/posts";
+const successMessage = document.getElementById("success");
 
 const getPostsButton = document.getElementById("getPostsBtn");
 getPostsButton.addEventListener("click", getPosts);
@@ -74,7 +75,7 @@ function displayPosts(posts) {
     .getElementById("postsContainer")
     .scrollIntoView({ behaviour: "smooth", block: "start" });
 }
-const successMessage = document.getElementById("success");
+
 function deletePost(postId) {
   console.log("Deleting post with id", postId);
   const fetchRequest = fetch(`${URL}/${postId}`, {
