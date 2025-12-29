@@ -43,7 +43,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  background-color: white;
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -62,7 +62,7 @@ main{
   padding: 20px;
 }
 #success{
-  color: green;
+  color: #008000;
   font-weight: bold;
 }
 
