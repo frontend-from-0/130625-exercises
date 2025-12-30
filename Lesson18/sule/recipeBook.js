@@ -26,6 +26,42 @@ Run this file in Node.js or the browser console to test.
    - cookingTime (number, in minutes)
 */
 
+const recipes = [
+  {
+    name: "Creamy Mushroom Soup",
+    ingredients: ["mushrooms", "cream", "water", "salt"],
+    cookingTime: 25
+  },
+  {
+    name: "Rice Pilaf",
+    ingredients: ["rice", "water", "oil", "salt"],
+    cookingTime: 20
+  },
+  {
+    name: "Salad",
+    ingredients: ["lettuce", "tomato", "cucumber", "olive oil", "salt"],
+    cookingTime: 10
+  },
+  {
+    name: "Walnut Carrot Cake",
+    ingredients: [
+      "carrot",
+      "walnuts",
+      "flour",
+      "eggs",
+      "sugar",
+      "oil",
+      "vanilla",
+      "cinnamon",
+      "baking powder"
+    ],
+    cookingTime: 45
+  }
+];
+// console.log("RecipeBook running ✅");
+// console.log(recipes);
+
+
 
 /*
 -----------------------------------------------------------
