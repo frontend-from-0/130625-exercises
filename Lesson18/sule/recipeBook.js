@@ -62,7 +62,6 @@ const recipes = [
 // console.log(recipes);
 
 
-
 /*
 -----------------------------------------------------------
   STEP 2: Display All Recipes
@@ -74,6 +73,15 @@ Function: displayAllRecipes()
   Cooking Time: 20 minutes
 */
 
+function displayAllRecipes() {
+  for (const recipe of recipes) {
+    console.log(
+`Recipe Name: ${recipe.name}
+Ingredients: ${recipe.ingredients.join(", ")}
+Cooking Time: ${recipe.cookingTime} minutes`
+    );
+  }
+}
 
 /*
 -----------------------------------------------------------
