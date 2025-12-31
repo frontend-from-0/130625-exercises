@@ -83,6 +83,8 @@ Cooking Time: ${recipe.cookingTime} minutes`
   }
 }
 
+displayAllRecipes();
+
 /*
 -----------------------------------------------------------
   STEP 3: Add a New Recipe
@@ -93,6 +95,51 @@ Function: addRecipe(name, ingredients, cookingTime)
 - If not, add the new recipe and log success.
 - ingredients should be an array like ['egg', 'milk', 'flour']
 */
+
+function addRecipe(name, ingredients, cookingTime) {
+  if (
+    typeof name !== "string" ||
+    !Array.isArray(ingredients) ||
+    typeof cookingTime !== "number"
+  ) {
+    console.warn(
+      'Invalid input. Please provide: name (string), ingredients (array), cookingTime (number).'
+    );
+    return;
+  }
+
+  const existingRecipeIndex = recipes.findIndex(
+    recipe => recipe.name.toLowerCase() === name.toLowerCase()
+  );
+
+  if (existingRecipeIndex !== -1) {
+    console.warn(`There is already a recipe named "${name}".`);
+    return;
+  }
+
+  recipes.push({ name, ingredients, cookingTime });
+  console.log(`Recipe "${name}" added successfully.`);
+}
+
+
+addRecipe(
+  "SALAD",
+  ["lettuce", "tomato", "cucumber", "olive oil", "salt"],
+  10
+);
+
+addRecipe(
+  "Creamy mushroom soup",
+  ["mushrooms", "cream", "water", "salt"],
+  25
+);
+
+addRecipe(
+  "Cherry Muffins",
+  ["cherries", "flour", "eggs", "sugar", "butter"],
+  35
+);
+
 
 
 /*
