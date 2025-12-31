@@ -129,7 +129,7 @@ addRecipe(
 );
 
 addRecipe(
-  "Creamy mushroom soup",
+  "Creamy Mushroom Soup",
   ["mushrooms", "cream", "water", "salt"],
   25
 );
@@ -151,7 +151,34 @@ Function: viewRecipe(name)
 - If not found, shows a message.
 */
 
+function viewRecipe(name) {
 
+  if (typeof name !== "string") {
+    console.warn('Please provide a recipe name as a string.');
+    return;
+  }
+
+  const recipeIndex = recipes.findIndex(
+    recipe => recipe.name.toLowerCase() === name.toLowerCase()
+  );
+
+  if (recipeIndex === -1) {
+    console.warn(`No recipe found with the name "${name}".`);
+    return;
+  }
+
+  const recipe = recipes[recipeIndex];
+
+  console.log(`
+Recipe Name: ${recipe.name}
+Ingredients: ${recipe.ingredients.join(", ")}
+Cooking Time: ${recipe.cookingTime} minutes
+`);
+}
+
+viewRecipe("Creamy Mushroom Soup");  
+viewRecipe("Chocolate Cake");
+viewRecipe(123);  
 
 /*
 -----------------------------------------------------------
