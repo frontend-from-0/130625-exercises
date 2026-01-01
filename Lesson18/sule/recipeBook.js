@@ -241,6 +241,31 @@ Function: deleteRecipe(name)
 - Logs success or error message.
 */
 
+function deleteRecipe(name) {
+  let deleted = false;
+
+  for (let i = 0; i < recipes.length; i++) {
+    if (recipes[i].name === name) {
+      recipes.splice(i, 1);
+      deleted = true;
+      break;
+    }
+  }
+
+  if (deleted) {
+    console.log("Recipe deleted successfully.");
+  } else {
+    console.log("No recipe found with this name.");
+  }
+}
+
+deleteRecipe("Rice Pilaf");
+deleteRecipe("Chocolate Cake");
+
+// Called twice on purpose to confirm the recipe is deleted
+// and that the function handles the "not found" case correctly.
+deleteRecipe("Rice Pilaf");
+
 
 /*
 -----------------------------------------------------------
