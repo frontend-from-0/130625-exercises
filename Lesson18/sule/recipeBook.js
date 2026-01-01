@@ -108,8 +108,10 @@ function addRecipe(name, ingredients, cookingTime) {
     return;
   }
 
-  const existingRecipeIndex = recipes.findIndex(
-    recipe => recipe.name.toLowerCase() === name.toLowerCase()
+  const normalizedName = name.trim().toLowerCase();
+
+   const existingRecipeIndex = recipes.findIndex(
+    recipe => recipe.name.trim().toLowerCase() === normalizedName
   );
 
   if (existingRecipeIndex !== -1) {
@@ -158,8 +160,10 @@ function viewRecipe(name) {
     return;
   }
 
-  const recipeIndex = recipes.findIndex(
-    recipe => recipe.name.toLowerCase() === name.toLowerCase()
+  const normalizedName = name.trim().toLowerCase();
+
+ const recipeIndex = recipes.findIndex(
+    recipe => recipe.name.trim().toLowerCase() === normalizedName
   );
 
   if (recipeIndex === -1) {
