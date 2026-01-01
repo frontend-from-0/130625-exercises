@@ -194,6 +194,43 @@ Function: updateRecipe(name, newIngredients, newCookingTime)
 - Logs success or error message.
 */
 
+function updateRecipe(name, newIngredients, newCookingTime) {
+  let found = false;
+
+  for (const recipe of recipes) {
+    if (recipe.name === name) {
+      recipe.ingredients = newIngredients;
+      recipe.cookingTime = newCookingTime;
+      found = true;
+      break;
+    }
+  }
+
+  if (found) {
+    console.log("Recipe updated successfully.");
+  } else {
+    console.log("No recipe found with this name.");
+  }
+}
+
+updateRecipe(
+  "Rice Pilaf",
+  ["rice", "butter", "water", "salt"],
+  25
+);
+
+updateRecipe(
+  "Pizza Deluxe",
+  ["flour", "cheese", "tomato"],
+  30
+);
+
+updateRecipe(
+  "Rice Pilaf",
+  ["rice", "olive oil", "water", "salt"],
+  22
+);
+
 
 /*
 -----------------------------------------------------------
