@@ -277,3 +277,47 @@ Function: filterByIngredient(ingredient)
 Function: filterByMaxTime(maxMinutes)
 - Shows recipes that take <= maxMinutes to cook.
 */
+
+function filterByIngredient(ingredient) {
+  let found = false;
+
+  for (const recipe of recipes) {
+    if (recipe.ingredients.includes(ingredient)) {
+      console.log(`Recipe Name: ${recipe.name}`);
+      console.log(`Ingredients: ${recipe.ingredients.join(", ")}`);
+      console.log(`Cooking Time: ${recipe.cookingTime} minutes`);
+      console.log("");
+      found = true;
+    }
+  }
+
+  if (!found) {
+    console.log(`No recipes found with ingredient "${ingredient}".`);
+  }
+}
+
+function filterByMaxTime(maxMinutes) {
+  let found = false;
+
+  for (const recipe of recipes) {
+    if (recipe.cookingTime <= maxMinutes) {
+      console.log(`Recipe Name: ${recipe.name}`);
+      console.log(`Ingredients: ${recipe.ingredients.join(", ")}`);
+      console.log(`Cooking Time: ${recipe.cookingTime} minutes`);
+      console.log("");
+      found = true;
+    }
+  }
+
+  if (!found) {
+    console.log(`No recipes found with cooking time <= ${maxMinutes} minutes.`);
+  }
+}
+
+filterByIngredient("salt");
+filterByIngredient("water");
+filterByIngredient("onion");
+filterByIngredient("banana");      
+filterByMaxTime(20);
+filterByMaxTime(5);               
+
