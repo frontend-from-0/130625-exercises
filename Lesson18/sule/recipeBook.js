@@ -118,9 +118,10 @@ function addRecipe(name, ingredients, cookingTime) {
     console.warn(`There is already a recipe named "${name}".`);
     return;
   }
+ 
+  recipes.push({ name: name.trim(), ingredients, cookingTime });
+ console.log(`Recipe "${name.trim()}" added successfully.`);
 
-  recipes.push({ name, ingredients, cookingTime });
-  console.log(`Recipe "${name}" added successfully.`);
 }
 
 
@@ -196,9 +197,10 @@ Function: updateRecipe(name, newIngredients, newCookingTime)
 
 function updateRecipe(name, newIngredients, newCookingTime) {
   let found = false;
+  const normalizedName = name.trim().toLowerCase();
 
   for (const recipe of recipes) {
-    if (recipe.name === name) {
+    if (recipe.name.trim().toLowerCase() === normalizedName) {
       recipe.ingredients = newIngredients;
       recipe.cookingTime = newCookingTime;
       found = true;
@@ -209,7 +211,7 @@ function updateRecipe(name, newIngredients, newCookingTime) {
   if (found) {
     console.log("Recipe updated successfully.");
   } else {
-    console.log("No recipe found with this name.");
+    console.warn("No recipe found with this name.");
   }
 }
 
@@ -243,9 +245,10 @@ Function: deleteRecipe(name)
 
 function deleteRecipe(name) {
   let deleted = false;
+  const normalizedName = name.trim().toLowerCase();
 
   for (let i = 0; i < recipes.length; i++) {
-    if (recipes[i].name === name) {
+    if (recipes[i].name.trim().toLowerCase() === normalizedName) {
       recipes.splice(i, 1);
       deleted = true;
       break;
@@ -255,7 +258,7 @@ function deleteRecipe(name) {
   if (deleted) {
     console.log("Recipe deleted successfully.");
   } else {
-    console.log("No recipe found with this name.");
+    console.warn("No recipe found with this name.");
   }
 }
 
@@ -292,7 +295,7 @@ function filterByIngredient(ingredient) {
   }
 
   if (!found) {
-    console.log(`No recipes found with ingredient "${ingredient}".`);
+    console.warn(`No recipes found with ingredient "${ingredient}".`);
   }
 }
 
@@ -310,7 +313,7 @@ function filterByMaxTime(maxMinutes) {
   }
 
   if (!found) {
-    console.log(`No recipes found with cooking time <= ${maxMinutes} minutes.`);
+    console.warn(`No recipes found with cooking time <= ${maxMinutes} minutes.`);
   }
 }
 
