@@ -110,7 +110,7 @@ getTotal(){
 
     return total;
 }
-}
+
 
 
 /*
@@ -140,7 +140,7 @@ applyDiscount(code) {
 
   return total;
 }
-
+}
 
 // ===============================
 // TESTS
@@ -165,9 +165,14 @@ myCart.viewCart();
 
 // ---------- STEP 4 TEST: getTotal ----------
 console.log('--- STEP 4 TEST ---');
+
+myCart.addItem('Dress', { amount: 70, currency: 'TRY' }, 1);
 console.log('Total after adding items (expected 170):', myCart.getTotal());
 myCart.removeItem('Dress');
 console.log('Total after removing Dress (expected 100):', myCart.getTotal());
+
+// Prepare cart for Step 5 (make total 170 again)
+myCart.addItem('Dress', { amount: 70, currency: 'TRY' }, 1);
 
 // ---------- STEP 5 TEST: applyDiscount ----------
 console.log('--- STEP 5 TEST ---');
