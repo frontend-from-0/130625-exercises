@@ -92,7 +92,6 @@ class ShoppingCart {
   }
 
 
-
 /*
 -----------------------------------------------------------
   STEP 4: Calculate the Total Cost
@@ -113,6 +112,7 @@ getTotal(){
 }
 }
 
+
 /*
 -----------------------------------------------------------
   STEP 5: Apply a Discount
@@ -125,8 +125,21 @@ getTotal(){
 3. Use an object to store discount codes and their values.
 */
 
+applyDiscount(code) {
+  const discounts = {
+    SAVE10: 0.10,
+    SAVE20: 0.20
+  };
 
+  const total = this.getTotal();
 
+  if (discounts[code]) {
+    const discountAmount = total * discounts[code];
+    return total - discountAmount;
+  }
+
+  return total;
+}
 
 
 // ===============================
@@ -155,3 +168,9 @@ console.log('--- STEP 4 TEST ---');
 console.log('Total after adding items (expected 170):', myCart.getTotal());
 myCart.removeItem('Dress');
 console.log('Total after removing Dress (expected 100):', myCart.getTotal());
+
+// ---------- STEP 5 TEST: applyDiscount ----------
+console.log('--- STEP 5 TEST ---');
+console.log('Total with SAVE10 (expected 153):', myCart.applyDiscount('SAVE10'));
+console.log('Total with SAVE20 (expected 136):', myCart.applyDiscount('SAVE20'));
+console.log('Total with INVALID code (expected 170):', myCart.applyDiscount('INVALID'));
