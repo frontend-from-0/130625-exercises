@@ -90,7 +90,7 @@ class ShoppingCart {
       }
     }
   }
-}
+
 
 
 /*
@@ -108,9 +108,10 @@ getTotal(){
     for (const item of this.#items){
         total = total + ( item.price.amount * item.quantity );
     }
+
     return total;
 }
-
+}
 
 /*
 -----------------------------------------------------------
