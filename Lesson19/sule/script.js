@@ -28,28 +28,6 @@ Node.js or a browser console.
 3. Add a `viewCart` method to display all items in the cart.
 */
 
-/*
------------------------------------------------------------
-  STEP 2: Add Items to the Cart
------------------------------------------------------------
-1. Create an `addItem` method in the `ShoppingCart` class.
-2. The method should:
-   - Accept `name`, `price`, and `quantity` as parameters.
-   - Check if the item already exists in the cart.
-     - If it exists, increase the quantity.
-     - Otherwise, add the new item to the `#items` array.
-*/
-
-/*
------------------------------------------------------------
-  STEP 3: Remove Items from the Cart
------------------------------------------------------------
-1. Add a `removeItem` method to the `ShoppingCart` class.
-2. The method should:
-   - Accept the `name` of the item to remove.
-   - Remove the item from the `#items` array if it exists.
-*/
-
 class ShoppingCart {
   #items;
 
@@ -63,6 +41,19 @@ class ShoppingCart {
       console.log(item);
     }
   }
+
+
+/*
+-----------------------------------------------------------
+  STEP 2: Add Items to the Cart
+-----------------------------------------------------------
+1. Create an `addItem` method in the `ShoppingCart` class.
+2. The method should:
+   - Accept `name`, `price`, and `quantity` as parameters.
+   - Check if the item already exists in the cart.
+     - If it exists, increase the quantity.
+     - Otherwise, add the new item to the `#items` array.
+*/
 
   addItem(name, price, quantity) {
     console.log('Adding new item to the cart...');
@@ -78,6 +69,17 @@ class ShoppingCart {
     this.#items.push({ id, name, price, quantity });
   }
 
+
+/*
+-----------------------------------------------------------
+  STEP 3: Remove Items from the Cart
+-----------------------------------------------------------
+1. Add a `removeItem` method to the `ShoppingCart` class.
+2. The method should:
+   - Accept the `name` of the item to remove.
+   - Remove the item from the `#items` array if it exists.
+*/
+
   // In real life, we usually use id to find elements or do any manipulations
   removeItem(name) {
     for (let i = 0; i < this.#items.length; i++) {
@@ -90,18 +92,6 @@ class ShoppingCart {
   }
 }
 
-const myCart = new ShoppingCart();
-myCart.viewCart();
-
-myCart.addItem('Shoes', { amount: 100, currency: 'TRY' }, 1);
-myCart.addItem('Dress', { amount: 70, currency: 'TRY' }, 1);
-
-myCart.viewCart();
-
-myCart.removeItem('Dress');
-
-myCart.viewCart();
-
 
 /*
 -----------------------------------------------------------
@@ -113,6 +103,15 @@ myCart.viewCart();
      the cart.
 */
 
+getTotal(){
+    let total=0;
+    for (const item of this.#items){
+        total = total + ( item.price.amount * item.quantity );
+    }
+    return total;
+}
+
+
 /*
 -----------------------------------------------------------
   STEP 5: Apply a Discount
@@ -123,4 +122,22 @@ myCart.viewCart();
    - Apply a percentage discount to the total cost if the 
      code is valid.
 3. Use an object to store discount codes and their values.
+*/
+
+
+
+
+
+/*
+const myCart = new ShoppingCart();
+myCart.viewCart();
+
+myCart.addItem('Shoes', { amount: 100, currency: 'TRY' }, 1);
+myCart.addItem('Dress', { amount: 70, currency: 'TRY' }, 1);
+
+myCart.viewCart();
+
+myCart.removeItem('Dress');
+
+myCart.viewCart();
 */
