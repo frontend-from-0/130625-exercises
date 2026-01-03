@@ -129,16 +129,29 @@ getTotal(){
 
 
 
-/*
+// ===============================
+// TESTS
+// ===============================
+
 const myCart = new ShoppingCart();
+
+// ---------- STEP 1 TEST: viewCart on empty cart ----------
+console.log('--- STEP 1 TEST ---');
 myCart.viewCart();
 
+// ---------- STEP 2 TEST: addItem + viewCart ----------
+console.log('--- STEP 2 TEST ---');
 myCart.addItem('Shoes', { amount: 100, currency: 'TRY' }, 1);
 myCart.addItem('Dress', { amount: 70, currency: 'TRY' }, 1);
-
 myCart.viewCart();
 
+// ---------- STEP 3 TEST: removeItem + viewCart ----------
+console.log('--- STEP 3 TEST ---');
 myCart.removeItem('Dress');
-
 myCart.viewCart();
-*/
+
+// ---------- STEP 4 TEST: getTotal ----------
+console.log('--- STEP 4 TEST ---');
+console.log('Total after adding items (expected 170):', myCart.getTotal());
+myCart.removeItem('Dress');
+console.log('Total after removing Dress (expected 100):', myCart.getTotal());
