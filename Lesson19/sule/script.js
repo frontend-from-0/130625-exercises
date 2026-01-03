@@ -28,6 +28,11 @@ Node.js or a browser console.
 3. Add a `viewCart` method to display all items in the cart.
 */
 
+const DISCOUNTS = {
+  SAVE10: 0.10,
+  SAVE20: 0.20,
+};
+
 class ShoppingCart {
   #items;
 
@@ -35,12 +40,24 @@ class ShoppingCart {
     this.#items = [];
   }
 
-  viewCart() {
-    console.log('Viewing cart....');
-    for (const item of this.#items) {
-      console.log(item);
-    }
+  // Displays all items currently in the shopping cart 
+    viewCart() {
+  console.log('Viewing cart....');
+
+  if (this.#items.length === 0) {
+    console.log('The cart is empty.');
+    return;
   }
+
+  for (const item of this.#items) {
+    console.log(
+      `- ${item.name} | qty: ${item.quantity} | ${item.price.amount} ${item.price.currency}`
+    );
+  }
+
+    console.log(`Subtotal: ${this.getTotal()} ${this.#items[0].price.currency}`);
+}
+
 
 
 /*
@@ -55,17 +72,18 @@ class ShoppingCart {
      - Otherwise, add the new item to the `#items` array.
 */
 
-  addItem(name, price, quantity) {
+  // Adds a new item to the cart or increases quantity if it already exists
+     addItem(name, price, quantity) {
     console.log('Adding new item to the cart...');
     for (const item of this.#items) {
       if (name === item.name) {
         console.log('increase the quantity.');
-        item.quantity++;
+        item.quantity += quantity;
         return;
       }
     }
 
-    const id = new Date().getMilliseconds();
+    const id = Date.now();
     this.#items.push({ id, name, price, quantity });
   }
 
@@ -81,16 +99,24 @@ class ShoppingCart {
 */
 
   // In real life, we usually use id to find elements or do any manipulations
-  removeItem(name) {
-    for (let i = 0; i < this.#items.length; i++) {
-      const currentElement = this.#items[i];
-      if (name.toLowerCase() === currentElement.name.toLowerCase()) {
-        this.#items.splice(i, 1);
-        return;
-      }
+   removeItem(name) {
+  let found = false;
+
+  for (let i = 0; i < this.#items.length; i++) {
+    const currentElement = this.#items[i];
+
+    if (name.toLowerCase() === currentElement.name.toLowerCase()) {
+      this.#items.splice(i, 1);
+      found = true;
+      break;
     }
   }
 
+  if (!found) {
+    console.log(`Item "${name}" not found in the cart.`);
+  }
+}
+ 
 
 /*
 -----------------------------------------------------------
@@ -102,7 +128,8 @@ class ShoppingCart {
      the cart.
 */
 
-getTotal(){
+// Calculates and returns the total cost of items in the cart
+   getTotal(){
     let total=0;
     for (const item of this.#items){
         total = total + ( item.price.amount * item.quantity );
@@ -125,17 +152,14 @@ getTotal(){
 3. Use an object to store discount codes and their values.
 */
 
-applyDiscount(code) {
-  const discounts = {
-    SAVE10: 0.10,
-    SAVE20: 0.20
-  };
-
+// Applies a discount code to the total price if the code is valid
+   applyDiscount(code) {
   const total = this.getTotal();
+  const cleanCode = code.toUpperCase();
+  const discountRate = DISCOUNTS[cleanCode];
 
-  if (discounts[code]) {
-    const discountAmount = total * discounts[code];
-    return total - discountAmount;
+  if (discountRate) {
+    return total - total * discountRate;
   }
 
   return total;
