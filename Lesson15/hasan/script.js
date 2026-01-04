@@ -120,7 +120,7 @@ console.log('Ex.18.', divisionResult, differenceResult);
 // CODE HERE
 const name = 'Alice';
 const surname = 'MUTLU';
-console.log(`${namen} ${surname }`);
+console.log(`${name} ${surname }`);
 
 // 20. Declare firstFactor=7 and secondFactor=2. Log the product.
 // CODE HERE
