@@ -118,7 +118,7 @@ const differenceResult = dividend - divisor;
 console.log('Ex.18.', divisionResult, differenceResult);
 // 19. Declare firstName and lastName. Create fullName by concatenating them with a space and log it.
 // CODE HERE
-const namen = 'Alice';
+const name = 'Alice';
 const surname = 'MUTLU';
 console.log(`${namen} ${surname }`);
 
