@@ -84,7 +84,7 @@ console.log(Math.floor(3.7));
 console.log(Math.ceil(3.2));
 // 13. Declare a boolean variable isStudent = true. Log it.
 // CODE HERE
-onst isStudent = true;
+const isStudent = true;
 console.log('Ex.13.', isStudent);
 // 14. Initialize counter = 0, then increment it by 1 using counter++ and log it.
 // CODE HERE
