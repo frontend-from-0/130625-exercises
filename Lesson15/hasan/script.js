@@ -93,7 +93,7 @@ counter++;
 console.log('Ex.14.', counter);
 // 15. Initialize points = 10, add 5 to it using points += 5, then log points.
 // CODE HERE
-et points = 10;
+let points = 10;
 points += 5;
 console.log('Ex.15.', points);
 // 16. Declare name="Alice", age=30, city="Paris". Log "Alice (30) lives in Paris" using template literals.
