@@ -83,12 +83,14 @@ function showSelectedTime(element) {
 function allowSubmit() {
   if (data.name && data.email && data.date && data.time) {
     confirmButton.removeAttribute("disabled");
+  } else {
+    confirmButton.setAttribute("disabled", "true");
   }
 }
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (!data.date && !data.time) return;
+  if (!data.name || !data.email || !data.date || !data.time) return;
 
   form.classList.add("hidden");
   header.classList.add("hidden");
