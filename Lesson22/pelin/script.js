@@ -66,75 +66,98 @@ function isRequired(value, errorElement) {
 }
 
 function validateEmail(email) {
-  if (!isRequired(emailInput.value, emailError)) return;
-  else if (!emailPattern.test(email)) {
+  if (!isRequired(emailInput.value, emailError)) {
+    emailInput.setAttribute("aria-invalid", "true");
+    return;
+  } else if (!emailPattern.test(email)) {
     emailError.innerText =
       "Please enter email address in the correct format (e.g. name@gmail.com)";
     emailError.classList.remove("hidden");
+    emailInput.setAttribute("aria-invalid", "true");
   } else {
     emailError.innerText = "";
     emailError.classList.add("hidden");
+    emailInput.removeAttribute("aria-invalid");
   }
 }
 
 function validatePhone(phone) {
-  if (!isRequired(phoneInput.value, phoneError)) return;
-  else if (!phonePattern.test(phone)) {
+  if (!isRequired(phoneInput.value, phoneError)) {
+    phoneInput.setAttribute("aria-invalid", "true");
+    return;
+  } else if (!phonePattern.test(phone)) {
     phoneError.innerText =
       "Please enter phone in the following format: +90 123 456 7890";
     phoneError.classList.remove("hidden");
+    phoneInput.setAttribute("aria-invalid", "true");
   } else {
     phoneError.innerText = "";
     phoneError.classList.add("hidden");
+    phoneInput.removeAttribute("aria-invalid");
   }
 }
 
 function validateName(name, nameError) {
-  if (!isRequired(name, nameError)) return;
-  else if (!onlyLetters.test(name)) {
+  const inputElement = nameError.previousElementSibling;
+
+  if (!isRequired(name, nameError)) {
+    inputElement.setAttribute("aria-invalid", "true");
+    return;
+  } else if (!onlyLetters.test(name)) {
     nameError.innerText = "Only letters, whitespaces and - are allowed.";
     nameError.classList.remove("hidden");
-  } else if (!(name.trim().length > 0)) {
-    nameError.classList.remove("hidden");
-    nameError.innerText = "Enter more than one character.";
+    inputElement.setAttribute("aria-invalid", "true");
   } else {
     nameError.innerText = "";
     nameError.classList.add("hidden");
+    inputElement.removeAttribute("aria-invalid");
   }
 }
 
 function validateCard(number) {
-  if (!isRequired(cardInput.value, cardNumberError)) return;
-  else if (!cardPattern.test(number)) {
+  if (!isRequired(cardInput.value, cardNumberError)) {
+    cardInput.setAttribute("aria-invalid", "true");
+    return;
+  } else if (!cardPattern.test(number)) {
     cardNumberError.innerText =
       "Please enter card number in the following format: 1234 5678 9101 1121";
     cardNumberError.classList.remove("hidden");
+    cardInput.setAttribute("aria-invalid", "true");
   } else {
     cardNumberError.innerText = "";
     cardNumberError.classList.add("hidden");
+    cardInput.removeAttribute("aria-invalid");
   }
 }
 
 function validateExpDate(date) {
-  if (!isRequired(expDate.value, expDateError)) return;
-  else if (!expDatePattern.test(date)) {
+  if (!isRequired(expDate.value, expDateError)) {
+    expDate.setAttribute("aria-invalid", "true");
+    return;
+  } else if (!expDatePattern.test(date)) {
     expDateError.innerText =
       "Please enter a expiration date in the following format: MM/YY";
     expDateError.classList.remove("hidden");
+    expDate.setAttribute("aria-invalid", "true");
   } else {
     expDateError.innerText = "";
     expDateError.classList.add("hidden");
+    expDate.removeAttribute("aria-invalid");
   }
 }
 
 function validateCvv(number) {
-  if (!isRequired(cvvInput.value, cvvError)) return;
-  else if (!cvvPattern.test(number)) {
+  if (!isRequired(cvvInput.value, cvvError)) {
+    cvvInput.setAttribute("aria-invalid", "true");
+    return;
+  } else if (!cvvPattern.test(number)) {
     cvvError.innerText = "Please enter CVV number in the following format: 123";
     cvvError.classList.remove("hidden");
+    cvvInput.setAttribute("aria-invalid", "true");
   } else {
     cvvError.innerText = "";
     cvvError.classList.add("hidden");
+    cvvInput.removeAttribute("aria-invalid");
   }
 }
 
