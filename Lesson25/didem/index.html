@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostFlow | Management Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">
+      <i class="fas fa-feather-alt"></i> <span>PostFlow</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="action-grid">
+      <div class="action-card">
+        <i class="fas fa-plus-circle fa-3x"></i>
+        <h3>New Content</h3>
+        <p>Share your thoughts with the world.</p>
+        <a href="./posts/manage/create.html" class="btn btn-primary">Create Post</a>
+      </div>
+
+      <div class="action-card">
+        <i class="fas fa-sync-alt fa-3x"></i>
+        <h3>Refresh Feed</h3>
+        <p>Load the latest discussions.</p>
+        <button id="getPostsBtn" class="btn btn-success">Get All Posts</button>
+      </div>
+    </div>
+
+    <ul id="postsContainer"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
