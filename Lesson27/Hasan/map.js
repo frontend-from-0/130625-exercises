@@ -184,6 +184,7 @@ console.log (namesGrades);
 // Exercise 6:
 // Given an array of numbers, convert each number to a string representation using .map().
 const numbersExercise6 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log ('Ex 6:');
 const stringNumbers = numbersExercise6.map(num => num.toString());
 
 // Exercise 7:
@@ -353,3 +354,5 @@ console.log (bookTitltesAndAuthors);
 const pricesExercise10 = [1999, 899, 1499, 299, 399, 999, 499, 649, 99, 129];
 
 console.log ('Ex 10:');
+const currencyPrices = pricesExercise10.map (price => `${price}$`);
+console.log (currencyPrices);
