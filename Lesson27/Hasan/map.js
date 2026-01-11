@@ -89,7 +89,7 @@ const products = [
   },
 ];
 
-console.log ('ex: 3');
+console.log ('Ex: 3');
 console.log (products.map (product => product.name));
 
 // Exercise 4:
@@ -107,7 +107,7 @@ const wordsExercise4 = [
   'jungle',
 ];
 
-console.log ('ex: 4');
+console.log ('Ex: 4');
 console.log (wordsExercise4.map (word => word.length));
 
 // Exercise 5:
@@ -186,6 +186,7 @@ console.log (namesGrades);
 const numbersExercise6 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 console.log ('Ex 6:');
 const stringNumbers = numbersExercise6.map(num => num.toString());
+console.log(stringNumbers);
 
 // Exercise 7:
 // Given an array of sentences, split each sentence into an array of words using .map().
@@ -354,5 +355,5 @@ console.log (bookTitltesAndAuthors);
 const pricesExercise10 = [1999, 899, 1499, 299, 399, 999, 499, 649, 99, 129];
 
 console.log ('Ex 10:');
-const currencyPrices = pricesExercise10.map (price => `${price}$`);
-console.log (currencyPrices);
+const addPricesSymbol = pricesExercise10.map (price => `${price} $`);
+console.log (addPricesSymbol);

@@ -2,7 +2,7 @@
 // Given an array of numbers, sort numbers.
 // Expected output: [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
 const numbers = [30, 1, 4, 11, 5, 9, 2, 6, 5, 3, 5];
-
+console.log('Ex:1');
 console.log([...numbers].sort((a,b) => a - b));
 
 
@@ -10,7 +10,8 @@ console.log([...numbers].sort((a,b) => a - b));
 // Sort an array of strings in alphabetical order.
 // Expected output: ["apple", "banana", "grape", "orange", "pear"]
 const fruits = ["banana", "apple", "Pear", "orange", "grape"];
-const sortedFruits = [...fruits].sort();
+const sortedFruits = [...fruits].sort((a,b) => a.localeCompare(b));
+console.log('Ex:2');
 console.log(sortedFruits);
 
 
@@ -21,6 +22,7 @@ console.log(sortedFruits);
 
 const scores = [40, 100, 1, 5, 25, 10];
 const sortedScores = [...scores].sort((a,b) => b - a);
+console.log('Ex:3');
 console.log(sortedScores);
 
 
@@ -33,6 +35,9 @@ const people = [
   { name: "Gary", age: 35 },
   { name: "Ellen", age: 22 }
 ];
+console.log('Ex:4');
+const ascendingAge = [...people].sort((a, b) => a.age - b.age);
+console.log(ascendingAge);
 
 // Exercise 5: Complex Sorting
 // Sort an array of strings by their length.
@@ -40,5 +45,6 @@ const people = [
 
 const words = ["notebook", "pen", "paper", "book", "pencil"];
 
-
-
+console.log('Ex:5');
+const wordAscending = [...words].sort((a, b) => a.length - b.length);
+console.log(wordAscending);
