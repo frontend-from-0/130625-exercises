@@ -152,7 +152,7 @@ const usersExercise4 = [
     email: 'sophia@example.com',
   },
 ];
-
+console.log('Ex4');
 console.log(usersExercise4.filter((user) => user.age > 25));
 
 
@@ -180,7 +180,6 @@ const sentencesExercise5 = [
   'The aroma of freshly brewed coffee permeated the air, enticing passersby to indulge in a cup of warmth.',
   'The butterfly gracefully fluttered its wings, showcasing vibrant colors in a delicate dance.',
 ];
-
 console.log(sentencesExercise5.filter((sentence) => sentence.split(' ').length > 10));
 
 // Exercise 6:
@@ -340,7 +339,7 @@ const studentsExercise9 = [
 
 console.log(studentsExercise9.filter((student) => student.grade >= 'C'));
 
-// Exercise 10: 
+// Exercise 10:
 // Given an array of user objects, filter out the users who have a name starting with the letter "J".
 const usersExercise10 = [
   {
@@ -406,4 +405,3 @@ const usersExercise10 = [
 ];
 
 console.log(usersExercise10.filter((user) => user.name.startsWith('J')));
-
