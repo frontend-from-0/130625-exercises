@@ -404,3 +404,5 @@ const usersExercise10 = [
     email: 'sophia@example.com',
   },
 ];
+
+console.log(usersExercise10.filter((user)=> !user.name.startsWith('J')));
