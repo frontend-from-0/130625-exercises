@@ -338,6 +338,8 @@ const studentsExercise9 = [
   },
 ];
 
+console.log(studentsExercise9.filter((student)=> student.grade>'C'));
+
 // Exercise 10:
 // Given an array of user objects, filter out the users who have a name starting with the letter "J".
 const usersExercise10 = [
