@@ -30,6 +30,9 @@ console.log('Result of ex. 1: ', result);
 // Find the maximum value in the given array. (Hint: Use -Infinity to compare values to)
 const numbersEx2 = [8, 3, 11, 6, 4];
 
+const maxValue = numbersEx2.reduce((max,currentValue)=>  currentValue>max? currentValue:max, -Infinity);
+console.log('Max value of ex. 2: ', maxValue);
+
 // Exercise 3: Explain the code
 // Count the occurrences of each element in the given array and return an object with the counts.
 const elements = ['a', 'b', 'a', 'c', 'b', 'a'];
