@@ -19,6 +19,10 @@ const userNameInput = document.getElementById('user-name');
 const displayName = document.getElementById('display-name');
 const userEmailInput = document.getElementById('user-email');
 const displayEmail = document.getElementById('display-email');
+const activeSlotSelector = '.slot.selected';
+const confirmedNameOutput = document.getElementById('confirmed-name');
+const confirmedEmailOutput = document.getElementById('confirmed-email');
+
 const today = new Date();
 const tomorrow = new Date(today);
 tomorrow.setDate(tomorrow.getDate() + 1);
@@ -43,11 +47,14 @@ dateInput.addEventListener('change', () => {
 userNameInput.addEventListener('change', () => {
   displayName.textContent = userNameInput.value;
   data.name = userNameInput.value;
+  allowSubmit();
 });
+
 
 userEmailInput.addEventListener('change', () => {
   displayEmail.textContent = userEmailInput.value;
   data.email = userEmailInput.value;
+  allowSubmit();
 });
 
 timeslotButtons.forEach(function (element) {
@@ -55,7 +62,7 @@ timeslotButtons.forEach(function (element) {
 });
 
 function showSelectedTime(element) {
-  const activeSlot = document.querySelector('.slot.selected');
+  const activeSlot = document.querySelector(activeSlotSelector);
   if (activeSlot) {
     activeSlot.classList.remove('selected');
   }
@@ -66,22 +73,23 @@ function showSelectedTime(element) {
 }
 
 
-
-
 function allowSubmit() {
-  if (data.date && data.time) {
+  if (data.date && data.time && data.name && data.email) {
     confirmButton.removeAttribute('disabled');
+  } else {
+    confirmButton.setAttribute('disabled', 'true');
   }
 }
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  if (!data.date && !data.time) return;
+  if (!data.date || !data.time || !data.name || !data.email) return;
+
 
   form.classList.add('hidden');
   confirmation.classList.remove('hidden');
   confirmedDate.textContent = data.date;
   confirmedTime.textContent = data.time;
-  document.getElementById('confirmed-name').textContent = data.name;
-  document.getElementById('confirmed-email').textContent = data.email;
+  confirmedNameOutput.textContent = data.name;
+  confirmedEmailOutput.textContent = data.email;
 });
