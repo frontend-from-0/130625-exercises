@@ -202,6 +202,7 @@ const sentencesExercise7 = [
   'The mountain peaks were covered in snow.',
   'The room was filled with laughter and joy.',
 ];
+console.log('Ex 7');
 const splitSentences = sentencesExercise7.map(sentence => sentence.split(' '));
 console.log(splitSentences);
 
