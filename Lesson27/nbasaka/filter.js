@@ -181,6 +181,9 @@ const sentencesExercise5 = [
   'The butterfly gracefully fluttered its wings, showcasing vibrant colors in a delicate dance.',
 ];
 
+console.log(sentencesExercise5.filter((sentence)=>sentence.split('').length <=10));
+
+
 // Exercise 6:
 // Given an array of products, filter out the products that are out of stock (where the quantity is 0).
 const productsExercise6 = [
