@@ -4,20 +4,19 @@
 
 body {
   padding: 10px;
-  font-family: "Nunito", sans-serif;
 }
 
 h1 {
   text-align: center;
 }
 
-.maincontainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  gap: 16px;
-}
+ .infoBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 18px;
+  }
+
 
 .post {
   border-radius: 12px;
@@ -27,6 +26,7 @@ h1 {
 
 .postid {
   margin: 6px 0;
+  display: none;
 }
 
 .posttitle {
@@ -47,9 +47,9 @@ h1 {
   right: 6px;
   bottom: 6px;
 
-  background-color: #c92103;
-  color: #fff;
-  border: #dd2403;
+  background-color: #de9487;
+  color: #dd2403;
+  border-color: #dd2403;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
@@ -60,19 +60,6 @@ h1 {
 }
 
 .message {
-  color: #c92103;
-  font-weight: 500;
-}
-
-@media all and (min-width: 768.98px) {
-  .maincontainer {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 18px;
-  }
-
-  body {
-    padding: 20px;
-  }
+  color: #959291;
+  font-weight: 900;
 }
