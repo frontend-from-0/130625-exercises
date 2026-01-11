@@ -254,6 +254,8 @@ console.log(productsExercise6.filter((product) => product.quantity > 0));
 // Given an array of numbers, filter out the numbers that are divisible by 3.
 const numbersExercise7 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+console.log(numbersExercise7.filter((number)=> number% 3 !== 0));
+
 // Exercise 8:
 // Given an array of strings, filter out the strings that have more than 5 characters.
 const wordsExercise8 = [
