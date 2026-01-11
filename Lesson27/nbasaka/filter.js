@@ -271,6 +271,8 @@ const wordsExercise8 = [
   'jungle',
 ];
 
+console.log(wordsExercise8.filter((word)=>word.length>5));
+
 // Exercise 9:
 // Given an array of objects representing students, filter out the students who have a grade lower than C.
 const studentsExercise9 = [
