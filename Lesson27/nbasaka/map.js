@@ -184,6 +184,10 @@ console.log(namesGrades);
 // Given an array of numbers, convert each number to a string representation using .map().
 const numbersExercise6 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+console.log('Ex 6:');
+console.log(numbersExercise6.map((number) => number.toString()));
+console.log(numbersExercise6);
+
 // Exercise 7:
 // Given an array of sentences, split each sentence into an array of words using .map().
 const sentencesExercise7 = [
