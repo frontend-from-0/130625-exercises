@@ -249,6 +249,7 @@ const productsExercise6 = [
   },
 ];
 
+console.log(productsExercise6.filter((product) => product.quantity > 0));
 // Exercise 7:
 // Given an array of numbers, filter out the numbers that are divisible by 3.
 const numbersExercise7 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
