@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+ .infoBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+
+.post {
+  border-radius: 12px;
+  padding: 8px 8px 16px;
+  position: relative;
+}
+
+.postid {
+  margin: 6px 0;
+  display: none;
+}
+
+.posttitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 0px;
+  margin-bottom: 4px;
+}
+
+.postbody {
+  font-size: 12px;
+  padding-bottom: 8px;
+  margin-top: 8px;
+}
+
+.deletebutton {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+
+  background-color: #de9487;
+  color: #dd2403;
+  border-color: #dd2403;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.message {
+  color: #959291;
+  font-weight: 900;
+}
