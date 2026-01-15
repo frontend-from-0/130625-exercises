@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Blog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="hero" id="hero">
+      <h1>Travel Blog</h1>
+
+      <p>
+        Hi, I’m Pelin 👋 For the past 10 years, I’ve been traveling the world,
+        meeting new people, discovering different cultures, and occasionally
+        getting lost in the wrong city — just for the story. I travel for the
+        food, stay for the culture, and leave with memories I can’t wait to
+        share. Welcome to my travel blog!
+      </p>
+
+      <img
+        src="assets/introduction.jpg"
+        alt="Pelin - travel blogger"
+        class="hero-image"
+      />
+
+      <button id="loadPlaces" type="button">Latest Visited Places</button>
+    </header>
+
+    <main class="content">
+      <h2 class="section-title">
+        Plan your next trip — and delete the destinations that don’t spark joy.
+      </h2>
+
+      <div id="places" aria-live="polite"></div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
