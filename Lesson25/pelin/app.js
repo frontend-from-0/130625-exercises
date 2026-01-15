@@ -43,12 +43,12 @@ function displayPosts(posts) {
       "href",
       `./posts/manage/index.html?postId=${post.id}`
     );
-    updateBtn.innerText = "Update post";
+    updateBtn.innerText = "Update notice";
     updateBtn.classList.add("button", "button--success");
 
     const postCard = document.createElement("li");
     const deleteBtn = document.createElement("button");
-    deleteBtn.innerText = "Delete post";
+    deleteBtn.innerText = "Delete notice";
     deleteBtn.classList.add("button", "button--danger");
 
     deleteBtn.addEventListener("click", () => deletePost(post.id, postCard));
@@ -70,9 +70,9 @@ function deletePost(postId, postCard) {
   }).then((res) => {
     if (res.ok) {
       postCard.remove();
-      console.log("Post deleted successfully.");
+      console.log("Notice deleted successfully.");
     } else {
-      console.log("Attempt to delete a post was unsuccessful.");
+      console.log("Attempt to delete a notice was unsuccessful.");
     }
   });
   console.log("After the fetch request!", fetchRequest);

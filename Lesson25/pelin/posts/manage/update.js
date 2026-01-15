@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       body: JSON.stringify(updatedPost),
     })
       .then(() => {
-        status.textContent = "Post updated successfully.";
+        status.textContent = "Notice updated successfully.";
       })
       .catch(() => {
         status.textContent = "Something went wrong.";

@@ -6,7 +6,7 @@ const BASE_URL = "https://jsonplaceholder.typicode.com/";
 
 createForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  status.textContent = "Creating post...";
+  status.textContent = "Creating notice...";
   const createdPost = {
     title: title.value,
     body: body.value,
@@ -19,7 +19,7 @@ createForm.addEventListener("submit", (e) => {
     body: JSON.stringify(createdPost),
   })
   .then(() => {
-      status.textContent = "Post created successfully.";
+      status.textContent = "Notice created successfully.";
       createForm.reset();
     })
     .catch(() => {
