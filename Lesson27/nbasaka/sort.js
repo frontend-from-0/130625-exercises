@@ -39,10 +39,16 @@ const people = [
   { name: "Ellen", age: 22 }
 ];
 
+console.log('Ex. 4');
+const sortedPeople = [...people].sort((a,b) => a.age - b.age);
+console.log(sortedPeople);
+
 // Exercise 5: Complex Sorting
 // Sort an array of strings by their length.
 // Expected output: ["pen", "book", "paper", "pencil", "notebook"]
 
 const words = ["notebook", "pen", "paper", "book", "pencil"];
 
-
+console.log('Ex. 5');
+const sortedWords = [...words].sort((a,b)=> a.length -b.length);
+console.log(sortedWords);
