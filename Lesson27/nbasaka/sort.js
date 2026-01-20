@@ -3,6 +3,7 @@
 // Expected output: [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
 const numbers = [30, 1, 4, 11, 5, 9, 2, 6, 5, 3, 5];
 
+console.log('Ex. 1');
 console.log([...numbers].sort((a,b) => a - b));
 
 
