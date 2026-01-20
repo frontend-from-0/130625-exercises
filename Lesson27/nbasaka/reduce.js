@@ -111,13 +111,25 @@ const average = numbersEx4.reduce((acc, val, i, arr) => {
 // Exercise 5: Explain the code below
 // Count the number of unique elements in the array.
 const numbersEx5 = [1, 2, 3, 2, 4, 3, 5];
-const numbers = [1, 2, 3, 2, 4, 3, 5];
+// const numbers = [1, 2, 3, 2, 4, 3, 5];
 
-const uniqueCount = numbers.reduce((accumulator, currentValue) => {
-  if (!accumulator.includes(currentValue)) {
-    accumulator.push(currentValue);
-  }
-  return accumulator;
+// const uniqueCount = numbers.reduce((accumulator, currentValue) => {
+//   if (!accumulator.includes(currentValue)) {
+//     accumulator.push(currentValue);
+//   }
+//   return accumulator;
+// }, []).length;
+
+console.log("Ex:5");
+const uniqueCount = numbersEx5.reduce((acc, val, i, arr) => {
+  console.log("------");
+  console.log("acc", acc);
+  console.log("val", val);
+  console.log("i", i);
+  console.log("arr", arr);
+  if(!acc.includes(val)){
+    acc.push(val);
+  } return acc;
 }, []).length;
 
 console.log(uniqueCount); // Output: 5
