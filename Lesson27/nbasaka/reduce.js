@@ -12,7 +12,7 @@
 // Exercise 1:
 // Calculate the sum of all numbers in the given array.
 const numbersEx1 = [1, 5, 3, 4, 2];
-
+console.log('Ex:1');
 const result = numbersEx1.reduce((acc, val, i, arr) => {
   console.log('------')
   console.log('acc', acc);
@@ -22,6 +22,8 @@ const result = numbersEx1.reduce((acc, val, i, arr) => {
   return acc + val;
 });
 
+
+
 // const result = numbersEx1.reduce((acc, val) => acc + val);
 
 console.log('Result of ex. 1: ', result);
@@ -30,35 +32,81 @@ console.log('Result of ex. 1: ', result);
 // Find the maximum value in the given array. (Hint: Use -Infinity to compare values to)
 const numbersEx2 = [8, 3, 11, 6, 4];
 
-const maxValue = numbersEx2.reduce((max,currentValue)=>  currentValue>max? currentValue:max, -Infinity);
-console.log('Max value of ex. 2: ', maxValue);
+// const maxValue = numbersEx2.reduce((max,currentValue)=>  currentValue>max? currentValue:max, -Infinity);
+// console.log('Max value of ex. 2: ', maxValue);
+
+console.log("Ex:2");
+const maxValue = numbersEx2.reduce((acc, val, i, arr) => {
+  console.log("------");
+  console.log("acc", acc);
+  console.log("val", val);
+  console.log("i", i);
+  console.log("arr", arr);
+  return val > acc ? val : acc;
+});
+
 
 // Exercise 3: Explain the code
 // Count the occurrences of each element in the given array and return an object with the counts.
 const elements = ['a', 'b', 'a', 'c', 'b', 'a'];
 
-const elementCounts = elements.reduce((accumulator, currentValue) => {
-  if (accumulator[currentValue]) {
-    accumulator[currentValue]++;
+// const elementCounts = elements.reduce((accumulator, currentValue) => {
+//   if (accumulator[currentValue]) {
+//     accumulator[currentValue]++;
+//   } else {
+//     accumulator[currentValue] = 1;
+//   }
+//   return accumulator;
+// }, {});
+
+
+console.log("Ex:3");
+const elementCounts = elements.reduce((acc, val, i, arr) => {
+  console.log("------");
+  console.log("acc", acc);
+  console.log("val", val);
+  console.log("i", i);
+  console.log("arr", arr);
+  if (acc[val]) {
+    acc[val]++;
   } else {
-    accumulator[currentValue] = 1;
+    acc[val] = 1;
   }
-  return accumulator;
+  return acc;
 }, {});
 
+
+
 console.log(elementCounts); // Output: { a: 3, b: 2, c: 1 }
+
+
 
 // Exercise 4:
 // Calculate the average of all numbers in the given array.
 const numbersEx4 = [10, 20, 30, 40, 50];
 
-console.log('Ex: 4');
-const average = numbersEx4.reduce((accumulator,currentValue,index, array) => {
-  accumulator += currentValue;
-  if(index === array.length -1) {
-    return accumulator/array.length;
-  }
-});
+// console.log('Ex: 4');
+// const average = numbersEx4.reduce((accumulator,currentValue,index, array) => {
+//   accumulator += currentValue;
+//   if(index === array.length -1) {
+//     return accumulator/array.length;
+//   }
+// });
+
+console.log("Ex:4");
+const average = numbersEx4.reduce((acc, val, i, arr) => {
+  console.log("------");
+  console.log("acc", acc);
+  console.log("val", val);
+  console.log("i", i);
+  console.log("arr", arr);
+  acc += val;
+  if ( i=== arr.length -1) {
+    return acc/ arr.length;
+  };
+  return acc; })
+
+  console.log(average);
 
 // Exercise 5: Explain the code below
 // Count the number of unique elements in the array.
