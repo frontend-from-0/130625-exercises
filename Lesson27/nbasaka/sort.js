@@ -21,8 +21,12 @@ console.log([...fruits].sort((a, b) => a.localeCompare(b)));
 // Expected output: [100, 40, 25, 10, 5, 1]
 
 const scores = [40, 100, 1, 5, 25, 10];
+
+console.log('Ex. 3');
 const sortedScores = [...scores].sort((a,b) => b - a);
 console.log(sortedScores);
+
+
 
 
 // Exercise 4: Sorting Objects
