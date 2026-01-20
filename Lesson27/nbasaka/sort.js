@@ -11,10 +11,10 @@ console.log([...numbers].sort((a,b) => a - b));
 // Sort an array of strings in alphabetical order.
 // Expected output: ["apple", "banana", "grape", "orange", "pear"]
 const fruits = ["banana", "apple", "Pear", "orange", "grape"];
-const sortedFruits = [...fruits].sort();
-console.log(sortedFruits);
+// const sortedFruits = [...fruits].sort();
 
-
+console.log('Ex. 2');
+console.log([...fruits].sort((a, b) => a.localeCompare(b)));
 
 // Exercise 3: Descending Order
 // Sort an array of numbers in descending order.
