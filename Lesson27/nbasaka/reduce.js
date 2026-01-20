@@ -52,6 +52,14 @@ console.log(elementCounts); // Output: { a: 3, b: 2, c: 1 }
 // Calculate the average of all numbers in the given array.
 const numbersEx4 = [10, 20, 30, 40, 50];
 
+console.log('Ex: 4');
+const average = numbersEx4.reduce((accumulator,currentValue,index, array) => {
+  accumulator += currentValue;
+  if(index === array.length -1) {
+    return accumulator/array.length;
+  }
+});
+
 // Exercise 5: Explain the code below
 // Count the number of unique elements in the array.
 const numbersEx5 = [1, 2, 3, 2, 4, 3, 5];
