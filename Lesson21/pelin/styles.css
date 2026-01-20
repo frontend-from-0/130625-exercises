@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.booking {
+  display: flex;
+  gap: 2rem;
+}
+
+.calendar {
+  flex: 2;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.calendar label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+#name {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+#email {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+#date {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+fieldset {
+  border: none;
+}
+
+.timeslots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.slot {
+  padding: 1rem;
+  background-color: #eee;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.selected {
+  background-color: #0077cc;
+  color: #fff;
+}
+
+.slot:hover:not(.selected) {
+  background-color: #ddd;
+}
+
+.summary {
+  flex: 1;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.summary p {
+  margin: 1rem 0;
+}
+
+#confirm {
+  padding: 0.75rem 1rem;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#confirm:hover {
+  background-color: #005fa3;
+}
+
+#confirm:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+#confirmation {
+  margin-top: 2rem;
+  background: white;
+  border-radius: 12px;
+  border: 2px solid #0077cc;
+  padding: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.confirmation-icon {
+  display: block;
+  width: 72px;
+  margin: 0 auto 1rem auto;
+}
+
+#confirmation-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #0077cc;
+  font-size: 1.6rem;
+}
+
+#confirmation div {
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+#confirmation p {
+  margin: 0;
+  font-size: 1.1rem;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1rem;
+  color: #0077cc;
+  font-weight: 700;
+}
+
+#confirmation p span {
+  color: #000;
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main>
@@ -14,8 +14,9 @@
         <input
           id="email"
           type="email"
-          placeholder="name@gmail.com"
+          placeholder="email@example.com"
           name="email"
+          autocomplete="email"
         />
         <p id="emailError" class="input-error hidden"></p>
       </div>
@@ -24,8 +25,9 @@
         <input
           id="phone"
           type="tel"
-          placeholder="+90 222 111 1111"
+          placeholder="555 123 4567"
           name="phoneNumber"
+          autocomplete="phone"
         />
         <p id="phoneError" class="input-error hidden"></p>
       </div>
@@ -34,55 +36,55 @@
         <input
           id="firstname"
           type="text"
-          placeholder="Clark"
+          placeholder="Sophia"
           name="firstname"
+          autocomplete="given-name"
           
         />
         <p id="firstNameError" class="input-error hidden"></p>
       </div>
       <div class="input-group">
         <label for="lastname">Last Name</label>
-        <input id="lastname" type="text" name="lastname" placeholder="Jackson"/>
+        <input id="lastname" type="text" placeholder="Clark" name="lastname" autocomplete="family-name" />
         <p id="lastNameError" class="input-error hidden"></p>
       </div>
 
       <div class="input-group">
-        <label for="cardnumber">Card Number</label>
+        <label for="cardNumber">Card Number</label>
         <input
           id="cardNumber"
           type="text"
-          placeholder="0000 0000 0000 0000"
+          placeholder="1234 5678 9101 1121"
           name="cardnumber"
+          autocomplete="off"
         />
         <p id="cardNumberError" class="input-error hidden"></p>
       </div>
       <div class="input-group">
         <label for="expDate">Expiration Date</label>
-        <input id="expDate" type="text"  name="expDate" placeholder="MM/YY" />
+        <input id="expDate" type="text" placeholder="MM/YY" name="expDate" autocomplete="off" />
       <p id="expDateError" class="input-error hidden"></p>
       </div>
       <div class="input-group">
         <label for="cvv">CVV</label>
-        <input id="cvv" type="text"  name="cvv" placeholder="123" />
-        <p id ="cvvError" class="input-error hidden"></p>
+        <input id="cvv" type="text" placeholder="123" name="cvv" autocomplete="off" />
+        <p id="cvvError" class="input-error hidden"></p>
       </div>
       <button type="submit"  id="submitBtn" class="btn-success" disabled>Place Order</button>
     </form>
-    <div class="success-section hidden" id="success"> 
-      <p>Success!</p>
-      <p> Name: <span id="confirmed-nameSurname">-</span></p>
-      <p> E-mail: <span id="confirmed-email">-</span></p>
-      <p> Number: <span id="confirmed-number">-</span></p>
+    <div class="hidden" id="success">
+      <h1>Success!</h1>
+      <p>Your order has been placed successfully.</p>
       
-      <p>Estimated delivery in 3-4 days </p>
-
+      <div class="order-details">
+        <h2>Order Details</h2>
+        <p>Order Number: <span id="confirmed-number"></span></p>
+        <p>Estimated Delivery Date: <span id="confirmed-date"></span></p>
+      </div>
+      
     </div>
-
-    <div id ="try"></div>
     </main>
     <script src="./script.js"></script>
   </body>
 </html>
-
-
 

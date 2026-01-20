@@ -1,11 +1,10 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
   margin: 0;
-  background-color: #1f3d34;
+  background-color: #214a3d;
   color: #fff;
 }
 
@@ -26,21 +25,16 @@ form {
 }
 
 input {
-  background: #ffffff;
+  background: #4dad8f;
   border: none;
   border-radius: 8px;
   padding: 16px;
-  color: #102e22;
-}
-
-input::placeholder {
-  color: #4f6f66;
-  opacity: 1;
+  color: #214a3d;
 }
 
 .input-error {
-  color: #ffadad;
-  font-size: 15px;
+  color: #622525;
+  font-size: 14px;
 }
 
 .btn-success {
@@ -51,19 +45,34 @@ input::placeholder {
   width: 100%;
   font-weight: 900;
 
-  color: #1f3d34;
+  color: #214a3d;
   background-color: #fff;
 }
 
+#success {
+  text-align: center;
+}
+
+#success p {
+  font-size: larger;
+
+}
+
+.order-details {
+  margin-top: 100px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background: #4dad8f;
+}
+ .order-details h2 {
+  margin-bottom: 40px;
+  font-size: xx-large;
+ }
+
+ .order-details p {
+  gap: 50px;
+ }
+
 .hidden {
   display: none;
-}
-.success-section{
-  background: linear-gradient(270deg, #7dff9e, #dfffea) ;
-  box-shadow: 8px 8px 20px black ;
-  outline: 2px solid green;
-  max-width: 448px;
-  color: #0f2e24;
-  padding: 1rem;
-  border-radius: 10px;
 }
