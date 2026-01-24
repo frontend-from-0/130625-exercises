@@ -10,11 +10,11 @@ h1 {
   text-align: center;
 }
 
- .infoBox {
+ .post-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 18px;
+    gap: 45px;
   }
 
 
@@ -22,37 +22,40 @@ h1 {
   border-radius: 12px;
   padding: 8px 8px 16px;
   position: relative;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
 }
 
-.postid {
+.post-id {
   margin: 6px 0;
   display: none;
 }
 
-.posttitle {
+.post-title {
   font-size: 18px;
   font-weight: 600;
   margin-top: 0px;
   margin-bottom: 4px;
 }
 
-.postbody {
+.post-body {
   font-size: 12px;
   padding-bottom: 8px;
   margin-top: 8px;
 }
 
-.deletebutton {
-  position: absolute;
-  right: 6px;
-  bottom: 6px;
-
-  background-color: #de9487;
-  color: #dd2403;
+.delete-button {
+  display: flex;
+  margin-top: auto;
+  align-self: flex-end;
+  background-color: #dd2403;
+  color: #fff;
   border-color: #dd2403;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+  
 }
 
 .hidden {

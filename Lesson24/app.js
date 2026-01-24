@@ -4,23 +4,15 @@ function getPosts() {
   fetch(BASE_URL + "posts")
     .then((response) => response.json())
     .then((data) => {
-      const sixBox = data.slice(0, 6);
-      console.table(sixBox);
-      addAndRemovePosts(sixBox);
+      const firtsTenPosts = data.slice(0, 10);
+      console.table(firtsTenPosts);
+      addAndRemovePosts(firtsTenPosts);
     });
 }
 
 function addAndRemovePosts(posts) {
-  const infoBox = document.getElementById("infoBox");
-  const colors = [
-    "#CCD5AE",
-    "#E9EDC9",
-    "#FEFAE0",
-    "#FAEDCD",
-    "#D4A373",
-    "#AC7035",
-   
-  ];
+  const mainContainer = document.getElementById("postList");
+  
 
 
   posts.forEach((post,colorindex) => {
@@ -30,18 +22,17 @@ function addAndRemovePosts(posts) {
 
     const postId = document.createElement("p");
     postId.innerText = post.id;
-    postId.classList.add("postid")
+    postId.classList.add("post-id")
 
-    const postTitle = document.createElement("p");
+    const postTitle = document.createElement("h1");
     postTitle.innerText = post.title;
-    postTitle.classList.add("posttitle");
+    postTitle.classList.add("post-title");
 
     const postBody = document.createElement("p");
     postBody.innerText = post.body;
-    postBody.classList.add("postbody")
-
+    postBody.classList.add("post-body")
     const deleteButton = document.createElement("button");
-    deleteButton.classList.add("deletebutton");
+    deleteButton.classList.add("delete-button");
     deleteButton.innerText = "Delete";
     deleteButton.setAttribute("aria-label", `Delete post ID: ${post.id}`);
 
@@ -52,14 +43,27 @@ function addAndRemovePosts(posts) {
 
     deleteButton.addEventListener("click", () => deletePost(post.id,postContainer,deleteMessage));
 
-    infoBox.appendChild(postContainer);
     postContainer.appendChild(postId);
     postContainer.appendChild(postTitle);
     postContainer.appendChild(postBody);
     postContainer.appendChild(deleteButton);
-    infoBox.appendChild(deleteMessage);
+    mainContainer.appendChild(postContainer);
+    mainContainer.appendChild(deleteMessage);
   });
 }
+
+const colors = [
+    "#E9EDC9",
+    "#FEFAE0",
+    "#FAEDCD",
+    "#D4A373",
+    "#AC7035",
+    "#F4F1DE",
+    "#E07A5F",
+    "#878fd4",
+    "#81B29A",
+    "#F2CC8F"
+  ];
 
 function deletePost(postId,containerElement,deleteMessageElement) {
  fetch(`${BASE_URL}posts/${postId}`, {
