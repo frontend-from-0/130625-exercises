@@ -15,12 +15,12 @@ const confirmation = document.getElementById('confirmation');
 const confirmedDate = document.getElementById('confirmed-date');
 const confirmedTime = document.getElementById('confirmed-time');
 const confirmButton = document.getElementById('confirm');
-const name = document.getElementById('name');
-const email= document.getElementById('email'); 
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email'); 
 const selectedName = document.getElementById('selected-name');   
 const selectedEmail = document.getElementById('selected-email');   
 const confirmedName = document.getElementById('confirmed-name');   
-const confirmedEmail = document.getElementById('confirmed-email'); 
+const confirmedEmail = document.getElementById('confirmed-email');
 
 // TODO: set min date for tomorrow or any other future date
 
