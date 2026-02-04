@@ -45,6 +45,7 @@ timeslotButtons.forEach(function (element) {
 });
 
 function showSelectedTime(element) {
+    timeslotButtons.forEach(btn => btn.classList.remove('selected'));
   element.classList.add('selected');
   // TODO: deselect element if another one is selected
   selectedTimeOutput.textContent = element.textContent;
