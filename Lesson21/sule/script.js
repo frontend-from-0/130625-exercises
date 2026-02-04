@@ -22,12 +22,16 @@ const selectedEmail = document.getElementById('selected-email');
 const confirmedName = document.getElementById('confirmed-name');   
 const confirmedEmail = document.getElementById('confirmed-email');
 
+
 // TODO: set min date for tomorrow or any other future date
 
 const data = {
+  name: null,
+  email: null,
   date: null,
   time: null,
 };
+
 
 dateInput.addEventListener('change', () => {
   dateOutput.textContent = dateInput.value;
@@ -49,17 +53,34 @@ function showSelectedTime(element) {
 }
 
 function allowSubmit() {
-  if (data.date && data.time) {
+  if (data.name && data.email && data.date && data.time) {
     confirmButton.removeAttribute('disabled');
+  } else {
+    confirmButton.setAttribute('disabled', 'true');
   }
 }
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  if (!data.date && !data.time) return;
+  if (!data.name || !data.email || !data.date || !data.time) return;
 
   form.classList.add('hidden');
   confirmation.classList.remove('hidden');
+
+  confirmedName.textContent = data.name;
+  confirmedEmail.textContent = data.email;
   confirmedDate.textContent = data.date;
   confirmedTime.textContent = data.time;
+});
+
+nameInput.addEventListener("blur", () => {
+  data.name = nameInput.value.trim();
+  selectedName.textContent = data.name || "-";
+  allowSubmit();
+});
+
+emailInput.addEventListener("blur", () => {
+  data.email = emailInput.value.trim();
+  selectedEmail.textContent = data.email || "-";
+  allowSubmit();
 });
