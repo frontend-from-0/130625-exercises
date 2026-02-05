@@ -6,18 +6,13 @@
 3. Take data from current element and show it in the target output field.
 
 */
-const tomorrow = new Date();
-tomorrow.setDate(tomorrow.getDate() + 1);
 
-
-const yyyy = tomorrow.getFullYear();
-const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
-const dd = String(tomorrow.getDate()).padStart(2, '0');
-
-const minDate = `${yyyy}-${mm}-${dd}`;
-dateInput.min = minDate; 
 
 const dateInput = document.getElementById('date');
+const tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+const minDate = tomorrow.toISOString().split('T')[0];
+dateInput.min = minDate;
 const dateOutput = document.getElementById('selected-date');
 const timeslotButtons = document.querySelectorAll('.slot');
 const selectedTimeOutput = document.getElementById('selected-time');
