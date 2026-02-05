@@ -38,6 +38,19 @@ const data = {
   time: null,
 };
 
+function setValidUI(inputEl, isValid) {
+  const wrap = inputEl.closest(".input-wrap");
+  const tick = wrap.querySelector(".tick");
+
+  if (isValid) {
+    inputEl.classList.add("is-valid");
+    tick.classList.add("show");
+  } else {
+    inputEl.classList.remove("is-valid");
+    tick.classList.remove("show");
+  }
+}
+
 
 dateInput.addEventListener('change', () => {
   dateOutput.textContent = dateInput.value;
@@ -51,13 +64,26 @@ timeslotButtons.forEach(function (element) {
 });
 
 function showSelectedTime(element) {
-    timeslotButtons.forEach(btn => btn.classList.remove('selected'));
+
+  if (element.disabled) return;
+
+  const alreadySelected = element.classList.contains('selected');
+
+  if (alreadySelected) {
+    element.classList.remove('selected');
+    data.time = "";
+    selectedTimeOutput.textContent = "-";
+    allowSubmit();
+    return;
+  }
+ 
+  timeslotButtons.forEach((btn) => btn.classList.remove('selected'));
   element.classList.add('selected');
-  // TODO: deselect element if another one is selected
-  selectedTimeOutput.textContent = element.textContent;
-  data.time = element.textContent;
+  data.time = element.textContent.trim();
+  selectedTimeOutput.textContent = data.time;
   allowSubmit();
 }
+
 
 function allowSubmit() {
   if (data.name && data.email && data.date && data.time) {
@@ -83,11 +109,21 @@ form.addEventListener('submit', (event) => {
 nameInput.addEventListener("blur", () => {
   data.name = nameInput.value.trim();
   selectedName.textContent = data.name || "-";
+
+  setValidUI(nameInput, data.name !== "");
+
   allowSubmit();
 });
 
+
 emailInput.addEventListener("blur", () => {
-  data.email = emailInput.value.trim();
+  const value = emailInput.value.trim();
+  const isValid = emailInput.checkValidity();
+
+  data.email = isValid ? value : "";        
   selectedEmail.textContent = data.email || "-";
+
+  setValidUI(emailInput, isValid);       
+
   allowSubmit();
 });

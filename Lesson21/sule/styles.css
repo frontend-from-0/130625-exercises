@@ -104,3 +104,33 @@ fieldset {
 .hidden {
   display: none;
 }
+
+.input-wrap {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.input-wrap input {
+  width: 100%;
+  padding-right: 36px; 
+}
+
+.tick {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;           
+  pointer-events: none; 
+  font-weight: 700;
+}
+
+.is-valid {
+  border: 2px solid green;
+}
+
+.tick.show {
+  opacity: 1;
+  color: green;
+}
