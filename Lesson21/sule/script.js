@@ -7,7 +7,6 @@
 
 */
 
-
 const dateInput = document.getElementById('date');
 const tomorrow = new Date();
 tomorrow.setDate(tomorrow.getDate() + 1);
@@ -27,7 +26,6 @@ const selectedName = document.getElementById('selected-name');
 const selectedEmail = document.getElementById('selected-email');   
 const confirmedName = document.getElementById('confirmed-name');   
 const confirmedEmail = document.getElementById('confirmed-email');
-
 
 // TODO: set min date for tomorrow or any other future date
 
@@ -50,7 +48,6 @@ function setValidUI(inputEl, isValid) {
     tick.classList.remove("show");
   }
 }
-
 
 dateInput.addEventListener('change', () => {
   dateOutput.textContent = dateInput.value;
@@ -84,7 +81,6 @@ function showSelectedTime(element) {
   allowSubmit();
 }
 
-
 function allowSubmit() {
   if (data.name && data.email && data.date && data.time) {
     confirmButton.removeAttribute('disabled');
@@ -115,7 +111,6 @@ nameInput.addEventListener("blur", () => {
   allowSubmit();
 });
 
-
 emailInput.addEventListener("blur", () => {
   const value = emailInput.value.trim();
   const isValid = emailInput.checkValidity();
@@ -127,3 +122,6 @@ emailInput.addEventListener("blur", () => {
 
   allowSubmit();
 });
+
+
+
