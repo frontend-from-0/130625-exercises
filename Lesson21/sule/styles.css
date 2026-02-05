@@ -184,5 +184,96 @@ input:focus {
     text-align: center;
     max-width: 500px;
     margin: 2rem auto; 
+
+
+@media (max-width: 768px) {
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  .booking {
+    flex-direction: column; 
+    gap: 1.5rem;
+  }
+  
+
+  .calendar, .summary {
+    flex: 1; 
+    padding: 1.5rem; 
+  }
+  
+  header h1 {
+    font-size: 2rem; 
+  }
+  
+  .timeslots {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 0.75rem; 
+  }
+  
+  #confirmation {
+    max-width: 100%; 
+    padding: 2rem 1rem; 
+  }
 }
 
+@media (max-width: 480px) {
+  
+  .container {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .calendar, .summary {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  
+  input[type="text"], 
+  input[type="email"], 
+  #date {
+    font-size: 16px; 
+    padding: 0.75rem 1rem;
+  }
+  
+ 
+  .timeslots {
+    grid-template-columns: 1fr; 
+  }
+  
+
+  .slot {
+    padding: 1rem;
+    min-height: 48px; 
+  }
+  
+  #confirm {
+    padding: 1.1rem;
+    font-size: 1rem;
+  }
+  
+  #confirmation {
+    padding: 2rem 1.5rem;
+  }
+}
+
+
+@media (max-width: 360px) {
+  
+  header h1 {
+    font-size: 1.5rem; 
+  }
+  
+  .calendar, .summary {
+    padding: 1.2rem;
+  }
+  
+  .slot {
+    padding: 0.9rem;
+  }
+}
