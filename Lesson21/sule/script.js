@@ -8,10 +8,17 @@
 */
 
 const dateInput = document.getElementById('date');
-const tomorrow = new Date();
-tomorrow.setDate(tomorrow.getDate() + 1);
-const minDate = tomorrow.toISOString().split('T')[0];
-dateInput.min = minDate;
+function getTomorrowDateISO() {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  return tomorrow.toISOString().split('T')[0];
+}
+function setMinDate() {
+  const minDate = getTomorrowDateISO();
+  dateInput.min = minDate;
+}
+
+setMinDate();
 const dateOutput = document.getElementById('selected-date');
 const timeslotButtons = document.querySelectorAll('.slot');
 const selectedTimeOutput = document.getElementById('selected-time');
@@ -35,19 +42,6 @@ const data = {
   date: null,
   time: null,
 };
-
-function setValidUI(inputEl, isValid) {
-  const wrap = inputEl.closest(".input-wrap");
-  const tick = wrap.querySelector(".tick");
-
-  if (isValid) {
-    inputEl.classList.add("is-valid");
-    tick.classList.add("show");
-  } else {
-    inputEl.classList.remove("is-valid");
-    tick.classList.remove("show");
-  }
-}
 
 dateInput.addEventListener('change', () => {
   dateOutput.textContent = dateInput.value;
@@ -114,14 +108,33 @@ nameInput.addEventListener("blur", () => {
 emailInput.addEventListener("blur", () => {
   const value = emailInput.value.trim();
   const isValid = emailInput.checkValidity();
+  const errorSpan = document.getElementById("email-error");
 
-  data.email = isValid ? value : "";        
+  if (!isValid) {
+    errorSpan.textContent =
+      value === "" ? "Email is required." : "Please enter a valid email address.";
+    emailInput.classList.add("is-invalid");
+  } else {
+    errorSpan.textContent = "";
+    emailInput.classList.remove("is-invalid");
+  }
+
+  data.email = isValid ? value : null;
   selectedEmail.textContent = data.email || "-";
 
-  setValidUI(emailInput, isValid);       
-
+  setValidUI(emailInput, isValid);
   allowSubmit();
 });
 
+function setValidUI(inputEl, isValid) {
+  const wrap = inputEl.closest(".input-wrap");
+  if (!wrap) return;
+
+  const tick = wrap.querySelector(".tick");
+  if (!tick) return;
+
+  inputEl.classList.toggle("is-valid", isValid);
+  tick.classList.toggle("show", isValid);
+}
 
 

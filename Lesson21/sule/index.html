@@ -17,20 +17,21 @@
 
       <form class="booking" id="booking_form">
         <section class="calendar">
-            <label for="name">Name</label>
+          <label for="name">Name</label>
 <div class="input-wrap">
-  <input type="text" id="name" required />
+  <input type="text" id="name" class="form-input" required />
   <span class="tick" aria-hidden="true">✓</span>
 </div>
 
 <label for="email">Email</label>
 <div class="input-wrap">
-  <input type="email" id="email" required />
+  <input type="email" id="email" class="form-input" required />
   <span class="tick" aria-hidden="true">✓</span>
 </div>
+<small id="email-error" class="error-text"></small>
 
-          <label for="date">Select a date</label>
-          <input type="date" id="date" required />
+<label for="date">Select a date</label>
+<input type="date" id="date" class="form-input" required />
           <h2 id="timeslots-heading">Available Time Slots</h2>
           <fieldset class="timeslots" aria-labelledby="timeslots-heading">
             <legend class="hidden">Choose a time slot</legend>
