@@ -1,0 +1,86 @@
+ * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+.header{
+  background-color: #cfd7d0;
+  color: #ffffff;
+  
+
+}
+
+.header-link{
+  text-decoration: none;
+  display: flex;
+  gap:10px;
+  padding: 10px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.invalid {
+  border: 2px solid #ff0000;
+}
+.inputBodyError {
+  color: #815151;
+  font-size: 14px;
+  
+}
+.inputTitleError {
+  color: #815151;
+  font-size: 14px;
+  
+} 
+
+#createForm{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.title{
+  text-align: left;
+  font-size: 36px;
+  margin: 20px 0;
+  padding-left: 30px;
+  color: #4CAF50;
+}
+
+main{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+#success{
+  color: #008000;
+  font-weight: bold;
+}
+.createsvg{
+ flex:1;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  
+}
+
+section{
+  display: flex;
+
+}
+section h1{
+  flex:1;
+  text-align:left;
+  font-size: 28px;
+  color: #333;
+}
