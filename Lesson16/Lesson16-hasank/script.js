@@ -1,0 +1,518 @@
+/*
+1. Sum Array Elements with a For Loop
+   - Define a function `sumArray(numbers)` that uses a for loop
+     to sum all elements in an array of numbers.
+   - Log the final sum.
+*/
+function sumArray(numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum = sum + numbers[i];
+  }
+  console.log(sum);
+}
+
+sumArray([1, 2, 3, 4]);
+/*
+2. Find Maximum Number in an Array
+   - Define a function `findMax(numbers)` that uses a for loop to iterate
+     through an array and find the largest value.
+   - Log the largest value.
+*/
+function findMax(numbers) {
+  let max = numbers[0];
+  for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] > max) {
+      max = numbers[i];
+    }
+  }
+  console.log("Maximum number is:", max);
+}
+
+findMax([3, 5, 7, 2, 8]);
+
+/*
+3. Count Odd and Even Numbers
+   - Define a function `countOddEven(numbers)` that loops through an array
+     of numbers and counts how many are odd and how many are even.
+   - Log the counts in the format: "Odd: X, Even: Y"
+*/
+
+function countOddEven(numbers) {
+  let odd = 0;
+  let even = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+      ++even;
+    } else {
+      ++odd;
+    }
+  }
+
+  console.log("Odd:", odd, "Even:", even);
+}
+
+countOddEven([1, 2, 3, 4, 5]);
+
+/*
+4. Sum of Numbers in a Range (While Loop)
+   - Define a function `sumRange(start, end)` that uses a while loop
+     to sum all integers from `start` to `end` (inclusive).
+   - Log the final sum.
+*/
+function sumRange(start, end) {
+  let sum = start;
+
+  if (start < end) {
+    let i = start + 1; // i  is for index
+    while (i <= end) {
+      console.log("While loop iteration:", i);
+      sum += i; // sum = sum + i;
+      i++;
+    }
+  } else {
+    let i = start - 1;
+    while (i >= end) {
+      console.log("While loop iteration:", i);
+      sum += i; // sum = sum + i;
+      i--;
+    }
+  }
+
+  console.log(sum);
+}
+
+sumRange(5, 13);
+
+sumRange(13, 5);
+sumRange(13, 13);
+
+/*
+5. Reverse an Array
+   - Define a function `reverseArray(arr)` that reverses the elements
+     of an array manually using a for loop (without using .reverse()).
+   - Log the reversed array.
+*/
+function reverseArray(arr) {
+  let reversedArray = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    reversedArray.push(arr[i]);
+  }
+
+  console.log("Reversed array is", reversedArray);
+}
+reverseArray([1, 2, 3, 4, 5]);
+
+/*
+6. Filter Out Negative Numbers
+   - Define a function `filterNegative(numbers)` that loops through
+     an array of numbers and creates a new array without any negative values.
+   - Log the new array.
+*/
+function timesFive(num) {
+  return num * 5;
+}
+timesFive(5);
+timesFive(2);
+timesFive(0);
+/*
+7. Double the Values (For-of Loop)
+   - Define a function `doubleValues(numbers)` that uses a for-of loop
+     to multiply each number by 2, storing results in a new array.
+   - Log the new array.
+*/
+
+function doubleValues(numbers) {
+  let doubled = []; // 1. Sonuçları biriktireceğimiz boş dizi
+
+  for (let num of numbers) {
+    // 2. Dizideki her bir sayı için döngü
+    doubled.push(num * 2); // 3. Her sayıyı 2 ile çarpıp diziye ekle
+  }
+
+  console.log("Doubled array is:", doubled); // 4. İşlem bitince yeni diziyi yazdır
+}
+doubleValues([1, 2, 3, 4, 5]);
+
+/*
+8. Print Each Character of a String (For-of)
+   - Define a function `printCharacters(str)` that uses a for-of loop
+     to log each character in the string on a separate line.
+*/
+function printCharacters(str) {
+  for (let char of str) {
+    console.log("Ex8:Character is:", char); // Her bir karakteri alt alta yazdırır
+  }
+}
+
+// Fonksiyonu bir string ile çağıralım:
+printCharacters("Lesson16");
+/*
+9. Sum All Values in an Object
+   - Define a function `sumObjectValues(obj)` that iterates over the
+     properties of an object (using a for-in loop) and sums all numeric values.
+   - Log the sum.
+   - Example: {a: 10, b: 20, c: 5} -> 35
+*/
+function sumObjectValues(obj) {
+  let sum = 0;
+
+  for (let key in obj) {
+    sum = sum + obj[key]; // Senin yazdığın o kritik satır 🎯
+  }
+
+  console.log("Ex9:Toplam sonuç:", sum);
+}
+
+const veri = { a: 10, b: 20, c: 5 };
+sumObjectValues(veri);
+/*
+10. Print Keys of an Object (For-in)
+    - Define a function `printObjectKeys(obj)` that uses a for-in loop
+      to log each key of the object.
+    - Example: { name: "Alice", age: 25 } -> logs "name", then "age"
+*/
+
+function printObjectKeys(obj) {
+  for (let key in obj) {
+    console.log("Ex10:key is :", key);
+  }
+}
+
+const list = { name: "Alice", age: 25 };
+printObjectKeys(list);
+
+/*
+11. Sum Array Using do-while Loop
+    - Define a function `sumWithDoWhile(numbers)` that uses a do-while loop
+      to sum all numbers in the array.
+    - Log the total.
+*/
+function sumWithDoWhile(numbers) {
+  let total = 0;
+  let i = 0;
+
+  do {
+    total += numbers[i]; // 1. numbers[i] değerini total'e ekle
+    i++; // 2. i sayacını 1 artır
+  } while (i < numbers.length);
+  console.log("Ex11: Toplam:", total);
+}
+sumWithDoWhile([1, 2, 3, 4, 5]);
+/*
+12. Remove Duplicates from an Array
+    - Define a function `removeDuplicates(arr)` that loops through the array
+      and creates a new array without duplicate elements.
+    - Hint: you could check if the item is already in the new array before pushing.
+    - Log the new array without duplicates.
+*/
+function removeDuplicates(arr) {
+  let uniqueArray = []; // 1. Benzersiz elemanları tutacak boş dizi
+
+  for (let item of arr) {
+    if (!uniqueArray.includes(item)) {
+      uniqueArray.push(item);
+    }
+  }
+
+  console.log("Ex12: Array without duplicates:", uniqueArray);
+}
+removeDuplicates([1, 2, 2, 3, 4, 4, 5]);
+/*
+13. Calculate Factorial (For Loop)
+    - Define a function `factorial(n)` that calculates n! (n factorial)
+      using a for loop.
+    - Log the result. 
+    - Example: factorial(5) -> 120
+*/
+function factorial(n) {
+  let result = 1; //  Sonucu tutacak değişken, başlangıçta 1
+
+  for (let i = 1; i <= n; i++) {
+    result *= i; //  result = result * i; (i'nin faktöriyeli)
+  }
+
+  console.log("Ex13: Factorial of", n, "is:", result);
+}
+
+factorial(6);
+/*
+14. String -> Array -> String
+    - Define a function `reverseWords(sentence)` that splits the sentence 
+      into an array of words, reverses the array order, then joins it back into
+      a string. Use loops or built-in methods as you like.
+    - Log the reversed sentence.
+*/
+function reverseWords(sentence) {
+  const reversedArray = sentence.split(" ").reverse().join(" ");
+  return reversedArray;
+}
+console.log(
+  "Ex14: : A correct sentence is:",
+  reverseWords(" How are you doing today ?"),
+);
+/*
+15. Filter Words Longer Than X
+    - Define a function `filterLongWords(words, minLength)` that uses a for loop
+      to collect only the words that have a length >= minLength.
+    - Log the resulting array.
+*/
+function filterLongWords(words, minLength) {
+  let longWords = []; // Uzun kelimeleri tutacak boş dizi
+
+  for (let word of words) {
+    if (word.length >= minLength) {
+      longWords.push(word); //  Kelime uzunluğu minLength'den büyük veya eşitse diziye ekle
+    }
+  }
+
+  console.log("Ex15: Long words are:", longWords);
+}
+
+filterLongWords(["short", "medium", "longer", "lengthy", "tiny"], 6);
+
+/*
+16. Log Array Elements with Their Indices
+    - Define a function `logElementsWithIndex(arr)` that loops through the array
+      and logs "Index: i, Value: arr[i]" for each element.
+*/
+function logElementsWithIndex(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    // i sıfırdan başlayarak dizi uzunluğuna kadar birer arttırarak döngü yapacak.
+    console.log("Ex16: Index:", i, "Value:", arr[i]);
+  }
+}
+
+logElementsWithIndex(["apple", "banana", "cherry"]); // işlem yapılacak dizi.
+/*
+17. Find the Smallest Number in an Array
+    - Define a function `findMin(numbers)` that loops through the array
+      to find and return the smallest number.
+    - Log the smallest number.
+*/
+function findMin(numbers) {
+  let min = numbers[0]; // İlk elemanı min kabul ediyoruz ve sonraki elemanları kıyaslayacağız.
+
+  for (let i = 1; i < numbers.length; i++) {
+    // klasik for döngüsü
+    if (numbers[i] < min) {
+      // eğer 'i' nci eleman min değerden küçükse min değerimiz o oluyor.
+      min = numbers[i];
+    }
+  }
+
+  console.log("Ex17: min number is", min); // consolda yazdır.
+}
+
+findMin([15, 3, 9, 2, 11]); // incelenecek dizi.
+/*
+18. Count Occurrences of a Word in an Array
+    - Define a function `countOccurrences(arr, word)` that loops through `arr`
+      to count how many times `word` appears.
+    - Log the count.
+*/
+function countOccurrences(arr, word) {
+  let counter = 0; // sıfırdan başlasın
+
+  for (let item of arr) {
+    // dizideki kelimelere bak
+    if (item == word) {
+      // elemanlar word e eşitse sayıyı bir arttır.
+      counter += 1;
+    }
+  }
+
+  console.log(
+    "Ex18: '" + word + "' appears " + counter + " times in the array.",
+  );
+}
+
+let myArr = ["one", "two", "three", "one", "one", "two", "three", "one"];
+countOccurrences(myArr, "two"); // myArr dizisinde two kelimesinin sayısnı say.
+
+/*
+19. Remove Falsy Values
+    - Define a function `removeFalsyValues(arr)` that loops through an array
+      and returns a new array without falsy values (false, 0, "", null, undefined, NaN).
+    - Log the new array.
+*/
+function removeFalsyValues(arr) {
+  let truthyValues = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+      truthyValues.push(arr[i]);
+    }
+  }
+  return truthyValues;
+}
+
+const exampleArr = [
+  false,
+  "true",
+  0,
+  "",
+  1,
+  " ",
+  null,
+  undefined,
+  "world",
+  NaN,
+];
+const resultArr = removeFalsyValues(exampleArr);
+console.log("Ex 19: Truthy Values Arr is:", resultArr);
+
+/*
+20. Sum of All Digits in a String
+    - Define a function `sumDigits(str)` that loops through each character of `str`,
+      checks if it's a digit, and if so, adds it to a total sum.
+    - Log the final sum.
+    - Example: "abc123" -> 6
+*/
+function sumDigits(str) {
+  let sum = 0;
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (!isNaN(char)) {
+      sum += Number(char);
+    }
+  }
+  return sum;
+}
+const exampleString = "5kere5yirmi5";
+const sumOfDigits = sumDigits(exampleString);
+console.log('Ex 20: The sum of the digits in "5kere5yirmi5" is:', sumOfDigits);
+
+/*
+21. Average of Array Elements
+    - Define a function `averageArray(numbers)` that uses a loop
+      to calculate the average (sum / length).
+    - Log the average.
+*/
+function averageArray(numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(
+    `Ex 21: average of [${numbers.join(", ")}] = ${sum / numbers.lengths}`,
+  );
+}
+averageArray([10, 20, 30, 40]);
+/*
+22. Flatten a 2D Array (Nested Loops)
+    - Define a function `flattenArray(twoDArray)` that takes an array of arrays
+      (e.g., [[1,2],[3,4]]) and uses nested loops to create a new one-dimensional array.
+    - Log the flattened array.
+*/
+
+function flattenArray(twoDArray) {
+  let flat = []; // 1. Fonksiyonun içinde yazacak olduğumuz boş kutumuzu hazırladık
+
+  for (let i = 0; i < twoDArray.length; i++) {
+    let insideArry = twoDArray[i];
+
+    for (let j = 0; j < insideArry.length; j++) {
+      let number = insideArry[j]; // 2. dizi elemanları için j kullandık!
+      flat.push(number);
+    }
+  }
+
+  return flat; // 2. Hazırladığımız düz diziyi dışarı gönderiyoruz
+}
+
+const nested = [
+  [1, 2],
+  [3, 4],
+];
+const result = flattenArray(nested); // Fonksiyondan dönen sonucu aldık
+
+console.log("Ex 22:", result); // dışarıda yazdırdık
+/*
+23. Find Words Containing a Letter
+    - Define a function `findWordsWithLetter(words, letter)` that loops through
+      an array of words and returns a new array of only the words that contain
+      the given letter.
+    - Log the filtered array.
+*/
+function findWordsWithLetter(words, letter) {
+  let wordsWithLetter = [];
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].includes(letter)) {
+      wordsWithLetter.push(words[i]);
+    }
+  }
+  return wordsWithLetter;
+}
+
+const wordList = ["apple", "banana", "grape", "orange", "berry"];
+const filteredWords = findWordsWithLetter(wordList, "a");
+console.log("Ex 23: Words containing 'a':", filteredWords);
+
+/*
+24. Push and Pop Operations
+    - Define a function `pushPopExample(arr, itemToPush)` that:
+      - pushes itemToPush to arr
+      - logs the updated array
+      - then pops the last element
+      - logs the popped element
+      - logs the final array
+*/
+function pushPopExample(arr, itemToPush) {
+  arr.push(itemToPush);
+  console.log("Ex 24: The ugly duckling has joined the Swan family.", arr);
+  let uglyDuckling = arr.pop();
+  console.log("Ex 24: The ugly duckling:", uglyDuckling);
+  console.log("Ex 24: The ugly duckling left the Swan family.", arr);
+}
+
+let swans = ["🦢", "🦢", "🦢"];
+console.log("The swan family:", swans);
+pushPopExample(swans, "🦆");
+
+/*
+25. Push and Shift Operations
+    - Define a function `manageQueue(queue, newPerson)` that:
+      - push `newPerson` to the end of `queue`
+      - logs the updated queue
+      - shifts (removes) the first person in the queue
+      - logs the removed person
+      - logs the final queue
+*/
+
+function manageQueue(queue, newPerson) {
+  queue.push(newPerson);
+  console.log("Ex. 25: New Person List:", queue);
+  let promotedPerson = queue.shift();
+  console.log("Ex. 25: Promoted Person:", promotedPerson);
+  console.log("Ex. 25: New person List:", queue);
+}
+
+let personList = ["Ali", "Ayşe", "Murat", "Ema"];
+console.log("Ex. 25: First Personal List is:", personList);
+manageQueue(personList, "Hasan");
+
+/*
+26. To-Do List Application 
+  - Define a function `updateTodoList(todoList, startIndex, deleteCount, ...newTasks)`:
+   - Logs the current list of tasks.
+   - Removes `deleteCount` tasks starting at `startIndex`.
+   - Inserts any new tasks at the end of the array.
+   - Logs the updated list.
+*/
+
+function updateTodoList(todoList, startIndex, deleteCount, ...newTasks) {
+  console.log("Ex.26: 1. The Duty List:", todoList);
+  todoList.splice(startIndex, deleteCount);
+  todoList.push(...newTasks);
+  console.log("Ex.26: 2. Remaining The Duty List:", todoList);
+}
+
+const todoList = ["Study JS", "Eat breakfast", "Walk dog"];
+
+updateTodoList(
+  todoList,
+  1,
+  3,
+  "Meeting at 9.00 am.",
+  "Zeynep will came at 16.00 pm",
+);
