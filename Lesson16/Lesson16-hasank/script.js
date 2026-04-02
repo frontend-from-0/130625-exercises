@@ -394,7 +394,7 @@ function averageArray(numbers) {
     sum += numbers[i];
   }
   console.log(
-    `Ex 21: average of [${numbers.join(", ")}] = ${sum / numbers.lengths}`,
+    `Ex 21: average of [${numbers.join(", ")}] = ${sum / numbers.length}`,
   );
 }
 averageArray([10, 20, 30, 40]);
