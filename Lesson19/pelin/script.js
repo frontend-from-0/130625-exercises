@@ -143,8 +143,8 @@ SO I GOT HELP ABOUT THIS FROM GEMINI.
       const percentage = discountRate * 100;
       console.log(
         `Discount applied! ${percentage}% (${discountAmount.toFixed(
-          2
-        )} TRY) has been saved.`
+          2,
+        )} TRY) has been saved.`,
       );
     } else {
       this.#discountValue = 0;
