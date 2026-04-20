@@ -180,7 +180,7 @@ updateRecipe(
   "Sütlaç",
   "Dessert",
   ["Milk", "Rice", "cinnamon"],
-  "30",
+  30,
   "Boil rice, add milk and sugar, then thicken. Add some cinnamon",
 );
 console.log("Step 5 finished...");
