@@ -135,7 +135,7 @@ function viewRecipe(name) {
     }
   }
   console.log(
-    `Sorry, we don't have ${name}'s recipe yet. But I'm noting rightnow for adding list.`,
+    `Sorry, we don't have ${name}'s recipe yet. But I'm adding it to the list right now.`,
   );
 }
 viewRecipe("Sütlaç");
