@@ -194,7 +194,7 @@ Function: deleteRecipe(name)
 */
 console.log("Step 6 starting...");
 function deleteRecipe(name) {
-  for (i = 0; i < recipes.length; i++) {
+  for (let i = 0; i < recipes.length; i++) {
     if (recipes[i].name === name) {
       recipes.splice(i, 1);
       console.log(`${name}'s recipe is deleted.`);
