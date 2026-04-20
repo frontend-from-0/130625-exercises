@@ -245,7 +245,7 @@ function filterByMaxTime(maxMinutes) {
       `Recipes that has max ${maxMinutes} minute cooking time: ${CookingTimeFilter.join(", ")}`,
     );
   } else {
-    console.log(`No recipes found until "${maxMinutes}}" minutes.`);
+    console.log(`No recipes found with max ${maxMinutes} minute cooking time.`);
   }
 }
 filterByIngredient("Water");
