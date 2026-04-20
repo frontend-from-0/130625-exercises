@@ -249,7 +249,7 @@ function filterByMaxTime(maxMinutes) {
   }
 }
 filterByIngredient("Water");
-filterByMaxTime("20");
+filterByMaxTime(20);
 console.log("Step 7 finished...");
 
 displayAllRecipes();
