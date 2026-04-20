@@ -219,7 +219,7 @@ Function: filterByMaxTime(maxMinutes)
 */
 console.log("Step 7 starting...");
 function filterByIngredient(ingredient) {
-  let foundRecipesIngredient = [];
+  const foundRecipesIngredient = [];
   for (i = 0; i < recipes.length; i++) {
     if (recipes[i].ingredients.includes(ingredient)) {
       foundRecipesIngredient.push(recipes[i].name);
