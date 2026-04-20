@@ -242,7 +242,7 @@ function filterByMaxTime(maxMinutes) {
   }
   if (CookingTimeFilter.length > 0) {
     console.log(
-      `Recipes cookingtime "${maxMinutes}": ${CookingTimeFilter.join(", ")}`,
+      `Recipes that has max ${maxMinutes} minute cooking time: ${CookingTimeFilter.join(", ")}`,
     );
   } else {
     console.log(`No recipes found until "${maxMinutes}}" minutes.`);
