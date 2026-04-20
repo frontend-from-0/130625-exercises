@@ -236,7 +236,7 @@ function filterByIngredient(ingredient) {
 function filterByMaxTime(maxMinutes) {
   let CookingTimeFilter = [];
   for (i = 0; i < recipes.length; i++) {
-    if (recipes[i].cookingTime <= 20) {
+    if (recipes[i].cookingTime <= maxMinutes) {
       CookingTimeFilter.push(recipes[i].name);
     }
   }
