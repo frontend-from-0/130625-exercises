@@ -56,7 +56,7 @@ class ShoppingCart {
     for (const item of this.#items) {
       if (name === item.name) {
         console.log("increase the quantity.");
-        item.quantity++;
+        item.quantity += quantity;
         return;
       }
     }
