@@ -88,7 +88,6 @@ class ShoppingCart {
       }
     }
   }
-  
 getTotal() {
     let totalAmount = 0;
     // Sepetteki her öğe için döngü
@@ -127,6 +126,7 @@ applyDiscount(code) {
       discountApplied: discountRate * 100 
     };
 }
+
 
 }
 
