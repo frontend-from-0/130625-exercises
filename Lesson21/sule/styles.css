@@ -1,0 +1,279 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif; 
+  background: #f0f2f5; 
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 1000px; 
+  margin: auto;
+  padding: 3rem 1rem;
+}
+
+header h1 {
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+}
+
+.booking {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.calendar, .summary {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); 
+}
+
+.calendar {
+  flex: 2;
+}
+
+.summary {
+  flex: 1.2;
+  border-top: 5px solid #0077cc; 
+}
+
+.calendar label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.slot {
+  padding: 0.8rem;
+  background-color: #f8f9fa;
+  border: 1.5px solid #eef0f2;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #4a5568;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slot:hover {
+  background-color: #f0f7ff;
+  border-color: #0077cc;
+  color: #0077cc;
+  transform: translateY(-2px);
+}
+
+.selected {
+  background-color: #0077cc !important;
+  color: white !important;
+  border-color: #0077cc;
+  box-shadow: 0 4px 12px rgba(0, 119, 204, 0.3);
+}
+
+#confirm {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #0077cc, #005fa3);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+#confirm:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 119, 204, 0.25);
+}
+
+#confirm:disabled {
+  background: #e1e4e8;
+  color: #999;
+  cursor: not-allowed;
+}
+
+
+#confirmation-title {
+  color: #2d3436;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.input-wrap {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.5rem; 
+}
+
+.tick {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #27ae60;
+  font-weight: bold;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.tick.show {
+  opacity: 1;
+}
+
+.is-valid {
+  border-color: #27ae60 !important;
+  background-color: #f0fff4; 
+}
+
+.hidden {
+    display: none !important;
+}
+
+#confirmation {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 500px;
+    margin: 2rem auto; 
+}
+
+.form-input {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border: 1.5px solid #e1e4e8;
+  border-radius: 10px; 
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #0077cc;
+  box-shadow: 0 0 0 4px rgba(0, 119, 204, 0.1);
+}
+
+.timeslots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+
+  border: 1.5px solid #eef0f2;
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+
+.error-text {
+  color: #d63031;
+  font-size: 0.8rem;
+  margin-top: -1.2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.is-invalid {
+  border-color: #d63031 !important;
+  background-color: #fff5f5;
+}
+
+@media (max-width: 768px) {
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  .booking {
+    flex-direction: column; 
+    gap: 1.5rem;
+  }
+  
+
+  .calendar, .summary {
+    flex: 1; 
+    padding: 1.5rem; 
+  }
+  
+  header h1 {
+    font-size: 2rem; 
+  }
+  
+  .timeslots {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 0.75rem; 
+  }
+  
+  #confirmation {
+    max-width: 100%; 
+    padding: 2rem 1rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem 0.75rem;
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  .calendar, .summary {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .form-input {
+    font-size: 16px;
+    padding: 0.75rem 1rem;
+  }
+
+  .timeslots {
+    grid-template-columns: 1fr;
+  }
+
+  .slot {
+    padding: 1rem;
+    min-height: 48px;
+  }
+
+  #confirm {
+    padding: 1.1rem;
+    font-size: 1rem;
+  }
+
+  #confirmation {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  
+  header h1 {
+    font-size: 1.5rem; 
+  }
+  
+  .calendar, .summary {
+    padding: 1.2rem;
+  }
+  
+  .slot {
+    padding: 0.9rem;
+  }
+}
