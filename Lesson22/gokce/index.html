@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Checkout Form</h1>
+    </header>
+    <main>
+      <form novalidate id="checkoutForm" method="post">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input
+            aria-describedby="emailError"
+            id="email"
+            type="email"
+            placeholder="email@example.com"
+            name="email"
+          />
+          <p id="emailError" class="input-error hidden"></p>
+        </div>
+        <div class="input-group">
+          <label for="phone">Phone</label>
+          <input
+            aria-describedby="phoneError"
+            id="phone"
+            type="tel"
+            placeholder="555 123 4567"
+            name="phoneNumber"
+          />
+          <p id="phoneError" class="input-error hidden"></p>
+        </div>
+        <div class="input-group">
+          <label for="firstname">First Name</label>
+          <input
+            aria-describedby="firstNameError"
+            id="firstname"
+            type="text"
+            placeholder="Sophia"
+            name="firstname"
+          />
+          <p id="firstNameError" class="input-error hidden"></p>
+        </div>
+        <div class="input-group">
+          <label for="lastname">Last Name</label>
+          <input
+            aria-describedby="lastNameError"
+            id="lastname"
+            type="text"
+            placeholder="Clark"
+            name="lastname"
+          />
+          <p id="lastNameError" class="input-error hidden"></p>
+        </div>
+
+        <div class="input-group">
+          <label for="cardnumber">Card Number</label>
+          <input
+            aria-describedby="cardNumberError"
+            id="cardNumber"
+            type="text"
+            placeholder="1234 5678 9101 1121"
+            name="cardnumber"
+          />
+          <p id="cardNumberError" class="input-error hidden"></p>
+        </div>
+        <div class="input-group">
+          <label for="expDate">Expiration Date</label>
+          <input
+            aria-describedby="expDateError"
+            id="expDate"
+            type="text"
+            placeholder="MM/YY"
+            name="expDate"
+          />
+          <p id="expDateError" class="input-error hidden"></p>
+        </div>
+        <div class="input-group">
+          <label for="cvv">CVV</label>
+          <input
+            aria-describedby="cvvCodeError"
+            id="cvv"
+            type="text"
+            placeholder="123"
+            name="cvv"
+          />
+          <p id="cvvCodeError" class="input-error hidden"></p>
+        </div>
+        <button type="submit" id="submitBtn" class="btn-success" disabled>
+          Place Order
+        </button>
+      </form>
+      <div class="hidden" id="success" aria-live="polite"></div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
