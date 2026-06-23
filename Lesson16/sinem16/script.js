@@ -265,7 +265,7 @@ console.log("Exp.13");
 function factorial(n) {
   let sum = 1;
   for (let i = 1; i <= n; i++) {
-    sum *= [i];
+    sum *= i;
   }
   console.log(sum);
 }
