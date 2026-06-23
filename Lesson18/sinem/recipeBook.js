@@ -46,7 +46,7 @@ Function: displayAllRecipes()
 */
 
 function displayAllRecipes() {
-  console.log("Displaying all available contacts...");
+  console.log("Displaying all available recipes...");
   for (let i = 0; i < recipes.length; i++) {
     rep = recipes[i];
     console.log(
