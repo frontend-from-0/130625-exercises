@@ -379,9 +379,9 @@ console.log("Exp.19");
 
 function removeFalsyValues(arr) {
   let trueWords = [];
-  for (let char of arr) {
-    if (char) {
-      trueWords.push(char);
+  for (let chars of arr) {
+    if (chars) {
+      trueWords.push(chars);
     }
   }
   console.log(trueWords);
@@ -408,6 +408,8 @@ function sumDigits(str) {
   }
   console.log(sum);
 }
+
+
 
 sumDigits("11abg11");
 
@@ -439,11 +441,14 @@ averageArray([1, 2, 3, 4]);
 console.log("Exp.22");
 
 function flattenArray(twoDArray) {
-  let newString = [];
+  let flattened = [];
   for (let i = 0; i < twoDArray.length; i++) {
-    newString = twoDArray.flat();
+    // Inner loop
+    for (let j = 0; j < twoDArray[i].length; j++) {
+       flattened.push(twoDArray[i][j]);
+    }
   }
-  console.log(newString);
+  console.log(flattened);
 }
 
 flattenArray([
@@ -483,7 +488,7 @@ findWordsWithLetter(["Ben", "kedi", "aile"], "a");
 console.log("Exp.24");
 
 function pushPopExample(arr, itemToPush) {
-  let pustItem = arr;
+  let pustItem = [...arr];
   arr.push(itemToPush);
   console.log(pustItem);
   const popItem = pustItem.pop();
@@ -528,8 +533,8 @@ function updateTodoList(todoList, startIndex, deleteCount, ...newTasks) {
   console.log(todoList);
   todoList.splice(startIndex, deleteCount);
   console.log(todoList);
-  const newList = todoList.concat(newTasks);
-  console.log(newList);
+  todoList.push(...newTasks);
+  console.log(todoList);
 }
 updateTodoList(
   ["Study JS", "Eat breakfast", "Walk dog", "Shower in bath"],
