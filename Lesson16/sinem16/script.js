@@ -338,7 +338,7 @@ logElementsWithIndex([2, 4, 6, 8, 10, 12]);
 console.log("Exp.17");
 
 function findMin(numbers) {
-  minNum = numbers[0];
+  let minNum = numbers[0];
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] < minNum) {
       minNum = numbers[i];
