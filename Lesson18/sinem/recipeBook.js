@@ -30,7 +30,7 @@ const recipes = [
   {
     name: "Köfte",
     ingredients: ["Kıyma", "Soğan", "Ekmek", "Maydonoz", "Tuz"],
-    cookingTime: "30 Dk",
+    cookingTime: 30,
   },
 ];
 
