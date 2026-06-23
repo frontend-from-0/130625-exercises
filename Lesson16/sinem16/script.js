@@ -422,7 +422,7 @@ console.log("Exp.21");
 function averageArray(numbers) {
   let average = 0;
   let sum = 0;
-  for (i = 0; i < numbers.length; i++) {
+  for (let i = 0; i < numbers.length; i++) {
     sum += numbers[i];
   }
   average = sum / numbers.length;
