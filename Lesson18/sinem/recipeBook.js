@@ -50,7 +50,7 @@ function displayAllRecipes() {
   for (let i = 0; i < recipes.length; i++) {
     const rep = recipes[i];
     console.log(
-      `Name: ${rep.name} \nIngredients: ${rep.ingredients} \nCooking Time: ${rep.cookingTime}`
+      `Name: ${rep.name} \nIngredients: ${rep.ingredients} \nCooking Time: ${rep.cookingTime} minutes`
     );
 
     console.log("End of the recipe list.");
