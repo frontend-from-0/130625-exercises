@@ -202,7 +202,7 @@ function filterByIngredient(ingredient) {
     const ingredients = recipe.ingredients;
     for (let i = 0; i < newArt.length; i++) {
       if (
-        newArt[i].toLocaleLowerCase().includes(ingredient.toLocaleLowerCase())
+        ingredients[i].toLocaleLowerCase().includes(ingredient.toLocaleLowerCase())
       )
         foundRecipes.push(art.name);
       break;
