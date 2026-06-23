@@ -198,7 +198,7 @@ function filterByIngredient(ingredient) {
   console.log(`Looking for '${ingredient}' in the recipe book...`);
   const foundRecipes = [];
   for (let i = 0; i < recipes.length; i++) {
-    const art = recipes[i];
+    const recipe = recipes[i];
     const newArt = art.ingredients;
     for (let i = 0; i < newArt.length; i++) {
       if (
