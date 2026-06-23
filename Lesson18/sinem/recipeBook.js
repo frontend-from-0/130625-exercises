@@ -111,7 +111,7 @@ function viewRecipe(name) {
     const rep = recipes[i];
     if (rep.name === name) {
       console.log(
-        `${name} recipe is details: \nIngredients: ${rep.ingredients} \nCooking Time: ${rep.cookingTime}`
+        `${name}'s recipe details:\nName: ${rep.name} \nIngredients: ${rep.ingredients} \nCooking Time: ${rep.cookingTime}`
       );
       console.log("");
       console.log("");
