@@ -157,7 +157,7 @@ function updateRecipe(name, newIngredients, newCookingTime) {
 }
 
 updateRecipe("Patates Kızartması", ["Dondurulmuş Patates", "Yağ"], 5);
-updateRecipe("Patates Haşlama", ["Patates, Su"], "35 Dk");
+updateRecipe("Patates Haşlama", ["Patates", "Su"], 35);
 /*
 -----------------------------------------------------------
   STEP 6: Delete a Recipe
