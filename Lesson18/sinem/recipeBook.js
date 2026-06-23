@@ -168,7 +168,7 @@ Function: deleteRecipe(name)
 */
 
 function deleteRecipe(name) {
-  console.log(`Deleting contact ${name} in the contact book...`);
+  console.log(`Deleting recipe ${name} from the recipe book...`);
   for (let i = 0; i < recipes.length; i++) {
     if (recipes[i].name === name) {
       recipes.splice(i, 1);
