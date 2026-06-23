@@ -53,7 +53,7 @@ function displayAllRecipes() {
       `Name: ${rep.name} \nIngredients: ${rep.ingredients} \nCooking Time: ${rep.cookingTime}`
     );
 
-    console.log("End of contacts.");
+    console.log("End of the recipe list.");
     console.log("");
     console.log("");
   }
