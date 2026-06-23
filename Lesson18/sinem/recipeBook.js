@@ -48,7 +48,7 @@ Function: displayAllRecipes()
 function displayAllRecipes() {
   console.log("Displaying all available recipes...");
   for (let i = 0; i < recipes.length; i++) {
-    rep = recipes[i];
+    const rep = recipes[i];
     console.log(
       `Name: ${rep.name} \nIngredients: ${rep.ingredients} \nCooking Time: ${rep.cookingTime}`
     );
