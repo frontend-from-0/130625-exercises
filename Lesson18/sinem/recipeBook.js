@@ -231,7 +231,7 @@ function filterByMaxTime(maxMinutes) {
   for (let i = 0; i < recipes.length; i++) {
     const art = recipes[i];
     const artNum = parseInt(art.cookingTime);
-    if (artNum <= maxMinutes) takeTimes.push(art.name);
+    if (recipe.cookingTime <= maxMinutes) { results.push(recipe.name) };
   }
   const out = results.join(", ");
   console.log(`The recipes that take less than the ${maxMinutes}: ` , out);
