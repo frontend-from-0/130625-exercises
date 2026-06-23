@@ -142,7 +142,7 @@ function updateRecipe(name, newIngredients, newCookingTime) {
     if (recipes[i].name === name) {
       recipes[i].ingredients = newIngredients;
       recipes[i].cookingTime = newCookingTime;
-      console.log("Recipe book updated successfully.");
+      console.log("Recipe updated successfully.");
       console.log(
         `New recipe details: \nIngredients: ${recipes.ingredients} \nCooking Time: ${recipes.cookingTime}`
       );
