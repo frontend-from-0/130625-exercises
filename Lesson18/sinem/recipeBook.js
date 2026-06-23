@@ -227,7 +227,7 @@ Function: filterByMaxTime(maxMinutes)
 
 function filterByMaxTime(maxMinutes) {
   console.log("Shows recipes max minutes:");
-  const takeTimes = [];
+  const results = [];
   for (let i = 0; i < recipes.length; i++) {
     const art = recipes[i];
     const artNum = parseInt(art.cookingTime);
