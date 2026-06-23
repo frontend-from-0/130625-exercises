@@ -156,7 +156,7 @@ function updateRecipe(name, newIngredients, newCookingTime) {
   console.log("");
 }
 
-updateRecipe("Patates Kızartması", ["Dondurulmuş Patates, Yağ"], "5 Dk");
+updateRecipe("Patates Kızartması", ["Dondurulmuş Patates", "Yağ"], 5);
 updateRecipe("Patates Haşlama", ["Patates, Su"], "35 Dk");
 /*
 -----------------------------------------------------------
