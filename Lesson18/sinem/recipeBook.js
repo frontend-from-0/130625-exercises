@@ -144,7 +144,7 @@ function updateRecipe(name, newIngredients, newCookingTime) {
       recipes[i].cookingTime = newCookingTime;
       console.log("Recipe updated successfully.");
       console.log(
-        `New recipe details: \nIngredients: ${recipes.ingredients} \nCooking Time: ${recipes.cookingTime}`
+        `New recipe details: \nIngredients: ${recipes[i].ingredients} \nCooking Time: ${recipes[i].cookingTime}`
       );
       console.log("");
       console.log("");
