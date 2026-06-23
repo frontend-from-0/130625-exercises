@@ -322,7 +322,7 @@ console.log("Exp.16");
 
 function logElementsWithIndex(arr) {
   let index = [];
-  for (let key in arr) {
+  for (let key of arr) {
     console.log("İndex: ", key, "Value: ", arr[key]);
   }
 }
