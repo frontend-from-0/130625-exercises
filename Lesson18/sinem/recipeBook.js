@@ -204,7 +204,7 @@ function filterByIngredient(ingredient) {
       if (
         ingredients[i].toLocaleLowerCase().includes(ingredient.toLocaleLowerCase())
       )
-        foundRecipes.push(art.name);
+        foundRecipes.push(recipe.name);
       break;
     }
   }
