@@ -265,7 +265,7 @@ console.log("Exp.13");
 function factorial(n) {
   let sum = 1;
   for (let i = 1; i <= n; i++) {
-    sum *= [i];
+    sum *= i;
   }
   console.log(sum);
 }
@@ -322,7 +322,7 @@ console.log("Exp.16");
 
 function logElementsWithIndex(arr) {
   let index = [];
-  for (let key in arr) {
+  for (let key of arr) {
     console.log("İndex: ", key, "Value: ", arr[key]);
   }
 }
@@ -338,7 +338,7 @@ logElementsWithIndex([2, 4, 6, 8, 10, 12]);
 console.log("Exp.17");
 
 function findMin(numbers) {
-  minNum = numbers[0];
+  let minNum = numbers[0];
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] < minNum) {
       minNum = numbers[i];
@@ -424,7 +424,7 @@ console.log("Exp.21");
 function averageArray(numbers) {
   let average = 0;
   let sum = 0;
-  for (i = 0; i < numbers.length; i++) {
+  for (let i = 0; i < numbers.length; i++) {
     sum += numbers[i];
   }
   average = sum / numbers.length;
