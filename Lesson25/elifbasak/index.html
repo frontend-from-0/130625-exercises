@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+
+<body>
+
+  <main class="container" id="mainContainer">
+
+    <div class="mainpage-buttons">
+    <button class="button button--success" id="getPostsBtn">Get Posts</button>
+
+    <button class="button button--create" id="createPostsBtn">Create a New Post</button>
+    </div>
+    <!--
+      Fetch all posts and display them on the page.
+      For every post, add a button to update the post and delete a post.
+      When the update button is clicked, redirect user to the update post page with a form to update the post.
+      When the delete button is clicked, send request to delete the post.
+      Add a button to create a new post. When the button is clicked, redirect user to the create post page with a form to create a new post.
+     
+    -->
+      <ul id="postsContainer" class="posts-container">
+
+      </ul>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
