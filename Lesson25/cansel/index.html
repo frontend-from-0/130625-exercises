@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 25 - CRUD Application</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Post Manager</h1>
+      <p>Complete CRUD Operations using JSONPlaceholder API</p>
+    </header>
+
+    <main>
+      <section class="form-section" aria-labelledby="form-title">
+        <h2 id="form-title">Create a New Post</h2>
+        <form id="post-form" novalidate>
+          <div class="input-group">
+            <label for="post-title">Title</label>
+            <input
+              type="text"
+              id="post-title"
+              name="title"
+              required
+              aria-required="true"
+              placeholder="Enter post title"
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="post-body">Content</label>
+            <textarea
+              id="post-body"
+              name="body"
+              rows="4"
+              required
+              aria-required="true"
+              placeholder="Enter post content"
+            ></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="submit-btn" class="btn-primary">
+              Add Post
+            </button>
+            <button type="button" id="cancel-btn" class="btn-secondary hidden">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section id="posts-container" class="grid-container" aria-live="polite">
+        <p id="loading-msg">Loading posts...</p>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
