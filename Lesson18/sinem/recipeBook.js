@@ -89,11 +89,10 @@ function addRecipe(name, ingredients, cookingTime) {
   console.log("");
 }
 
-addRecipe("Patates Kızartması", ["Patates, Yağ"], "15 Dk");
-addRecipe("Mantı", ["Un, Tuz, Su, Kıyma, Yağ, Yoğrt"], "60 Dk");
-addRecipe("Makarna", ["Makarna, Su, Yağ, Salça, Tuz"], "20 Dk");
-
-addRecipe("Köfte", ["Patates, Yağ"], "20 Dk");
+addRecipe("Patates Kızartması", ["Patates, Yağ"], 15);
+addRecipe("Mantı", ["Un, Tuz, Su, Kıyma, Yağ, Yoğrt"], 60);
+addRecipe("Makarna", ["Makarna, Su, Yağ, Salça, Tuz"], 20);
+addRecipe("Köfte", ["Patates, Yağ"], 20);
 
 /*
 -----------------------------------------------------------
@@ -193,19 +192,19 @@ deleteRecipe("Hamburger");
 Function: filterByIngredient(ingredient)
 - Shows all recipes that use a certain ingredient.
 */
-
+console.log("ex 7 -----------------")
 function filterByIngredient(ingredient) {
   console.log(`Looking for '${ingredient}' in the recipe book...`);
   const foundRecipes = [];
   for (let i = 0; i < recipes.length; i++) {
     const recipe = recipes[i];
     const ingredients = recipe.ingredients;
-    for (let i = 0; i < newArt.length; i++) {
+    for (let i = 0; i < ingredients.length; i++) {
       if (
         ingredients[i].toLocaleLowerCase().includes(ingredient.toLocaleLowerCase())
       )
-        foundRecipes.push(recipe.name);
-      break;
+        {foundRecipes.push(recipe.name);
+      break;}
     }
   }
   const out = foundRecipes.join(", ");
@@ -230,7 +229,7 @@ function filterByMaxTime(maxMinutes) {
   const results = [];
   for (let i = 0; i < recipes.length; i++) {
     const recipe = recipes[i];
-    const artNum = parseInt(art.cookingTime);
+
     if (recipe.cookingTime <= maxMinutes) { results.push(recipe.name) };
   }
   const out = results.join(", ");
